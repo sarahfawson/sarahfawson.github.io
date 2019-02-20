@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Latitude Viz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="body">
+    <!-- navbar -->
+    <nav class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Latitude Viz</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" type="button" data-toggle="dropdown">Plots
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="temperature.html">Temperature</a></li>
+                        <li><a href="humidity.html">Humidity</a></li>
+                        <li><a href="cloudiness.html">Cloudiness</a></li>
+                        <li><a href="wind.html">Wind Speed</a></li>
+                    </ul>
+                </li>
+
+                <!-- links to data and comparison pages -->
+                <li class="menu">
+                    <a href="comparison.html">Comparison</a>
+                </li>
+                <li class="menu">
+                    <a href="data.html">Data</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- body text and intro -->
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col-md-7" id="summary">
+          <h1>Summary: Latitude vs. X</h1>
+          <hr />
+          <section id="summary">
+            <img
+              style="padding: 0 15px; float: left;"
+              width="400px"
+              src="Resources/assets/images/Fig1.png"
+              alt="weather trend graph"
+            /><br />
+            <p class="text-left">
+              The purpose of this project was to analyze how weather changes as
+              you get closer to the equator. I pulled data from the
+              OpenWeatherMap API accomplish this analysis. <br /><br />After
+              accessing the data through an API call to OpenWeatherMap, I
+              assembled a dataset of over 500 random cities around the world.
+              Then, I used Matplotlib to plot various aspects of the weather vs.
+              the latitude, to see what trends I could find. Factors looked at
+              include: temperature, humidity, cloudiness, and wind speed. This
+              site provides the source data and visualizations associated with
+              this analysis, as well as some explanations and descriptions of
+              any trends or correlations witnessed. Here's a
+              <a
+                href="https://github.com/sarahfawson/GWARL-homeworks/tree/master/APIs%20HW"
+                class="card-link"
+                >link</a
+              >
+              to the Github repository where you can see the code I wrote to get
+              these plots.
+            </p>
+          </section>
+        </div>
+
+        <!-- visualizations snapshot of all graphs -->
+        <div class="col-md-4" id="sidenav">
+          <h1>Visualizations</h1>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <a href="temperature.html"
+                ><img
+                  width="200px"
+                  src="Resources/assets/images/Fig1.png"
+                  alt="temp weather trend graph"
+              /></a>
+            </div>
+            <div class="col-md-6">
+              <a href="humidity.html"
+                ><img
+                  width="200px"
+                  src="Resources/assets/images/Fig2.png"
+                  alt="humidity weather trend graph"
+              /></a>
+            </div>
+            <div class="col-md-6">
+              <a href="cloudiness.html"
+                ><img
+                  width="200px"
+                  src="Resources/assets/images/Fig3.png"
+                  alt="cloudiness weather trend graph"
+              /></a>
+            </div>
+            <div class="col-md-6">
+              <a href="wind.html"
+                ><img
+                  width="200px"
+                  src="Resources/assets/images/Fig4.png"
+                  alt="wind speed weather trend graph"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
