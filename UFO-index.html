@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>UFO Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+  <link rel="stylesheet" href="UFO-static/css/style.css">
+  <link rel="icon" type="image/png" href="https://img.icons8.com/material-sharp/50/000000/sci-fi.png">
+
+</head>
+
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="UFO-index.html">UFO Sightings
+            <img class="nav-ufo" src="static/images/ufo.svg">
+          </a>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="menu">
+                <a href="index.html">Portfolio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="hero text-center">
+      <h1><span>UFO Sightings</span></h1>
+      <p><span>The Truth is Out There</span></p>
+    </div>
+    <div class="container">
+      <div class="row margin-top-50">
+        <div class="col-md-2">
+          <aside class="filters search-box">
+            <div class="search-box panel panel-heading">
+              <div class="panel-heading">Filter Search</div>
+              <div class="panel-body search-box">
+                <form>
+                  <div class="form-group search-box">
+                    <ul class="list-group search-box" id="filters">
+                      <li class="filter list-group-item search-box">
+                        <label for="date">Enter a date:</label>
+                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                      </li>
+                    </ul>
+                  </div>
+                  <button id="filter-btn" type="submit" class="search-box btn btn-default">Filter Table</button>
+                </form>
+              </div>
+            </div>
+          </aside>
+        </div>
+        <div class="col-md-10">
+          <div id="table-area" class="">
+            <table class="table table-light">
+              <thead>
+                <tr>
+                  <th class="table-head">Date</th>
+                  <th class="table-head">City</th>
+                  <th class="table-head">State</th>
+                  <th class="table-head">Country</th>
+                  <th class="table-head">Shape</th>
+                  <th class="table-head">Duration</th>
+                  <th class="table-head">Comments</th>
+                </tr>
+              </thead>
+              <tbody class = "san-serif" id="table-content"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">Brought to you by UFO Sightings Incorporated. Report all potential UFOs.</span>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+  <script src="UFO-static/js/data.js"></script>
+  <script src="UFO-static/js/app.js"></script>
+</body>
+
+</html>
