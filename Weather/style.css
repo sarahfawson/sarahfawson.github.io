@@ -1,15 +1,9 @@
 /* stylin' */
 
-/* google fonts:
-font-family: 'Roboto', sans-serif;
-font-family: 'Playfair Display', serif;
-font-family: 'Open Sans', sans-serif; */
-
-
 /* -------------- CLASS CSS DATA -------------- */
 
-* {
-    background-color: white;
+.body {
+    background-color: rgb(241, 241, 241);
 }
 
 .container-fluid {
@@ -22,15 +16,19 @@ font-family: 'Open Sans', sans-serif; */
 }
 
 .navbar-default .navbar-brand {
-    color:  black;
+    color: white;
+    background-color: rgb(10, 151, 151);
+    font-family: Book Antiqua;
     font-size: 24px;
     font-weight: bold;
-    font-family: 'Playfair Display', serif;
+
+    border-bottom: solid rgb(226, 225, 225);
+    border-right: 20px;
 }
 
 .navbar-header .navbar-toggle .collapsed{
   float: right;
-  /* font-family: 'Roboto', serif; */
+  font-family: Book Antiqua;
   font-size: 16px;
 }
 
@@ -52,24 +50,27 @@ font-family: 'Open Sans', sans-serif; */
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    color: black;
+    font-family: Book Antiqua;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color:  rgb(10, 151, 151);
 }
 
 h2 {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-    color:  rgb(235, 31, 190);
+  font-family: Book Antiqua;
+    font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color:  rgb(10, 151, 151);
 }
 
 h3 {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    text-align: center;
-    color: black;
+  font-family: Book Antiqua;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color:  black;
 }
 
 .card {
