@@ -28,6 +28,13 @@ font-family: 'Open Sans', sans-serif; */
     font-family: 'Playfair Display', serif;
 }
 
+.navbar-default .navbar-brand:hover {
+    color:  #c200c2;;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
 .navbar-header .navbar-toggle .collapsed{
   float: right;
   /* font-family: 'Roboto', serif; */
@@ -62,7 +69,7 @@ h2 {
     font-size: 18px;
     text-align: center;
     font-weight: bold;
-    color:  rgb(235, 31, 190);
+    color:  #c200c2;
 }
 
 h3 {
@@ -79,7 +86,7 @@ h3 {
 }
 
 .footer {
-    color: rgb(245, 16, 188);
+    color: #c200c2;
     padding: 15px;
     text-align: center;
     position: absolute;
@@ -128,7 +135,7 @@ h3 {
 
 #img-border {
     outline-style: solid;
-    outline-color: rgb(245, 16, 188);
+    outline-color: #c200c2;
     outline-width: 3px;
     outline-offset: -2px;
     /* margin: 2px; */
@@ -157,3 +164,4 @@ h3 {
       margin-top: 0;
   }
 }
+
