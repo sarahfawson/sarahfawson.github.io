@@ -1,118 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Sarah Fawson</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display:900|Roboto" rel="stylesheet">    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="icon" type="image/png" href="favicon-S.png">
-  </head>
-
-  <body class="body">
-    <!-- navbar -->
-    <nav class="navbar navbar-default">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-          aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html"></a>
-      </div>
-      <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a class="dropdown-toggle" type="button" data-toggle="dropdown">Projects
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="UFO-index.html">UFO Records</a></li>
-              <li><a href="trolls.html">Trolls Twitter Sentiment Analysis</a></li>
-              <li><a href="weather-index.html">Weather Analysis</a></li>
-              <li><a href="personal-art.html">Personal Art</a></li>
-            </ul>
-          </li>
-
-          <!-- links to data and comparison pages -->
-          <li class="menu">
-            <a href="resume-page.html">Resume</a>
-          </li>
-          <li class="menu">
-            <a target="#_blank" href="https://github.com/sarahfawson">Github</a>
-          </li>
-          <li class="menu">
-              <a target="#_blank" href="https://www.linkedin.com/in/sarah-fawson-b911b083/">Linkedin</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- body text and intro -->
-    <div class="col-md-2" id="sidenav">
-    </div>
-
-    <div class="container-fluid text-center">
-      <div class="row">
-        <div class="col-md-8 hero text-center" id="summary">
-          <h1>Hello there!</h1>
-          <h2>MY NAME IS SARAH FAWSON. LET ME TELL YOU A BIT ABOUT MYSELF.</h2>
-          <hr />
-          <section id="summary">
-            <p class="text-left">
-              I am an aspiring Data Journalist with a background in Supply Chain Management. I received 
-              a BA in Supply Chain Management from the University of Oklahoma then gained experience in 
-              strategic operations planning, data analysis and reporting in both a global chemical company 
-              and a marketing agency. I am now taking an intensive 24-week bootcamp course in Data 
-              Analytics & Visualization from George Washington University, where I am learning Javascript, 
-              D3, Python, R, HTML/CSS, SQL, Git/Github and Tableau. I will finish this program in May 2019.
-              <br/><br/>As a data journalist, my goal is to use data analysis and design to translate 
-              ambiguous data into relatable stories to help people understand topics and make informed 
-              decisions. I've seen the power of data visualization firsthand as I've used it to help people 
-              understand an autoimmune disease that I have. It has also helped me effectively educate others 
-              about the 
-              <a
-              target="#_blank" 
-              href="https://www.instagram.com/p/BhwUui1AwH_/"
-              class="card-link">treatment</a> 
-              and 
-              <a
-              target="#_blank" 
-              href="https://www.instagram.com/p/BqVEchaH8hB/"
-              class="card-link">cost</a> 
-              of this life-long disease. This experience has 
-              motivated me to change career paths entirely into data visualization and data journalism. 
-              These personal experiences, my knowledge of data analytics, experience in design and natural 
-              curiosity make me a great fit for this path, and SO excited to dig my heels in deeper and really take off with it.
-              <br/><br />When I'm not working, I'm probably illustrating, painting, rock climbing with my husband, 
-              or playing with my adorable dog
-              <a
-                target="#_blank" 
-                href="https://www.instagram.com/pablo_thoughts/"
-                class="card-link">Pablo</a>.
-              <br/><br />I'm also on
-              <a
-                target="#_blank" 
-                href="https://twitter.com/SarahFawson"
-                class="card-link">Twitter</a> and
-              <a
-                target="#_blank" 
-                href="https://www.instagram.com/sarahfawson/"
-                class="card-link">Instagram</a>.
-            </p>
-          </section>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-2" id="sidenav">
-    </div>
-    
-  </body>
+<html>
 </html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sarah Fawson</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="all,follow">
+  <!-- Bootstrap CSS-->
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome CSS-->
+  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
+  <!-- Google fonts - Roboto-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+  <!-- owl carousel-->
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.css">
+  <link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.css">
+  <!-- theme stylesheet-->
+  <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
+  <!-- Custom stylesheet-->
+  <link rel="stylesheet" href="css/custom.css">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/favicon.png">
+  <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+</head>
+<body>
+  <div id="all">
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left"> 
+        <!--   *** SIDEBAR ***-->
+        <div id="sidebar" class="col-md-4 col-lg-3 sidebar-offcanvas">
+          <div class="sidebar-content">
+            <h1 class="sidebar-heading"> <a href="index.html">Sarah Fawson</a></h1>
+            <p class="sidebar-p">Data Visualization Specialist and illustrator.</p>
+            <p class="sidebar-p">Originally from Texas, currently based in DC. </p>
+            <ul class="sidebar-menu">
+                <!-- Link-->
+                <li class="sidebar-item"><a href="index.html" class="sidebar-link active">Home</a></li>
+                <!-- Link-->
+                <li class="sidebar-item"><a href="about.html" class="sidebar-link">About</a></li>
+                <!-- Link-->
+                <li class="sidebar-item"><a href="contact.html" class="sidebar-link">Get in touch</a></li>
+            </ul>
+            <p class="social">
+              <a href="https://github.com/sarahfawson" target="#_blank" data-animate-hover="pulse" class="external github"><i class="fa fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/sarah-fawson-b911b083/" target="#_blank" data-animate-hover="pulse" class="external linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="https://twitter.com/SarahFawson" target="#_blank" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.instagram.com/sarahfawson/" target="#_blank" title="" class="external instagram"><i class="fa fa-instagram"></i></a>
+              <a href="mailto:sarahelizabethfawson@gmail.com" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a>
+            </p>
+            <div class="copyright text-center text-md-left">
+              <p class="credit">&copy;2019 Sarah Fawson | Template by <a href="http://bootstrapious.com/portfolio-themes" class="external">Bootstrapious.com</a></p>
+              <!-- Please do not remove the backlink to us, unless you support the development at http://bootstrapious.com/donate. It is part of the license conditions. Thanks for understanding :)        -->
+            </div>
+          </div>
+        </div>
+        <!--   *** SIDEBAR END ***  -->
+        <!--   *** PORTFOLIO ***  -->
+        <div class="col-md-8 col-lg-9 content-column">
+          <div class="small-navbar d-flex d-md-none">
+            <button type="button" data-toggle="offcanvas" class="btn btn-outline-primary"> <i class="fa fa-align-left mr-2"></i>Menu</button>
+            <h1 class="small-navbar-heading"> <a href="index.html">Creative </a></h1>
+          </div>
+          <div class="grid row">
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#t1d_infographic" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/t1d_infographic.PNG" alt="t1d infographic" class="img-fluid"></a>
+                <div class="box-masonry-hover-text-header"> <a href="detail.html#t1d_infographic" class="tile-link">  </a>
+                  <h4>T1D Infographic</h4>
+                  <div class="box-masonry-desription">
+                    <!-- <p>
+                      <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                      </i>
+                       Personal Project
+                    </p>  -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> 
+                <div class="box-masonry-text"> 
+                  <h4> <a href="detail.html#cdcHealth">The Social Determinants of Health</a></h4>
+                  <div class="box-masonry-desription">
+                    <!-- <p>
+                      <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                      </i>
+                        Class Project
+                    </p>  -->
+                    <p> Analyzed the Social Determinants of Health from CDC data and the Social Vulnerability Index.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#twitterTrolls" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/vader-score.PNG" alt="" class="img-fluid"></a>
+                <div class="box-masonry-text"> 
+                  <h4> <a href="detail.html#twitterTrolls">Twitter Trolls Sentiment Analysis</a></h4>
+                  <div class="box-masonry-desription">
+                    <!-- <p>
+                      <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                      </i>
+                        Class Project
+                    </p>  -->
+                    <p>Analyzed the sentiment of over 1 million Russian Troll Tweets surrounding the 2016 Presidential Election.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#freedomArt" title="" class="box-masonry-image with-hover-overlay"><img src="img/portfolio/frederick_douglass_portrait.jpg" alt="Drawing of Frederick Douglass" class="img-fluid"></a>
+                <div class="box-masonry-hover-text-header"> <a href="detail.html#freedomArt" class="tile-link">  </a>
+                  <h4>Freedom Art Series</h4>
+                  <div class="box-masonry-desription">
+                    <!-- <p>
+                      <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                      </i>
+                        Personal Project
+                    </p>  -->
+                    <p>Series of four hand drawn free-thinkers, painted with a pop of color in acrylic.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#coffeeCups" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/coffee_dali.jpg" alt="Dali coffee cup drawing" class="img-fluid"></a>
+                <div class="box-masonry-text">
+                  <h4>Coffee Cup Illustrations</h4>
+                  <div class="box-masonry-desription">
+                    <!-- <p>
+                      <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                      </i>
+                        Personal Project
+                    </p>  -->
+                    <p>Hand-drawn coffee cup series.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> 
+                <div class="box-masonry-text"> 
+                  <h4> <a href="detail.html#ufo">UFO Searching Website</a></h4>
+                  <div class="box-masonry-desription">
+                      <!-- <p>
+                        <i class ="fa fa-chevron-circle-right" aria-hidden="true">
+                        </i>
+                          Class Project
+                      </p>  -->
+                    <p>Website created with HTML, CSS, Javascript to search UFO signting records.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#digitalArt" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/dream_big.JPG" alt="Digital Illustration" class="img-fluid"></a>
+                <div class="box-masonry-text"> 
+                  <h4> <a href="detail.html#digitalArt">Digital Art</a></h4>
+                  <div class="box-masonry-desription">
+                    <p>I make art in an iPad app called Procreate.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#illustrations" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/illustration_2years.JPG" alt="" class="img-fluid"></a>
+                <div class="box-masonry-text">
+                  <h4><a href="detail.html#illustrations">Illustrations</a></h4>
+                  <div class="box-masonry-desription">
+                    <p>Pencil drawings - mostly portraits!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#paintings" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/acrylic_youcaneven.JPG" alt="" class="img-fluid"></a>
+                <div class="box-masonry-text"> 
+                  <h4> <a href="detail.html#paintings">Acrylic Paintings</a></h4>
+                  <div class="box-masonry-desription">
+                    <p>Bright and fun paintings in acrylic.</p>
+                  </div>
+                </div>
+              </div>
+            </div>   
+            <div class="col-md-6 col-lg-3 grid-item"> 
+              <div class="box-masonry"> <a href="detail.html#paintings" title="" class="box-masonry-image with-hover-overlay with-hover-icon"><img src="img/portfolio/oilpainting_natgeo.jpeg" alt="" class="img-fluid"></a>
+                <div class="box-masonry-text">
+                  <h4><a href="detail.html#paintings">Oil Paintings</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--   *** PORTFOLIO END ***-->
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript files-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/popper.js/umd/popper.min.js"> </script>
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+  <script src="js/front.js"></script>
+</body>
