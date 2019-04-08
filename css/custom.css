@@ -4,3 +4,8 @@
     max-width: 100%;
     height: auto;
 }
+
+.whitespace {
+    margin-top:20px;
+    margin-bottom:20px;
+}
