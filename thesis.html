@@ -4,11 +4,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
       
     <!-- CSS -->
-    <link rel="stylesheet" href="css/testing.css">
+    <link rel="stylesheet" href="css/thesis.css">
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
 
     <!-- google fonts -->
@@ -17,9 +18,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
+    
     <!-- icon -->
     <link rel="icon" href="style/images/website_icon.ico" sizes="16x16" type="image/ico">
     <title>Sarah Fawson</title>
+
+    <!-- js -->
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
 
   </head>
     
@@ -75,7 +80,7 @@
       </div>
       <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
         <div class="col-md-10">
-          <p class="section super-font">MICA THESIS  |  DECEMBER 2020</p>
+          <p class="section super-font" style="color: #1b7c72">MICA THESIS  |  DECEMBER 2020</p>
           <p class="body-text sub-font">
           Description about the project here
           </p>
@@ -86,71 +91,130 @@
     <!-- main container-->
     <div class="container"> 
 
-      <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+      <!-- <div class="row justify-content-center">
         <div class="col-md-10">
           <p class="section super-font">Section 1</p>
         </div>
-      </div>
+      </div> -->
 
       <!-- section -->
       <div class="row justify-content-center "> 
-        <div class="col-md-4">
-          <!-- image -->
-          <img class="image " src="images/portfolio/MICA/disenfranchisement-poster.jpg" alt="image description">
-        </div>
-        <div class="col-md-6 ">
-          <!-- headline/description -->
-          <p class="subhead super-font">Title</p>
-          <p class="sub-font explanation">Lorem ipsum dolor sin amet.</p>
+        <div class="col-md-10">
+          <!-- <p class="subhead super-font">Title</p> -->
+          <p class="sub-font explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
-      <!-- end of section -->
+      <!-- / section -->
 
-      
+       <!-- viz -->
+       <div class="row justify-content-center "> 
+        <div class="col-md-10">
+          <p class="subhead super-font">Title</p>
+          <div id="container" class="svg-container"></div>
+          <script>
+          
+          //------------------------SVG PREPARATION------------------------//
+          var width = 960;
+          var height = 500;
+          var adj = 20;
+          // we are appending SVG first
+          var svg = d3.select("div#container").append("svg")
+          .attr("preserveAspectRatio", "xMinYMin meet")
+          .attr("viewBox", "-" + adj + " -"+ adj + " " + (width + adj) + " " + (height + adj))
+          .style("padding", 5)
+          .style("margin", 5)
+          .classed("svg-content", true);
+          
+          //-----------------------DATA PREPARATION------------------------//
+          var dataset = d3.csv("data.csv");
+          dataset.then(function(data) {
+            data.map(function(d) {
+              d.val = +d.val;
+              return d;});
+          });
+          console.log(dataset);
+          //---------------------------BAR CHART---------------------------//
+          
+          dataset.then(function(data) {  
+            svg.selectAll("div")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("class", "bar")
+            .attr("x", function (d, i) {
+              for (i>0; i < data.length; i++) {
+                  return i * 26;
+              }
+            })
+            .attr("y", function (d) {
+                return height - (d.val*10);
+            })
+            .attr("width", 25)
+            .attr("height", function (d) {
+                return d.val * 10;
+            });
+        });
+          
+          </script>
+        </div>
+      </div>
+      <!-- / viz -->
+
       <!-- ** section divider ** -->
       <br><br>
-
-      <!-- section header -->
-      <div class="row justify-content-center">
+      
+      <!-- section -->
+      <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <p class="section super-font">Section 2</p>
+          <!-- headline/description -->
+          <!-- <p class="subhead super-font">Title</p> -->
+          <!-- description -->
+          <p class="sub-font explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <br><br>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+          </p>
         </div>
       </div>
+      <!-- / section -->
 
       <!-- section -->
-        <div class="row justify-content-center "> 
-          <div class="col-md-4">
-            <!-- image -->
-            <img class="image " src="images/portfolio/MICA/disenfranchisement-moodboard.jpg" alt="image description">
-          </div>
-          <div class="col-md-6 ">
-            <!-- headline/description -->
-            <p class="subhead super-font">Title</p>
-            <p class="sub-font explanation">Lorem Ipsum dolor sin amet</p>
-          </div>
+      <div class="row justify-content-center "> 
+        <div class="col-md-10">
+          <p class="subhead super-font">Map</p>
+          <img class="image " src="images/thesis/hexmap.jpg" alt="usa state hexmap">
         </div>
-      </a>
-      <!-- ** end of section ** -->
+      </div>
+      <!-- / section -->
 
     </div>
     <!-- end of main container -->
       
-    <!-- footer-ish -->
-    <div class="container">            
+
+    <!-- sources -->
+    <div class="container" style="margin-top:50px; margin-bottom:50px;">            
       <div class="row justify-content-center">
         <div class="col-md-10">
-          <p class="body-text sub-font">
-          <br><br>
-          Similar work available on <a href='https://instagram.com/thedatasays'>Instagram</a>.
+          <hr>
+          <p class="subhead super-font">Sources</p> 
+          <p class="sub-font">Sources here
           </p>
         </div>
       </div>
     </div>
-    <!-- end footer --> 
+    <!-- end sources --> 
+
+    <!-- <hr> -->
+
+    <!-- <div class="footer">
+      <p class="sub-font">Footer</p> 
+    </div> -->
         
     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- JavaScript files -->
+    <!-- <script type="text/javascript" src="js/visuals.js"></script> -->
+    <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+
+    <!-- jQuery, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>

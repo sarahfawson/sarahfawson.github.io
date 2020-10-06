@@ -171,7 +171,9 @@ sub-font
 
 .super-font {
   font-family: 'Source Sans Pro', sans-serif;
+  color: #33b3a6 !important;
 }
+
 .sub-font {
   font-family: 'Public Sans', sans-serif;
 }

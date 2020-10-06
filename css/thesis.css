@@ -29,8 +29,18 @@ margin-bottom:20px;
    END OLD CSS  
    ************** */
 
-
-/* choose a light or dark theme to add to the body tag. */
+.footer {
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(189, 188, 188);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 0px !important;
+}
+   
 .dark-theme {
   background-color: #181414;
   color: #fcfbfb;   
@@ -43,8 +53,6 @@ margin-bottom:20px;
 .container {
   max-width: 975px;
 }
-
-/* ******** */
 
 .image {
   margin-bottom: 1rem;
@@ -69,6 +77,7 @@ sub-font
 .super-font {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
 .sub-font {
   font-family: 'Public Sans', sans-serif;
 }
