@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,700,400italic">
     
     <!-- icon -->
-    <link rel="icon" href="style/images/website_icon.ico" sizes="16x16" type="image/ico">
-    <title>Sarah Fawson</title>
+    <link rel="icon" href="images/favicon.png" sizes="16x16" type="image/ico">
+    <title>When is Time Served?</title>
 
     <!-- js -->
     <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
@@ -80,10 +80,10 @@
       </div>
       <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
         <div class="col-md-10">
-          <p class="section super-font" style="color: #1b7c72">MICA THESIS  |  DECEMBER 2020</p>
-          <p class="body-text sub-font">
-          Description about the project here
-          </p>
+          <p class="section subheader">SARAH FAWSON  |  DECEMBER 2020</p>
+          <!-- <p class="body-text sub-font">
+          Description about the thesis here
+          </p> -->
         </div>
       </div>
     </div>
@@ -100,7 +100,7 @@
       <!-- section -->
       <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <!-- <p class="subhead super-font">Title</p> -->
+          <p class="subhead super-font">Section Title</p>
           <p class="sub-font explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
@@ -109,7 +109,8 @@
        <!-- viz -->
        <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <p class="subhead super-font">Title</p>
+          <p class="subhead super-font">Chart Title</p>
+          <p class="sub-font explanation">This is a D3 bar chart that will contain the prison rate per 100,000 of the USA vs other countries.</p>
           <div id="container" class="svg-container"></div>
           <script>
           
@@ -180,23 +181,37 @@
       <!-- section -->
       <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <p class="subhead super-font">Map</p>
+          <p class="subhead super-font">Map Title</p>
+          <p class="sub-font explanation">This will be an interactive USA hexmap or tile map where you can use a drop down to select different categories and states will be highlighted if they correspond with that category.
           <img class="image " src="images/thesis/hexmap.jpg" alt="usa state hexmap">
+          <br>
+          <hr>
+          <label for="states">Choose a State:</label>
+          <select name="states" id="states">
+            <option value="alaska">Alaska</option>
+            <option value="alabama">Alabama</option>
+            <option value="california">California</option>
+            <option value="colorado">Colorado</option>
+          </select>
+          <p class="sub-font explanation">There will also be a drop down here to view all categorical information from the above map, but allowing the user to select a state to see an output by individual state.</p>
+          <p class="sub-font super-font">Number</p>
+          <p class="sub-font super-font">Number</p>
+          <p class="sub-font super-font">Number</p>
         </div>
       </div>
       <!-- / section -->
 
     </div>
     <!-- end of main container -->
-      
+    <br>
 
     <!-- sources -->
     <div class="container" style="margin-top:50px; margin-bottom:50px;">            
       <div class="row justify-content-center">
         <div class="col-md-10">
           <hr>
-          <p class="subhead super-font">Sources</p> 
-          <p class="sub-font">Sources here
+          <p class="section subheader">Sources & Methodology</p> 
+          <p class="sources-methodology">Sources & methodology goes here
           </p>
         </div>
       </div>
@@ -205,9 +220,14 @@
 
     <!-- <hr> -->
 
-    <!-- <div class="footer">
-      <p class="sub-font">Footer</p> 
-    </div> -->
+    <div class="footer">
+      <!-- <p class="sub-font">I'm the Footer</p> -->
+      <a href="https://github.com/sarahfawson" target="#_blank" data-animate-hover="pulse" class="external github"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sarahfawson/" target="#_blank" data-animate-hover="pulse" class="external linkedin"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/SarahFawson" target="#_blank" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/thedatasays/" target="#_blank" title="" class="external instagram"><i class="fa fa-instagram"></i></a>
+      <a href="mailto:hello@sarahfawson.com" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a>
+    </div>
         
     
     <!-- JavaScript files -->
