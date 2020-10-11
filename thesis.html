@@ -25,53 +25,12 @@
 
     <!-- js -->
     <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="bar.js"></script>
+    <script type="text/javascript" src="map.js"></script>
 
   </head>
     
-    <!-- navbar  -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Home</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-            <div class="row justify-content-right">
-              <p class="social">
-                <a href="https://github.com/sarahfawson" target="#_blank" data-animate-hover="pulse" class="external github"><i class="fa fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/sarahfawson/" target="#_blank" data-animate-hover="pulse" class="external linkedin"><i class="fa fa-linkedin"></i></a>
-                <a href="https://twitter.com/SarahFawson" target="#_blank" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.instagram.com/thedatasays/" target="#_blank" title="" class="external instagram"><i class="fa fa-instagram"></i></a>
-                <a href="mailto:hello@sarahfawson.com" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a>
-              </p>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-      </div>
-    </nav> -->
-
-
-    <body class="light-theme">
+  <body class="light-theme">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10 ">
@@ -81,6 +40,7 @@
       <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
         <div class="col-md-10">
           <p class="section subheader">SARAH FAWSON  |  DECEMBER 2020</p>
+          <!-- <hr> -->
           <!-- <p class="body-text sub-font">
           Description about the thesis here
           </p> -->
@@ -111,8 +71,8 @@
         <div class="col-md-10">
           <p class="subhead super-font">Chart Title</p>
           <p class="sub-font explanation">This is a D3 bar chart that will contain the prison rate per 100,000 of the USA vs other countries.</p>
-          <div id="container" class="svg-container"></div>
-          <script>
+          <div id="barChart"></div>
+          <!-- <script>
           
           //------------------------SVG PREPARATION------------------------//
           var width = 960;
@@ -156,13 +116,14 @@
             });
         });
           
-          </script>
+          </script> -->
         </div>
       </div>
       <!-- / viz -->
 
-      <!-- ** section divider ** -->
+
       <br><br>
+
       
       <!-- section -->
       <div class="row justify-content-center "> 
@@ -178,14 +139,14 @@
       </div>
       <!-- / section -->
 
-      <!-- section -->
+
+      <!-- temp map section -->
       <div class="row justify-content-center "> 
         <div class="col-md-10">
           <p class="subhead super-font">Map Title</p>
           <p class="sub-font explanation">This will be an interactive USA hexmap or tile map where you can use a drop down to select different categories and states will be highlighted if they correspond with that category.
           <img class="image " src="images/thesis/hexmap.jpg" alt="usa state hexmap">
           <br>
-          <hr>
           <label for="states">Choose a State:</label>
           <select name="states" id="states">
             <option value="alaska">Alaska</option>
@@ -199,11 +160,22 @@
           <p class="sub-font super-font">Number</p>
         </div>
       </div>
-      <!-- / section -->
-
+      <!-- / temp map section -->
+      <br>
+    
+      <!-- **** MAP **** -->
+      <div class="row justify-content-center "> 
+        <div class="col-md-10">
+          <p class="subhead super-font">Map Title</p>
+          <p class="sub-font explanation">Mapsplainer</p>
+          <div id="map"></div>
+        </div>
+      </div>
+      
     </div>
     <!-- end of main container -->
-    <br>
+      
+  <br>
 
     <!-- sources -->
     <div class="container" style="margin-top:50px; margin-bottom:50px;">            
@@ -222,13 +194,13 @@
 
     <div class="footer">
       <!-- <p class="sub-font">I'm the Footer</p> -->
-      <a href="https://github.com/sarahfawson" target="#_blank" data-animate-hover="pulse" class="external github"><i class="fa fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/sarahfawson/" target="#_blank" data-animate-hover="pulse" class="external linkedin"><i class="fa fa-linkedin"></i></a>
-      <a href="https://twitter.com/SarahFawson" target="#_blank" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a>
-      <a href="https://www.instagram.com/thedatasays/" target="#_blank" title="" class="external instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://github.com/sarahfawson" target="#_blank" data-animate-hover="pulse" class="github"><i class="fa fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sarahfawson/" target="#_blank" data-animate-hover="pulse" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      <a href="https://twitter.com/SarahFawson" target="#_blank" data-animate-hover="pulse" class="twitter"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.instagram.com/thedatasays/" target="#_blank" title="" class="instagram"><i class="fa fa-instagram"></i></a>
       <a href="mailto:hello@sarahfawson.com" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a>
     </div>
-        
+          
     
     <!-- JavaScript files -->
     <!-- <script type="text/javascript" src="js/visuals.js"></script> -->

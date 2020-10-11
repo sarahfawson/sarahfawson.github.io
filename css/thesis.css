@@ -211,7 +211,33 @@ body {
 hr {
   height: 3px;
   position: relative; 
-  top: 20px; 
+  /* top: 20px;  */
   background: black;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
+
+/* map stylin' */
+.state {
+  fill: #c0c0c0;
+  stroke: #fff;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+#nav-container {
+  display: flex;
+  cursor: pointer;
+}
+
+#source {
+  margin-left: 20px;
+}
+
+#source a {
+  color: #556b2f;
+}
+
+.label {
+  pointer-events: none;
+}
+/* end map stylin' */
