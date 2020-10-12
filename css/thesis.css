@@ -241,3 +241,48 @@ hr {
   pointer-events: none;
 }
 /* end map stylin' */
+
+/* interactive bar chart stylin  */
+
+rect {
+  fill: rgb(21, 89, 145);
+  fill-opacity: 0.8;
+}
+
+rect:hover {
+  fill-opacity: 1;
+}
+
+path {
+  fill-opacity: 0.8;
+}
+
+.selected,
+path:hover {
+  fill-opacity: 1;
+}
+
+/* .axis {
+  font-size: smaller;
+} */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h3 {
+  text-align: center;
+}
+/* end interactive bar chart stylin  */
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
