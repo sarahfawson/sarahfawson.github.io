@@ -16,14 +16,6 @@ body {
   margin-bottom: 0px !important;
 }
 
-/* .footer  {
-  font-size: 1rem;
-  line-height: 0.75;
-  margin-top: 5rem;
-  margin-bottom: 5rem;
-  font-weight: 400;
-} */
-
 .dark-theme {
   background-color: #181414;
   color: #fcfbfb;   
@@ -73,6 +65,15 @@ body {
 .sub-font {
   font-family: 'Public Sans', sans-serif;
   font-weight: 300;
+}
+
+.big-stat {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 300;
+  font-size: 3.00rem;
+  color: #228f84;
+  background-color: white;
+  padding: 20px;
 }
 
 .sources-methodology {
@@ -198,11 +199,6 @@ body {
   color: black !important;
 }
 
-/* .a .i {
-  color: black !important;
-  padding: 10px;
-} */
-
 .fa {
   color: black !important;
   padding: 10px;
@@ -211,9 +207,7 @@ body {
 hr {
   height: 3px;
   position: relative; 
-  /* top: 20px;  */
   background: black;
-  /* margin-bottom: 30px; */
 }
 
 /* map stylin' */
@@ -243,9 +237,74 @@ hr {
 /* end map stylin' */
 
 /* interactive bar chart stylin  */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 900px;
+  height: 700px;
+  position: relative;
+}
+.label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: right !important;
+  padding-right: 10px;
+}
 
-rect {
-  fill: rgb(21, 89, 145);
+svg {
+  width: 120%;
+  height: 100%;
+  position: center;
+}
+
+.toolTip {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 12px;
+  position: absolute;
+  display: none;
+  width: auto;
+  height: auto;
+  background: none repeat scroll 0 0 white;
+  border: 0 none;
+  border-radius: 1px 1px 1px 1px;
+  box-shadow: -3px 3px 10px #4d4c4c;
+  color: black;
+  padding: 6px;
+  text-align: center;
+}
+
+text {
+  font-family: 'Public Sans', sans-serif;
+  /* font-size: 10px; */
+  color: rgb(136, 133, 133);
+}
+text.value {
+  font-size: 100%;
+  font-size: 12px;
+  fill: white;
+}
+
+.axisHorizontal path{
+  fill: none;
+}
+
+.axisHorizontal .tick line {
+  stroke-width: 1;
+  stroke: rgba(0, 0, 0, 0.2);
+}
+
+.bar {
+  fill: #252525;
+  fill-opacity: .9;
+}
+
+rect:hover {
+  fill: #228f84;
+  fill-opacity: 1;
+}
+
+/* rect {
+  fill: #228f84;
   fill-opacity: 0.8;
 }
 
@@ -262,9 +321,9 @@ path:hover {
   fill-opacity: 1;
 }
 
-/* .axis {
+.axis {
   font-size: smaller;
-} */
+}
 
 main {
   display: flex;
@@ -273,7 +332,9 @@ main {
 
 h3 {
   text-align: center;
-}
+} */
+
+
 /* end interactive bar chart stylin  */
 
 .axis {
