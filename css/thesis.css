@@ -39,12 +39,12 @@ body {
 .super-font
 .headline
 .kicker
-.subheader
-.subhead
 .label
 .label-text
 .credit
 .sub-font
+.big-stat
+.sources-methodology
 .date
 .body-text
 .note
@@ -56,24 +56,25 @@ body {
   font-size: 1.00rem;
 }
 
-.subheader {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 400;
-  /* color: #228f84; */
-}
-
 .sub-font {
   font-family: 'Public Sans', sans-serif;
   font-weight: 300;
 }
 
 .big-stat {
-  font-family: 'Public Sans', sans-serif;
-  font-weight: 300;
-  font-size: 3.00rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 800 !important;
+  font-size: 1.75rem;
   color: #228f84;
-  background-color: white;
-  padding: 20px;
+  margin-bottom: 0px;
+}
+
+.stat-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500 !important;
+  font-size: .9rem;
+  text-transform: uppercase;
+  color: #228f84;
 }
 
 .sources-methodology {
@@ -81,8 +82,6 @@ body {
   font-weight: 200;
   font-size: .80rem;
   color: rgb(53, 53, 53);
-  margin-top: 0.5rem;
-  margin-bottom: 3.75rem;
 }
 
 .headline {
@@ -97,26 +96,20 @@ body {
   font-size: 1.25rem;
   line-height: 1.6;
   margin-top: 0.5rem;
-  margin-bottom: 3.75rem;
+  margin-bottom: .75rem;
 }
 
-.explanation {
-  font-size: 1.00rem;
+.graph-text {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+  font-size: .90rem;
+  color: gray;
   line-height: 1.6;
   margin-top: 0.5rem;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1rem;
 }
 
-.kicker {
-  font-size: 1.5rem;
-  line-height: 1;
-  margin-bottom: 0.5rem;
-  margin-top: 1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.credit  {
+.credit {
   font-size: 1.2rem;
   line-height: 0.75;
   margin-top: 2rem;
@@ -132,15 +125,27 @@ body {
   font-style: italic;
 }
 
-.subhead {
-  font-size: 1.75rem;
+.section-heading {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600 !important;
+  font-size: 1.25rem;
   line-height: 0.9;
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
-  font-weight: 600;
 }
 
-.label {
+.quote {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: .90rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+  background-color: rgb(233, 52, 52);
+  padding: 15px;
+}
+
+/* .label {
   font-size: 1.25rem;
   line-height: 1.25;
   margin-top: 2rem;
@@ -184,13 +189,13 @@ body {
   margin-bottom: 1rem;
   margin-top: 1rem;
   border-color: darkgrey;
-}
+} */
 
 .section {
-  font-size: 1.25rem;
+  font-size: 1.10rem;
   line-height: 0.9;
-  margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -210,9 +215,11 @@ hr {
   background: black;
 }
 
-/* map stylin' */
+/* ********************************
+  map stylin' 
+  ******************************** */
 .state {
-  fill: #c0c0c0;
+  fill: #818181;
   stroke: #fff;
   opacity: 0.2;
   cursor: pointer;
@@ -228,21 +235,35 @@ hr {
 }
 
 #source a {
-  color: #556b2f;
+  color: #eb370b;
 }
 
 .label {
   pointer-events: none;
 }
-/* end map stylin' */
+/* ********************************
+  / end map stylin' 
+*********************************/
 
-/* interactive bar chart stylin  */
+
+
+/* ********************************
+  bar chart stylin  
+******************************** */
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  width: 900px;
-  height: 700px;
+  /* width: 800px;
+  height: 600px; */
   position: relative;
 }
+
+#graphContainer {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 800px;
+  height: 600px;
+  position: relative;
+}
+
 .label {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 500;
@@ -269,13 +290,12 @@ svg {
   border-radius: 1px 1px 1px 1px;
   box-shadow: -3px 3px 10px #4d4c4c;
   color: black;
-  padding: 6px;
+  padding: 7px;
   text-align: center;
 }
 
 text {
   font-family: 'Public Sans', sans-serif;
-  /* font-size: 10px; */
   color: rgb(136, 133, 133);
 }
 text.value {
@@ -303,39 +323,9 @@ rect:hover {
   fill-opacity: 1;
 }
 
-/* rect {
-  fill: #228f84;
-  fill-opacity: 0.8;
-}
-
-rect:hover {
-  fill-opacity: 1;
-}
-
-path {
-  fill-opacity: 0.8;
-}
-
-.selected,
-path:hover {
-  fill-opacity: 1;
-}
-
-.axis {
-  font-size: smaller;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-h3 {
-  text-align: center;
-} */
-
-
-/* end interactive bar chart stylin  */
+/* ********************************
+ / end interactive bar chart stylin 
+*********************************** */
 
 .axis {
   font: 10px sans-serif;
@@ -347,3 +337,47 @@ h3 {
   stroke: #000;
   shape-rendering: crispEdges;
 }
+
+
+/* *******************************
+   Dropdown stylin
+********************************** */
+.dropbtn {
+  background-color: #228f84;
+  color: white;
+  min-width: 200px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 7px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(61, 61, 61);}
+
+/* *******************************
+   /End Dropdown stylin
+********************************** */

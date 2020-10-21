@@ -4,7 +4,7 @@ d3.csv( 'map.csv',
     d => ({ code: d.code, x: +d.x, y: +d.y }),
     m => {
       gridmap = d3.map( m, d => d.code );
-      d3.csv( 'murder_rate.csv', parseRow, ready );
+      d3.csv( 'incarceration_rate.csv', parseRow, ready );
     });
 
 function parseRow (d) {
@@ -20,8 +20,8 @@ function ready ( data ) {
   data = data.filter( d => gridmap.has( d.code ) );
   
   const margin = { top: 40, bottom: 10, left: 120, right: 20 };
-  const width = 800 - margin.left - margin.right;
-  const height = 600 - margin.top - margin.bottom;
+  const width = 750 - margin.left - margin.right;
+  const height = 550 - margin.top - margin.bottom;
   
   var 
 //   margin = { top: 10, right: 10, bottom: 10, left: 10 },

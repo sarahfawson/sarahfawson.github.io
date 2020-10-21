@@ -28,8 +28,6 @@
     <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> -->
     <!-- <script type="text/javascript" src="bar.js"></script> -->
     <script type="text/javascript" src="map.js"></script>
-    <!-- for interactive bar chart  -->
-    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> 
 
   </head>
     
@@ -37,27 +35,30 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-10 ">
-          <h1 class="headline super-font">When is Time Served?</h1>
+          <h1 class="headline">When is Time Served?</h1>
         </div>
       </div>
-      <div class="row justify-content-center"> <!-- this is the subhead for the stories -->
+      <br>
+      <div class="row justify-content-center">
         <div class="col-md-10">
-          <p class="section subheader">SARAH FAWSON  |  MICA INVIZ THESIS</p>
-          <!-- <hr> -->
-          <!-- <p class="body-text sub-font">
-          Description about the thesis here
-          </p> -->
+          <p class="sub-font">By Sarah Fawson</p>
+          <hr>
         </div>
       </div>
     </div>
     
+
+    <br>
+
+
     <!-- main container-->
     <div class="container"> 
-
+    
       <!-- description section -->
       <div class="row justify-content-center "> 
-        <div class="col-md-10">
-          <p class="sub-font explanation">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+          <p class="sub-font">
             The justice system exists to protect Americans and provide fair treatment and rehabilitation to 
             those convicted of a crime. There are major disparities in the expressed goals of the justice system 
             and what is happening in reality, and the results are striking. I would like to create a comprehensive 
@@ -65,6 +66,18 @@
             but prolonged for the rest of someone’s life through restrictions on political rights, employment, 
             and opportunities, all of which leads to higher rates of racial discrimination and recidivism.
           </p>
+        </div>
+        <div class="col-md-4">
+          <p class="quote">The mission statement of the U.S. justice department is, "To enforce the law and defend the interests of the United 
+            States according to the law; to ensure public safety against threats foreign and domestic; to provide federal 
+            leadership in preventing and controlling crime; to seek just punishment for those guilty of unlawful behavior; 
+            and to ensure fair and impartial administration of justice for all Americans."</p>
+            <p>Source: 
+              <a target="#_blank" 
+                  href="https://www.justice.gov/about#:~:text=To%20enforce%20the%20law%20and,to%20ensure%20fair%20and%20impartial">
+                  Justice.gov
+              </a>
+            </p>
         </div>
       </div>
       <!-- end description section -->
@@ -76,15 +89,15 @@
       <!-- bar chart -->
       <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <p class="subhead super-font">International Rates of Incarceration per 100,000</p>
-          <p class="sub-font explanation">The U.S. has been on top of the list for X years.</p>
+          <p class="section-heading">International Rates of Incarceration per 100,000</p>
+          <p class="graph-text">The U.S. has been on top of the list for X years.</p>
         </div>
+        <div id="graphContainer">
           <div id="barChart"></div>
-          
-          <script>
-
+        </div>
+        <script>
             data = [
-                {label:"United States of America", value:639},
+                {label:"USA", value:639},
                 {label:"El Salvador", value:566},
                 {label:"Turkmenistan", value:552},
                 {label:"Thailand", value:549},
@@ -92,26 +105,24 @@
                 {label:"Rwanda", value:511},
                 {label:"Cuba", value:510},
                 {label:"Maldives", value:499},
-                {label:"Northern Mariana Islands (USA)", value:482},
-                {label:"Virgin Islands (United Kingdom)", value:447},
+                {label:"Northern Mariana Islands", value:482},
+                {label:"Virgin Islands (UK)", value:447},
                 {label:"Bahamas", value:442},
                 {label:"Grenada", value:429},
                 {label:"Panama", value:412},
                 {label:"Guam", value:411}
             ];
         
-            var div = d3.select("body").append("div").attr("class", "toolTip");
+            var div = d3.select("#graphContainer").append("div").attr("class", "toolTip");
         
             var axisMargin = 100,
-                    margin = 20,
-                    valueMargin = 4,
-                    // width = 960,
-                    // height = 500,
-                    width = parseInt(d3.select('body').style('width'), 10),
-                    height = parseInt(d3.select('body').style('height'), 10),
-                    barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
-                    barPadding = (height-axisMargin-margin*2)*0.6/data.length,
-                    data, bar, svg, scale, xAxis, labelWidth = 0;
+                margin = 20,
+                valueMargin = 4,
+                width = parseInt(d3.select('#graphContainer').style('width'), 10),
+                height = parseInt(d3.select('#graphContainer').style('height'), 10),
+                barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+                barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+                data, bar, svg, scale, xAxis, labelWidth = 0;
         
             max = d3.max(data, function(d) { return d.value; });
         
@@ -121,24 +132,24 @@
                     .attr("height", height);
         
             bar = svg.selectAll("g")
-                    .data(data)
-                    .enter()
-                    .append("g");
+                      .data(data)
+                      .enter()
+                      .append("g");
         
             bar.attr("class", "bar")
-                    .attr("cx",0)
-                    .attr("transform", function(d, i) {
-                        return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
-                    });
+                .attr("cx",0)
+                .attr("transform", function(d, i) {
+                    return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+                });
         
             bar.append("text") // country labels
-                    .attr("class", "label")
-                    .attr("y", barHeight / 2)
-                    .attr("dy", ".35em") //vertical align middle
-                    .attr("dx", -valueMargin + labelWidth) //margin right
-                    .text(function(d){
-                        return d.label;
-                    }).each(function() {
+                .attr("class", "label")
+                .attr("y", barHeight / 2)
+                .attr("dy", ".35em") //vertical align middle
+                .attr("dx", -valueMargin + labelWidth) //margin right
+                .text(function(d){
+                    return d.label;
+                }).each(function() {
                 labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
             });
         
@@ -174,7 +185,7 @@
 
             svg.append("text")
                 .attr("x", 425)
-                .attr("y", 630)
+                .attr("y", 530)
                 .attr("dy", "0.71em")
                 .attr("fill", "#000")
                 .text("Rate of Incarceration per 100,000")
@@ -182,30 +193,30 @@
                 .style("fill", "#000000");
 
             svg.append("text")
-              .attr("x", 800)
+              .attr("x", 700)
               .attr("y", 10)
               .attr("dy", "0em")
               .style("font", "12px avenir")
               .style("fill", "#000000")
               .text("Source here");
   
-        
             bar.on("mousemove", function(d){
-                        div.style("left", d3.event.pageX+10+"px");
-                        div.style("top", d3.event.pageY-25+"px");
-                        div.style("display", "inline-block");
-                        div.html((d.label)+"<br>"+(d.value));
-                    });
+                div.style("left", d3.event.pageX+10+"px");
+                div.style("top", d3.event.pageY-25+"px");
+                div.style("display", "inline-block");
+                div.html((d.label)+"<br>"+(d.value));
+            });
+
             bar.on("mouseout", function(d){
-                        div.style("display", "none");
-                    });
+                div.style("display", "none");
+            });
         
             svg.insert("g",":first-child")
-                    .attr("class", "axisHorizontal")
-                    .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
-                    .call(xAxis);
+                .attr("class", "axisHorizontal")
+                .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+                .call(xAxis);
         
-          </script>
+        </script>
       </div>
       <!-- end bar chart -->
 
@@ -213,7 +224,7 @@
       <!-- section -->
       <div class="row justify-content-center "> 
         <div class="col-md-10">
-          <p class="sub-font explanation">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          <p class="sub-font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
             <br><br>
             Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
           </p>
@@ -226,17 +237,59 @@
 
 
       <!-- **** MAP **** -->
-      <div class="row justify-content-center "> 
+      <div class="row justify-content-center">
         <div class="col-md-10">
-          <p class="subhead super-font">Voting Rights by State</p>
-          <p class="sub-font explanation">This will be an interactive USA tile map where you can use a drop 
+          <p class="section-heading">Voting Rights by State</p>
+          <p class="graph-text">This will be an interactive USA tile map where you can use a drop 
             down to select different categories and states will be highlighted if they correspond with that category. 
             Right now this is just the template that is made with D3.
           </p>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        
+
+
+        <div class="col-md-3">
+          <!-- <p class="section">Explore the data</p> -->
+          <br><br><br>
+          <!-- <label for="states">Choose a State:</label>
+          <select name="states" id="states">
+            <option value="alaska">Alaska</option>
+            <option value="alabama">Alabama</option>
+            <option value="california">California</option>
+            <option value="colorado">Colorado</option>
+          </select> -->
+
+          <div class="dropdown">
+            <button class="dropbtn section">Choose a State:<span class="caret"></span></button>
+            <div class="dropdown-content">
+              <a value="alaska" href="#">Alaska</a>
+              <a value="alabama" href="#">Alabama</a>
+              <a value="california" href="#">California</a>
+            </div>
+          </div>
+          <!-- <p class="graph-text">There will be a drop down here to view all categorical information from the above map, but allowing the user to select a state to see an output by individual state.</p> -->
+          <br><br>
+          <p class="big-stat">120,000</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">900</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">50,000</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">100X</p>
+          <p class="stat-description">Stat name</p>
+        </div>
+
+        <div class="col-md-9">
           <div id="map"></div>
-          <br>
+        </div>
+          <!-- <br>
           <hr>
-          <p class="section subheader">Explore the data</p>
+          <p class="section">Explore the data</p>
           <label for="states">Choose a State:</label>
           <select name="states" id="states">
             <option value="alaska">Alaska</option>
@@ -244,32 +297,56 @@
             <option value="california">California</option>
             <option value="colorado">Colorado</option>
           </select>
-          <p class="sub-font explanation">There will be a drop down here to view all categorical information from the above map, but allowing the user to select a state to see an output by individual state.</p>
+          <p class="graph-text">There will be a drop down here to view all categorical information from the above map, but allowing the user to select a state to see an output by individual state.</p>
         </div>
       </div>
       <div class="row justify-content-center "> 
-        <div class="col-md-5">
-          <p class="big-stat super-font">120,000 Stat</p>
-          <p class="big-stat super-font">900 Stat</p>
+        <div class="col-md-3">
+          <p class="big-stat">120,000</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">900</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">50,000</p>
+          <p class="stat-description">Stat name</p>
+
+          <p class="big-stat">100X</p>
+          <p class="stat-description">Stat name</p>
+
         </div>
-        <div class="col-md-5">
-          <p class="big-stat super-font">50,000 Stat</p>
-          <p class="big-stat super-font">100X Stat</p>
-        </div>
-      </div>
+      </div> -->
       <!-- **** END MAP **** -->
       
     </div>
     <!-- end of main container -->
       
-  <br>
+
+    <br><br>
+
+
+    <div class="container">            
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <!-- <hr> -->
+          <p class="section">Static Maps to Develop</p> 
+          <p class="graph-text">These are the things I'm working to develop interactively above.</p>
+          <!-- <img class="image" src="images/thesis/international-rate-of-incarceration-04.jpg" alt="international rates of incarceration"> -->
+          <img class="image" src="images/thesis/voting-rights-by-state-01.jpg" alt="usa state voting rights tile map">
+        </div>
+      </div>
+    </div>
+
+
+    <br><br>
+
 
     <!-- sources -->
     <div class="container">            
       <div class="row justify-content-center">
         <div class="col-md-10">
           <hr>
-          <p class="section subheader">Sources & Methodology</p> 
+          <p class="section">Sources & Methodology</p> 
           <p class="sources-methodology">
             <ol>
               <li>Prison Policy Initiative, Worldwide Prison Rates per 100,000, 2019</li>
@@ -281,26 +358,6 @@
         </div>
       </div>
     </div>
-
-
-    <br>
-    <br>
-
-
-    <div class="container">            
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <hr>
-          <p class="section subheader">Static Maps and Goals</p> 
-          <p>International Rate of Incarceration</p>
-          <img class="image" src="images/thesis/international-rate-of-incarceration-04.jpg" alt="international rates of incarceration">
-          <p>Voting Rights by State (Static)</p>
-          <img class="image" src="images/thesis/voting-rights-by-state-01.jpg" alt="usa state voting rights tile map">
-
-        </div>
-      </div>
-    </div>
-
     <!-- end sources --> 
 
     <div class="footer">

@@ -1,118 +1,120 @@
-var margin = {top: 54, right: 60, bottom: 107, left: 88},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+data = [
+  {label:"United States of America", value:639},
+  {label:"El Salvador", value:566},
+  {label:"Turkmenistan", value:552},
+  {label:"Thailand", value:549},
+  {label:"Palau", value:522},
+  {label:"Rwanda", value:511},
+  {label:"Cuba", value:510},
+  {label:"Maldives", value:499},
+  {label:"Northern Mariana Islands (USA)", value:482},
+  {label:"Virgin Islands (United Kingdom)", value:447},
+  {label:"Bahamas", value:442},
+  {label:"Grenada", value:429},
+  {label:"Panama", value:412},
+  {label:"Guam", value:411}
+];
 
-var x = d3.scale.linear().range([0, width]);
+var div = d3.select("#graphContainer").append("div").attr("class", "toolTip");
 
-var y = d3.scale.ordinal().rangeRoundBands([0, height]);
+var axisMargin = 100,
+  margin = 20,
+  valueMargin = 4,
+  width = parseInt(d3.select('#graphContainer').style('width'), 10),
+  height = parseInt(d3.select('#graphContainer').style('height'), 10),
+  barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
+  barPadding = (height-axisMargin-margin*2)*0.6/data.length,
+  data, bar, svg, scale, xAxis, labelWidth = 0;
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-		.ticks(10);
+max = d3.max(data, function(d) { return d.value; });
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left");
-    
-var svg = d3.select("#bar").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+svg = d3.select('#barChart')
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height);
 
-    svg.append("text")
-    .attr("x", 0)
-    .attr("y", -35)
-    .attr("dy", "0.71em")
-    .attr("fill", "#000")
-    .text("Rate of Incarceration Worldwide")
-    .style("font", "23px avenir")
-    .style("fill", "#000000");
-  
-    svg.append("text")
-    .attr("x", -69)
-    .attr("y", -8)
-    .attr("dy", "0.71em")
-    .attr("fill", "#000")
-    .text("Category")
-    .style("font", "12px avenir")
-    .style("fill", "#000000")
-    .style("font-weight", "bold");
-  
-    svg.append("text")
-    .attr("x", 0)
-    .attr("y", 400)
-    .attr("dy", "0em")
-    .style("font", "12px avenir")
-    .style("fill", "#000000")
-    .text("This visualization depicts the rate of incarceration in countries from highest to lowest around the world ");
-  
-     svg.append("text")
-    .attr("x", 0)
-    .attr("y", 400)
-    .attr("dy", "1em")
-    .style("font", "12px avenir")
-    .style("fill", "#000000")
-    .text("and suicide were observed less frequently.");
-     
-     svg.append("text")
-    .attr("x", 0)
-    .attr("y", 400)
-    .attr("dy", "3em")
-    .style("font", "12px avenir")
-    .style("fill", "#000000")
-    .text("By Sarah Fawson")
-    .style("font-weight", "bold");
-  
+bar = svg.selectAll("g")
+        .data(data)
+        .enter()
+        .append("g");
 
-d3.csv("bar-data.csv", function(error, data) {
+bar.attr("class", "bar")
+  .attr("cx",0)
+  .attr("transform", function(d, i) {
+      return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
+  });
 
-    data.forEach(function(d) {
-      d.count = +d.count;
-      return d;
-          
-}, function(error, data) {
-      
-  if (error) throw error;
-    });
-	
-  data.sort(function(a,b){ return b.count- a.count});
-  
- 	x.domain([0, 4000]);
-  y.domain(data.map(function(d) {return d.category; }));
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis)
-    .selectAll("text");
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Value ($)");
-
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .style("fill", "steelblue")
-  		.attr("y", function(d) { return y(d.category); })
-      .attr("width", function(d) { return x(d.count);} )
-      .attr("height", 13);
-  
-   svg.append("text")
-    .attr("x", 350)
-    .attr("y", 370)
-    .attr("dy", "0.71em")
-    .attr("fill", "#000")
-    .text("Number of Records")
-    .style("font", "12px avenir")
-    .style("fill", "#000000")
-    .style("font-weight", "bold");
+bar.append("text") // country labels
+  .attr("class", "label")
+  .attr("y", barHeight / 2)
+  .attr("dy", ".35em") //vertical align middle
+  .attr("dx", -valueMargin + labelWidth) //margin right
+  .text(function(d){
+      return d.label;
+  }).each(function() {
+  labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
 });
+
+scale = d3.scale.linear()
+      .domain([0, max])
+      .range([0, width - margin*2 - labelWidth]);
+
+xAxis = d3.svg.axis()
+      .scale(scale)
+      .tickSize(-height + 2*margin + axisMargin)
+      .orient("bottom");
+
+bar.append("rect")
+  .attr("transform", "translate("+labelWidth+", 0)")
+  .attr("height", barHeight)
+  .attr("width", function(d){
+      return scale(d.value);
+  });
+
+bar.append("text") //bar labels
+  .attr("class", "value")
+  .attr("y", barHeight / 2)
+  .attr("dx", -valueMargin + labelWidth) //margin right
+  .attr("dy", ".35em") //vertical align middle
+  .attr("text-anchor", "end")
+  .text(function(d){
+      return (d.value);
+  })
+  .attr("x", function(d){
+      var width = this.getBBox().width;
+      return Math.max(width + valueMargin, scale(d.value));
+  });
+
+svg.append("text")
+  .attr("x", 425)
+  .attr("y", 530)
+  .attr("dy", "0.71em")
+  .attr("fill", "#000")
+  .text("Rate of Incarceration per 100,000")
+  .style("font", "14px avenir")
+  .style("fill", "#000000");
+
+svg.append("text")
+.attr("x", 700)
+.attr("y", 10)
+.attr("dy", "0em")
+.style("font", "12px avenir")
+.style("fill", "#000000")
+.text("Source here");
+
+
+bar.on("mousemove", function(d){
+  div.style("left", d3.event.pageX+10+"px");
+  div.style("top", d3.event.pageY-25+"px");
+  div.style("display", "inline-block");
+  div.html((d.label)+"<br>"+(d.value));
+});
+
+bar.on("mouseout", function(d){
+  div.style("display", "none");
+});
+
+svg.insert("g",":first-child")
+  .attr("class", "axisHorizontal")
+  .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
+  .call(xAxis);
