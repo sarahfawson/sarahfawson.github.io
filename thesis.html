@@ -28,6 +28,8 @@
     <!-- <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script> -->
     <!-- <script type="text/javascript" src="bar.js"></script> -->
     <script type="text/javascript" src="map.js"></script>
+    <script type="text/javascript" src="map_dropdown.js"></script>
+    <script src="jquery-3.5.1.min.js"></script>
 
   </head>
     
@@ -56,8 +58,8 @@
     
       <!-- description section -->
       <div class="row justify-content-center "> 
-        <div class="col-md-1"></div>
-        <div class="col-md-7">
+        <!-- <div class="col-md-1"></div> -->
+        <div class="col-md-6">
           <p class="sub-font">
             The justice system exists to protect Americans and provide fair treatment and rehabilitation to 
             those convicted of a crime. There are major disparities in the expressed goals of the justice system 
@@ -220,6 +222,17 @@
       </div>
       <!-- end bar chart -->
 
+      <br>
+
+
+      <div class="row justify-content-center "> 
+        <div class="col-md-10">
+          <p class="placeholder-handwritten">More people are serving sentences in the U.S. than anywhere around the world. 
+            But the problem we're not talking about, is that when they get out, they're <i>still</i> serving their time, in society.</p>
+        </div>
+      </div>
+
+      <br>
 
       <!-- section -->
       <div class="row justify-content-center "> 
@@ -251,27 +264,65 @@
 
 
         <div class="col-md-3">
-          <!-- <p class="section">Explore the data</p> -->
           <br><br><br>
-          <!-- <label for="states">Choose a State:</label>
-          <select name="states" id="states">
+
+          <select id="dropdown-test">
+            <option selected value="base">Please Select</option>
             <option value="alaska">Alaska</option>
             <option value="alabama">Alabama</option>
-            <option value="california">California</option>
-            <option value="colorado">Colorado</option>
-          </select> -->
+          </select>
+          
+          <br>
+          
+          <select id="second-choice">
+            <option>Please choose from above</option>
+          </select>
+
+          <!-- <script>
+            $("#first-choice").change(function() {
+              var $dropdown = $(this);
+
+              $.getJSON("data/state_data.json", function(data) {
+
+                var key = $dropdown.val();
+                var vals = [];
+                          
+                switch(key) {
+                  case 'beverages':
+                    vals = data.beverages.split(",");
+                    break;
+                  case 'snacks':
+                    vals = data.snacks.split(",");
+                    break;
+                  case 'base':
+                    vals = ['Please choose from above'];
+                }
+                
+                var $secondChoice = $("#second-choice");
+                $secondChoice.empty();
+                $.each(vals, function(index, value) {
+                  $secondChoice.append("<option>" + value + "</option>");
+                });
+
+              });
+              });
+          </script> -->
+          <br>
+
 
           <div class="dropdown">
-            <button class="dropbtn section">Choose a State:<span class="caret"></span></button>
-            <div class="dropdown-content">
-              <a value="alaska" href="#">Alaska</a>
-              <a value="alabama" href="#">Alabama</a>
-              <a value="california" href="#">California</a>
+            <button class="dropbtn section">Choose a State:
+              <span class="caret"></span>
+            </button>
+            <div class="dropdown-content" onchange="changeStateStats()">
+              <a value="alaska">Alaska</a>
+              <a value="alabama">Alabama</a>
+              <a value="california">California</a>
             </div>
           </div>
           <!-- <p class="graph-text">There will be a drop down here to view all categorical information from the above map, but allowing the user to select a state to see an output by individual state.</p> -->
           <br><br>
-          <p class="big-stat">120,000</p>
+          <p class="big-stat">{{ state.stat1 }}</p>
           <p class="stat-description">Stat name</p>
 
           <p class="big-stat">900</p>

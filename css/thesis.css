@@ -215,6 +215,15 @@ hr {
   background: black;
 }
 
+.placeholder-handwritten {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700 !important;
+  font-size: 1.6rem;
+  color: black;
+  padding: 20px;
+  background: rgb(219, 219, 219);
+}
+
 /* ********************************
   map stylin' 
   ******************************** */
