@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -9,6 +11,7 @@ const nextConfig = {
       },
     ],
   },
+  basePath: '/sarahfawson.github.io',
 }
 
 module.exports = nextConfig 
