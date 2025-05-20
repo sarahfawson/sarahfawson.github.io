@@ -1,18 +1,20 @@
-"use client";
-
-import { useParams } from 'next/navigation';
+import { getProjectBySlug, getAllProjects } from '@/data/projects';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getProjectBySlug } from '@/data/projects';
 
-export default function ProjectPage() {
-  const params = useParams();
-  const project = getProjectBySlug(params.slug as string);
+export function generateStaticParams() {
+  const projects = getAllProjects();
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export default function ProjectPage({ params }: { params: { slug: string } }) {
+  const project = getProjectBySlug(params.slug);
 
   if (!project) {
     return (
       <main className="container">
-        <Link href="/projects" className="back-link">Back to Projects</Link>
         <h1>Project Not Found</h1>
         <p>The project you're looking for doesn't exist.</p>
       </main>
