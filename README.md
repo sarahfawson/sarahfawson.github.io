@@ -1,46 +1,36 @@
-## Bootstrap 4 Template from https://bootstrapious.com
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Getting Started
 
----------------------
- CSS
----------------------
+First, run the development server:
 
-The theme stylesheet is css/style.default.css. If you want to make any changes,
-you can do it here or better to override it in custom.css so you can update the original theme stylesheet if an updated is released.
-Changing to another colour variant, is just a matter of replacing css/style.default.css with css/style.pink.css in index.html.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----------------------
- JavaScript
----------------------
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Apart from the Bootstrap JS components, the majority of JS is located in /js/front.js.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
----------------------
- CREDITS
----------------------
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- Bootstrap 4.1 - http://getbootstrap.com/
-- Font Awesome 4.7 - http://fontawesome.io/
-- more in credits.txt.
+## Learn More
 
----------------------
- Changelog
----------------------
+To learn more about Next.js, take a look at the following resources:
 
-Version 2.0.1 - 2018/02/14
---------------------------
-- updated: Bootstrap to 4.3.1
-- updated plugins: PopperJs, Masonry
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Version 2.0.0 - 2018/06/01
---------------------------
-- remake and upgrade to Bootstrap to 4.1.1
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
----------------------
- LICENSE CONDITIONS
----------------------
-This template is free to use for personal development as you keep the link at the template footer pointing to Bootstrapious.
+## Deploy on Vercel
 
-If you would prefer removing the backlink from the theme footer, please donate (https://bootstrapious.com/donate)
-to support themes' development. Suggested amount per template is $10.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
