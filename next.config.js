@@ -11,7 +11,6 @@ const nextConfig = {
       },
     ],
   },
-  basePath: '/sarahfawson.github.io',
 }
 
 module.exports = nextConfig 
