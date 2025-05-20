@@ -101,6 +101,10 @@ export function getProjectBySlug(slug: string): Project | undefined {
   return [...largeProjects, ...smallProjects].find(project => project.slug === slug);
 }
 
+export function getAllProjects(): Project[] {
+  return [...largeProjects, ...smallProjects];
+}
+
 // Get all unique tags from all projects
 export const allTags = Array.from(new Set([
   ...largeProjects.flatMap(project => project.tags),
