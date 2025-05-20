@@ -1,0 +1,392 @@
+body {
+  padding-top:60px;
+  margin: auto;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(189, 188, 188, .5);
+  outline-color: #818181;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 0px !important;
+}
+
+.dark-theme {
+  background-color: #181414;
+  color: #fcfbfb;   
+}
+.light-theme {
+  background-color: #F5F5F5;
+  color: black;    
+}
+
+.container {
+  max-width: 975px;
+}
+
+.image {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+
+/*
+.super-font
+.headline
+.kicker
+.label
+.label-text
+.credit
+.sub-font
+.big-stat
+.sources-methodology
+.date
+.body-text
+.note
+*/
+
+.super-font {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 200 !important;
+  font-size: 1.00rem;
+}
+
+.sub-font {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 300;
+}
+
+.big-stat {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 800 !important;
+  font-size: 1.75rem;
+  color: #228f84;
+  margin-bottom: 0px;
+}
+
+.stat-description {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500 !important;
+  font-size: .9rem;
+  text-transform: uppercase;
+  color: #228f84;
+}
+
+.sources-methodology {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+  font-size: .80rem;
+  color: rgb(53, 53, 53);
+}
+
+.headline {
+  font-size: 3.5rem;
+  line-height: 0.9;
+  margin-bottom: 0.25rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.body-text {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  margin-bottom: .75rem;
+}
+
+.graph-text {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+  font-size: .90rem;
+  color: gray;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.credit {
+  font-size: 1.2rem;
+  line-height: 0.75;
+  margin-top: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.date {
+  font-size: 1rem;
+  line-height: 1;
+  margin-top: 0.25;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.section-heading {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600 !important;
+  font-size: 1.25rem;
+  line-height: 0.9;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quote {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: .90rem;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+  background-color: rgb(233, 52, 52);
+  padding: 15px;
+}
+
+/* .label {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.label-text {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.note {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+.caption  {
+  font-size: 1rem;
+  line-height: 1.2;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.handle  {
+  font-size: 1.25rem;
+  line-height: 0.75;
+  margin-top: 1.75rem;
+  font-weight: 400;
+  color: rgb(26, 26, 26) !important;
+}
+
+.rule {
+  border-style: solid;
+  border-top: 1px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  border-color: darkgrey;
+} */
+
+.section {
+  font-size: 1.10rem;
+  line-height: 0.9;
+  margin-bottom: 1.2rem;
+  margin-top: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.link {
+  color: black !important;
+}
+
+.fa {
+  color: black !important;
+  padding: 10px;
+}
+
+hr {
+  height: 3px;
+  position: relative; 
+  background: black;
+}
+
+.placeholder-handwritten {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700 !important;
+  font-size: 1.6rem;
+  color: black;
+  padding: 20px;
+  background: rgb(219, 219, 219);
+}
+
+/* ********************************
+  map stylin' 
+  ******************************** */
+.state {
+  fill: #818181;
+  stroke: #fff;
+  opacity: 0.2;
+  cursor: pointer;
+}
+
+#nav-container {
+  display: flex;
+  cursor: pointer;
+}
+
+#source {
+  margin-left: 20px;
+}
+
+#source a {
+  color: #eb370b;
+}
+
+.label {
+  pointer-events: none;
+}
+/* ********************************
+  / end map stylin' 
+*********************************/
+
+
+
+/* ********************************
+  bar chart stylin  
+******************************** */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  /* width: 800px;
+  height: 600px; */
+  position: relative;
+}
+
+#graphContainer {
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 800px;
+  height: 600px;
+  position: relative;
+}
+
+.label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: right !important;
+  padding-right: 10px;
+}
+
+svg {
+  width: 120%;
+  height: 100%;
+  position: center;
+}
+
+.toolTip {
+  font-family: 'Public Sans', sans-serif;
+  font-size: 12px;
+  position: absolute;
+  display: none;
+  width: auto;
+  height: auto;
+  background: none repeat scroll 0 0 white;
+  border: 0 none;
+  border-radius: 1px 1px 1px 1px;
+  box-shadow: -3px 3px 10px #4d4c4c;
+  color: black;
+  padding: 7px;
+  text-align: center;
+}
+
+text {
+  font-family: 'Public Sans', sans-serif;
+  color: rgb(136, 133, 133);
+}
+text.value {
+  font-size: 100%;
+  font-size: 12px;
+  fill: white;
+}
+
+.axisHorizontal path{
+  fill: none;
+}
+
+.axisHorizontal .tick line {
+  stroke-width: 1;
+  stroke: rgba(0, 0, 0, 0.2);
+}
+
+.bar {
+  fill: #252525;
+  fill-opacity: .9;
+}
+
+rect:hover {
+  fill: #228f84;
+  fill-opacity: 1;
+}
+
+/* ********************************
+ / end interactive bar chart stylin 
+*********************************** */
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+
+/* *******************************
+   Dropdown stylin
+********************************** */
+.dropbtn {
+  background-color: #228f84;
+  color: white;
+  min-width: 200px;
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 200px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 7px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(61, 61, 61);}
+
+/* *******************************
+   /End Dropdown stylin
+********************************** */
