@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
-import ThanksPage from '@/app/projects/thanks/page';
 
 interface ModalProps {
   isOpen: boolean;
@@ -12,7 +11,7 @@ interface ModalProps {
   link: string;
 }
 
-export default function Modal({ isOpen, onClose, title, image, description, tags, link }: ModalProps) {
+export default function Modal({ isOpen, onClose, title, image, description, tags }: ModalProps) {
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
