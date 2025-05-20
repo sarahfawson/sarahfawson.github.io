@@ -78,7 +78,7 @@ export default function DataViz() {
       .data(stack(stackedData))
       .join("path")
       .attr("d", area)
-      .attr("fill", (d, i) => color(d.key))
+      .attr("fill", (d) => color(d.key))
       .attr("opacity", 0.8)
       .on("mouseover", function() {
         d3.select(this)
@@ -114,9 +114,9 @@ export default function DataViz() {
 
     // Add interactive elements
     svg.selectAll("path")
-      .on("mousemove", function(this: d3.BaseType, event: any, d: unknown) {
+      .on("mousemove", function(this: d3.BaseType, event: MouseEvent, d: unknown) {
         const series = d as d3.Series<{ [key: string]: number }, string>;
-        const [pointerX, pointerY] = d3.pointer(event);
+        const [pointerX] = d3.pointer(event);
         const date = x.invert(pointerX);
         const value = data.find(cat => cat.name === series.key)?.values.find(v => v.date.getTime() === date.getTime());
         
