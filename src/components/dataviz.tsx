@@ -32,6 +32,15 @@ export default function DataViz() {
       }))
     }));
 
+    // Transform data for stacking
+    const stackedData = data[0].values.map((_, i) => {
+      const obj: { [key: string]: number } = {};
+      data.forEach(d => {
+        obj[d.name] = d.values[i].value;
+      });
+      return obj;
+    });
+
     // Create scales
     const x = d3.scaleTime()
       .domain(d3.extent(data[0].values, d => d.date) as [Date, Date])
@@ -47,14 +56,14 @@ export default function DataViz() {
       .keys(data.map(d => d.name));
 
     // Create the area generator
-    const area = d3.area<d3.SeriesPoint<{ date: Date; value: number }>>()
-      .x(d => x(d.data.date))
+    const area = d3.area<d3.SeriesPoint<{ [key: string]: number }>>()
+      .x((d, i) => x(data[0].values[i].date))
       .y0(d => y(d[0]))
       .y1(d => y(d[1]))
       .curve(d3.curveBasis);
 
     // Create a color scale
-    const color = d3.scaleOrdinal()
+    const color = d3.scaleOrdinal<string>()
       .domain(data.map(d => d.name))
       .range([
         '#4e79a7',  // blue
@@ -66,7 +75,7 @@ export default function DataViz() {
 
     // Add the areas
     svg.selectAll("path")
-      .data(stack(data.map(d => d.values)))
+      .data(stack(stackedData))
       .join("path")
       .attr("d", area)
       .attr("fill", (d, i) => color(d.key))
@@ -105,16 +114,17 @@ export default function DataViz() {
 
     // Add interactive elements
     svg.selectAll("path")
-      .on("mousemove", function(event, d) {
-        const [x, y] = d3.pointer(event);
-        const date = x.invert(x);
-        const value = d.values.find(v => v.date.getTime() === date.getTime());
+      .on("mousemove", function(this: d3.BaseType, event: any, d: unknown) {
+        const series = d as d3.Series<{ [key: string]: number }, string>;
+        const [pointerX, pointerY] = d3.pointer(event);
+        const date = x.invert(pointerX);
+        const value = data.find(cat => cat.name === series.key)?.values.find(v => v.date.getTime() === date.getTime());
         
         tooltip.transition()
           .duration(200)
           .style("opacity", .9);
         
-        tooltip.html(`${d.key}<br/>Value: ${value?.value.toFixed(1)}`)
+        tooltip.html(`${series.key}<br/>Value: ${value?.value.toFixed(1)}`)
           .style("left", (event.pageX + 10) + "px")
           .style("top", (event.pageY - 28) + "px");
       })
