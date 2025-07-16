@@ -1081,6 +1081,32 @@ main {
   margin-top: 2rem;
 }
 
+/* Art Grid */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.art-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.art-item:hover {
+  transform: translateY(-4px);
+}
+
+.art-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* Spinning Smiley */
 .spinning-container {
   display: flex;

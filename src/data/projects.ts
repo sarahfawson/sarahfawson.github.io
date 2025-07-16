@@ -46,6 +46,14 @@ export const smallProjects: Project[] = [
     tags: ["Data Visualization"]
   },
   {
+    title: "Bitches Are The Shit",
+    summary: "A visualization of award-winning female music artists.",
+    details: "",
+    image: "/images/portfolio/thedatasays-personal/bitches-are-the-shit.jpg",
+    slug: "bitches-are-the-shit",
+    tags: ["Data Visualization"]
+  },
+  {
     title: "Middle School Infographic",
     summary: "An infographic for parents to see what's upcoming in their child's schoolyear.",
     details: "",
@@ -72,7 +80,7 @@ export const smallProjects: Project[] = [
   },
   {
     title: "Beerconomics Infographic",
-    summary: "Learn more about the economics of beer.",
+    summary: "The economics of beer, summarized visually.",
     details: "",
     image: "/images/portfolio/thedatasays-personal/beer-infographic.jpg",
     slug: "beer-infographic",
@@ -84,7 +92,7 @@ export const smallProjects: Project[] = [
     details: "",
     image: "/images/portfolio/thedatasays-clients/political/DFD-interpreting-polls-2.png",
     slug: "breaking-news-illustration",
-    tags: ["Illustration"]
+    tags: ["Graphic Design"]
   },
   {
     title: "Wrongful Death Sentence",
@@ -93,7 +101,24 @@ export const smallProjects: Project[] = [
     image: "/images/portfolio/thedatasays-personal/wrongful-death-sentence-dark.png",
     slug: "wrongful-death-sentence",
     tags: ["Data Visualization"]
+  },
+  {
+    title: "Democratic Polls Sketch",
+    summary: "A sketched visualization of democratic polling data for the 2020 presidential election.",
+    details: "",
+    image: "/images/portfolio/thedatasays-personal/demPollsSketched1.jpg",
+    slug: "democratic-polls-sketch",
+    tags: ["Data Visualization", "Sketch"]
+  },
+  {
+    title: "Disenfranchisement Poster",
+    summary: "A poster highlighting huge issues related to disenfranchisement of people who have served time for a felony.",
+    details: "",
+    image: "/images/portfolio/thedatasays-personal/disenfranchisement-poster.jpg",
+    slug: "disenfranchisement-poster",
+    tags: ["Data Visualization", "Graphic Design"]
   }
+
 ];
 
 // Helper function to get a project by slug
