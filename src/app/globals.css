@@ -605,6 +605,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+  border: .5px solid var(--accent-pink);
 }
 
 .about-email:hover {
@@ -669,6 +670,45 @@ main {
   position: absolute;
   left: 0;
   color: var(--accent-green-light);
+}
+
+/* Fast Facts Section */
+.fast-facts-section {
+  background: rgba(248, 249, 250, 0.5);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.fast-facts-section h4 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--foreground);
+  opacity: 0.9;
+}
+
+.fast-facts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fast-fact-item {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  opacity: 0.8;
+  line-height: 1.4;
+  padding: 0.25rem 0;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.fast-fact-item::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--foreground);
+  font-weight: bold;
 }
 
 /* Add to your globals.css */
@@ -958,6 +998,10 @@ main {
 /* Recommended Reads */
 .recommended-reads {
   margin-top: 4rem;
+  background-color: #f8f9fa;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 4rem 2rem;
 }
 
 .recommended-reads h2 {

@@ -14,8 +14,8 @@ export default function ProjectsPage() {
   const toggleTag = (tag: string) => {
     setSelectedTags(prev => 
       prev.includes(tag) 
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
+        ? [] // If clicking the same tag, clear it
+        : [tag] // If clicking a different tag, replace with just that tag
     );
   };
 
@@ -30,9 +30,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="container projects-page">
-      <h1>Case Studies</h1>
-      {/* <DataViz /> */}
-      
+      <h1>Design Work </h1>      
       <div className="large-projects-grid">
         {largeProjects.map((project) => (
           <div key={project.slug} className="project-large">
@@ -47,15 +45,8 @@ export default function ProjectsPage() {
                 />
               </div>
               <div className="project-large-content">
-              {/* <div className="project-header"> */}
                 <h3>{project.title}</h3>
-              {/* </div> */}
                 <p>{project.summary}</p>
-                {/* <div className="tag-container">
-                  {project.tags.map((tag, index) => (
-                    <span key={index} className="tag">{tag}</span>
-                  ))}
-                </div> */}
                 <span className="see-more">See more →</span>
               </div>
             </Link>
@@ -63,7 +54,7 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <h2 className="section-title">More Projects by Category</h2>
+      <h2 className="section-title">More designs</h2>
       
       <div className="tag-container">
         <button 
@@ -99,15 +90,10 @@ export default function ProjectsPage() {
                 className="project-image"
               />
             </div>
-            <div className="project-content">
+            {/* <div className="project-content">
               <h4>{project.title}</h4>
               <p>{project.summary}</p>
-              {/* <div className="tag-container">
-                {project.tags.map((tag, index) => (
-                  <span key={index} className="tag">{tag}</span>
-                ))}
-              </div> */}
-            </div>
+            </div> */}
           </div>
         ))}
       </div>

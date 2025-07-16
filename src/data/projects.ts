@@ -15,7 +15,7 @@ export const largeProjects: Project[] = [
     image: "/images/portfolio/thedatasays-personal/thumbnails-02.jpg",
     slug: "workflow-diagrams",
     details: "A collection of journey maps and diagrams that visualize complex processes and user experiences. More info and examples to come.",
-    tags: ["Journey Maps", "Diagrams"]
+    tags: ["Journey Maps", "Data Visualization"]
   },
   {
     title: "CJR Visual Analyses",
@@ -23,7 +23,7 @@ export const largeProjects: Project[] = [
     image: "/images/portfolio/thedatasays-personal/thumbnails-04.png",
     slug: "cjr",
     details: "A comprehensive analysis of the United States criminal justice system, including data on policing practices, incarceration rates, and the impact of disenfranchisement on communities. More examples to come. ",
-    tags: ["Data Visualization", "Infographic"]
+    tags: ["Data Visualization"]
   },
   {
     title: "Calendar Prototype",
@@ -31,7 +31,7 @@ export const largeProjects: Project[] = [
     image: "/images/portfolio/thedatasays-personal/dash-general-light.png",
     slug: "calendar-prototype",
     details: "More details and images to come..",
-    tags: ["UX/UI Design"]
+    tags: ["UX/UI Design", "Data Visualization"]
   }
 ];
 
