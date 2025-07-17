@@ -34,8 +34,8 @@ export default function ProjectsPage() {
       <div className="large-projects-grid">
         {largeProjects.map((project) => (
           <div key={project.slug} className="project-large">
-            <Link href={`/projects/${project.slug}`} className="portfolio-link">
-              <div className="project-large-image-container">
+            <div className="project-large-image-container">
+              <Link href={`/projects/${project.slug}`} className="portfolio-link">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -43,19 +43,20 @@ export default function ProjectsPage() {
                   className="project-large-image"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-              </div>
-              <div className="project-large-content">
-                <h3>{project.title}</h3>
-                <p>{project.summary}</p>
+              </Link>
+            </div>
+            <div className="project-large-content">
+              <h3>{project.title}</h3>
+              <p>{project.summary}</p>
+              <Link href={`/projects/${project.slug}`} className="portfolio-link">
                 <span className="see-more">See more →</span>
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         ))}
       </div>
 
-      <h2 className="section-title">More designs</h2>
-      
+      <h2 className="section-title">More designs</h2>    
       <div className="tag-container">
         <button 
           className={`tag tag-interactive ${selectedTags.length === 0 ? 'active' : ''}`}
