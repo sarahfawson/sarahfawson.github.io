@@ -1,23 +1,49 @@
 import Image from 'next/image';
 
-const recommendedReads = [
+const artImages = [
   {
-    title: "Design is Storytelling",
-    author: "Ellen Lupton",
-    image: "/images/books/design-is-storytelling.jpg",
-    link: "https://www.amazon.com/Design-Storytelling-Ellen-Lupton/dp/194230319X"
+    src: "/images/portfolio/creative/coffee_dali.jpg",
+    alt: "Salvador Dali coffee cup"
   },
   {
-    title: "Am I there yet?",
-    author: "Mari Andrew",
-    image: "/images/books/am-i-there-yet.jpg",
-    link: "https://bymariandrew.com/books/am-i-there-yet/"
+    src: "/images/portfolio/creative/3yearAnniversaryInfographic.jpg",
+    alt: "3 year anniversary infographic"
   },
   {
-    title: "Data Story",
-    author: "Nancy Duarte",
-    image: "/images/books/data-story.jpg",
-    link: "https://www.amazon.com/Data-Story-Communicate-Data-People/dp/1940858984"
+    src: "/images/portfolio/creative/2yearAnniversaryInfographic.JPG",
+    alt: "2 year anniversary infographic, sketched"
+  },
+  {
+    src: "/images/portfolio/creative/acrylic_youcaneven.JPG",
+    alt: "Acrylic painting - you can even"
+  },
+  {
+    src: "/images/portfolio/creative/coffee_douglassperspective.jpg",
+    alt: "Frederick Douglass coffee cup sketching in progress"
+  },
+  {
+    src: "/images/portfolio/creative/dream_big.JPG",
+    alt: "Dream big digital artwork"
+  },
+  {
+    src: "/images/portfolio/creative/oilpainting_iceland.jpg",
+    alt: "Oil painting of Iceland"
+  },
+  {
+    src: "/images/portfolio/creative/coffeecup_ellen.JPG", 
+    alt: "Ellen Degeneres coffee cup"
+  },
+  {
+    src: "/images/portfolio/creative/oilpainting_laughing.jpg",
+    alt: "Oil painting of laughing"
+  },
+  {
+    src: "/images/portfolio/creative/coffeecup_popart.JPG",
+    alt: "Pop art coffee cup"
+  },
+  {
+    src: "/images/portfolio/creative/perfect-dots.png",
+    alt: "Perfect dots artwork"
   }
 ];
 
@@ -25,38 +51,22 @@ export default function ArtPage() {
   return (
     <main className="container">
       <h1>Art</h1>
-      <p>Coming soon: A showcase of some personal creative projects.</p>
+      <p>A selection of some personal creative projects.</p>
       
-      <section className="recommended-reads">
-        <h2>Recommended Reads</h2>
-        <p>A collection of books that have influenced my work in data visualization, design, history, and creativity.</p>
-        
-        <div className="books-grid">
-          {recommendedReads.map((book, index) => (
-            <a 
-              key={index}
-              href={book.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="book-card"
-            >
-              <div className="book-image-container">
-                <Image
-                  src={book.image}
-                  alt={`${book.title} by ${book.author}`}
-                  fill
-                  className="book-image"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </div>
-              <div className="book-content">
-                <h3>{book.title}</h3>
-                <p>{book.author}</p>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
+      <div className="art-grid">
+        {artImages.map((image, index) => (
+          <div key={index} className="art-item">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={400}
+              height={400}
+              className="art-image"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

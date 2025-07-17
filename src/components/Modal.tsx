@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Image from 'next/image';
+import confetti from 'canvas-confetti';
 
 interface ModalProps {
   isOpen: boolean;
@@ -32,6 +33,34 @@ export default function Modal({ isOpen, onClose, title, image, description, tags
 
   if (!isOpen) return null;
 
+  const handleConfettiClick = () => {
+    // Create a spectacular confetti explosion
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+      zIndex: 9999
+    });
+    
+    // Add a second burst for extra effect
+    setTimeout(() => {
+      confetti({
+        particleCount: 50,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        zIndex: 9999
+      });
+      confetti({
+        particleCount: 50,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        zIndex: 9999
+      });
+    }, 150);
+  };
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={e => e.stopPropagation()}>
@@ -55,13 +84,15 @@ export default function Modal({ isOpen, onClose, title, image, description, tags
             <p>{description}</p>
             <div className="tag-container">
               {tags.map((tag, index) => (
-                <span key={index} className="tag">{tag}</span>
+                <span key={index} className="tag tag-interactive active">{tag}</span>
               ))}
             </div>
             <a 
-              href="/projects/thanks" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleConfettiClick();
+              }}
               className="project-link"
             >
               I like this
