@@ -22,7 +22,7 @@ const recommendedReads = [
   {
     title: "The boy the mole the fox and the horse",
     author: "Charlie Mackesy",
-    image: "/images/books/boy-mole-fox-horse.jpg"
+    image: "/images/books/boy-mole-fox.jpg"
   }
 ];
 
@@ -101,7 +101,40 @@ export default function About() {
           <li>You're looking for a thoughtful, collaborative partner (and a bit of design magic)</li>
         </ul>
       </div> */}
-  
+<hr className="section-divider" />
+
+  <section className="services-section">
+        <div className="services-row">
+          <Image
+            src="/images/about/services/services-01.jpg"
+            alt="Service 1"
+            width={200}
+            height={200}
+            className="service-image"
+          />
+          <Image
+            src="/images/about/services/services-02.jpg"
+            alt="Service 2"
+            width={200}
+            height={200}
+            className="service-image"
+          />
+          <Image
+            src="/images/about/services/services-03.jpg"
+            alt="Service 3"
+            width={200}
+            height={200}
+            className="service-image"
+          />
+          <Image
+            src="/images/about/services/services-04.jpg"
+            alt="Service 4"
+            width={200}
+            height={200}
+            className="service-image"
+          />
+        </div>
+      </section>
 
       <section className="recommended-reads">
         <h2>Inspiration</h2>

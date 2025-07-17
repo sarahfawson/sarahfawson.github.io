@@ -10,20 +10,20 @@ export interface Project {
 
 export const largeProjects: Project[] = [
   {
-    title: "Workflow Diagrams",
-    summary: "Various journey maps and diagrams where I layer in how people, processes, and technology interact.",
-    image: "/images/portfolio/thedatasays-personal/thumbnails-02.jpg",
-    slug: "workflow-diagrams",
-    details: "A collection of journey maps and diagrams that visualize complex processes and user experiences. More info and examples to come.",
-    tags: ["Journey Maps", "Data Visualization"]
-  },
-  {
-    title: "CJR Visual Analyses",
+    title: "The Legislative Roots of Mass Incarceration",
     summary: "Analyzing the United States' criminal legal system, policing, disenfranchisement, and more.",
     image: "/images/portfolio/thedatasays-personal/thumbnails-04.png",
     slug: "cjr",
     details: "A comprehensive analysis of the United States criminal justice system, including data on policing practices, incarceration rates, and the impact of disenfranchisement on communities. More examples to come. ",
     tags: ["Data Visualization"]
+  },
+  {
+    title: "Workshops & Diagramming",
+    summary: "Various journey maps and diagrams where I layer in how people, processes, and technology interact.",
+    image: "/images/portfolio/thedatasays-personal/thumbnails-02.jpg",
+    slug: "workflow-diagrams",
+    details: "A collection of journey maps and diagrams that visualize complex processes and user experiences. More info and examples to come.",
+    tags: ["Journey Maps", "Data Visualization"]
   },
   {
     title: "Calendar Prototype",
@@ -52,6 +52,14 @@ export const smallProjects: Project[] = [
     image: "/images/portfolio/thedatasays-personal/bitches-are-the-shit.jpg",
     slug: "bitches-are-the-shit",
     tags: ["Data Visualization"]
+  },
+  {
+    title: "What Chart Are You?",
+    summary: "A playful horoscope about what chart you are.",
+    details: "",
+    image: "/images/portfolio/thedatasays-personal/what-chart-art-you.png",
+    slug: "what-chart-are-you",
+    tags: ["Data Visualization", "Graphic Design"]
   },
   {
     title: "Middle School Infographic",

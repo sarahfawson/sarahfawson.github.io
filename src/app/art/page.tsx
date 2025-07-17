@@ -11,7 +11,7 @@ const artImages = [
   },
   {
     src: "/images/portfolio/creative/2yearAnniversaryInfographic.JPG",
-    alt: "2 year anniversary infographic"
+    alt: "2 year anniversary infographic, sketched"
   },
   {
     src: "/images/portfolio/creative/acrylic_youcaneven.JPG",
@@ -19,11 +19,11 @@ const artImages = [
   },
   {
     src: "/images/portfolio/creative/coffee_douglassperspective.jpg",
-    alt: "Frederick Douglass perspective coffee cup"
+    alt: "Frederick Douglass coffee cup sketching in progress"
   },
   {
     src: "/images/portfolio/creative/dream_big.JPG",
-    alt: "Dream big artwork"
+    alt: "Dream big digital artwork"
   },
   {
     src: "/images/portfolio/creative/oilpainting_iceland.jpg",
