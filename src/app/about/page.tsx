@@ -1,7 +1,6 @@
 "use client";
 
 import Image from 'next/image';
-import Chip from '@/components/Chip';
 
 const recommendedReads = [
   {
@@ -27,16 +26,6 @@ const recommendedReads = [
 ];
 
 export default function About() {
-  const skills = [
-    "Data Visualization",
-    "UX/UI",
-    "Storytelling",
-    "Product Design",
-    "Journey Maps",
-    "Service Design",
-    "Art Direction",
-    "Workshops & Facilitation"
-  ];
 
   const fastFacts = [
     "Based in Denver, CO",
