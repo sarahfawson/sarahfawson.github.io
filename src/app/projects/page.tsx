@@ -49,7 +49,7 @@ export default function ProjectsPage() {
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
               <Link href={`/projects/${project.slug}`} className="portfolio-link">
-                <span className="see-more">See more →</span>
+                <span className="see-more">Details →</span>
               </Link>
             </div>
           </div>

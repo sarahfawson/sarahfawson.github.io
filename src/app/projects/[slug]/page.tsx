@@ -40,7 +40,6 @@ export default async function ProjectPage(props: { params: Promise<{ slug: strin
         </div>
 
         <div className="project-content">
-          <p>{project.details}</p>
           <div className="tag-container">
             {project.tags.map((tag, index) => (
               <span key={index} className="tag">{tag}</span>
