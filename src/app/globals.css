@@ -16,6 +16,14 @@
   --accent-turquoise-dark: #4a8e8b;
   --line-primary: rgb(217, 217, 217);
 
+  /* Better responsive design system */
+  --container-width: min(95vw, 1400px);
+  --container-width-wide: min(90vw, 1600px);
+  --container-width-ultra: min(85vw, 1800px);
+  
+  --spacing-fluid: clamp(1rem, 3vw, 2rem);
+  --spacing-fluid-lg: clamp(2rem, 5vw, 4rem);
+  --spacing-fluid-xl: clamp(3rem, 7vw, 6rem);
 }
 
 @theme inline {
@@ -75,6 +83,13 @@ h3 {
   font-weight: 600;
 }
 
+h4 {
+  font-size: 1.375rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
 p {
   font-size: 1rem;
   line-height: 1.6;
@@ -101,7 +116,7 @@ footer {
 }
 
 .footer-content {
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 0 auto;
   padding: 0 1rem;
   display: flex;
@@ -224,6 +239,13 @@ footer {
   flex: 1;
 }
 
+.two-column-layout.highlighted .column-left,
+.two-column-layout.highlighted .column-right {
+  background-color: #f5f5f5;
+  padding: 3rem;
+  border-radius: 8px;
+}
+
 .column-right ul {
   list-style-type: disc;
   padding-left: 1.5rem;
@@ -231,19 +253,27 @@ footer {
 
 /* Project Detail Page Special Sections */
 .project-quote-section {
-  background-color: #f8f9fa;
-  padding: 3rem 2rem;
+  background-color: #2c3e50;
+  padding: 4rem 3rem;
   margin: 2rem 0;
   border-radius: 8px;
-  border-left: 4px solid var(--accent-turquoise);
+  max-width: 900px;
 }
 
 .project-quote-section p {
   font-size: 1.25rem;
   line-height: 1.6;
-  font-style: italic;
-  color: var(--foreground);
+  color: #ffffff;
   margin: 0;
+  font-weight: 300;
+}
+
+.project-quote-section h4 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 300;
 }
 
 .project-two-column-info {
@@ -335,11 +365,11 @@ footer {
 .carousel-track {
   display: flex;
   transition: transform 0.4s cubic-bezier(0.4, 0.2, 1);
-  width: 400%;
+  width: 600%;
 }
 
 .carousel-slide {
-  width: 25%;
+  width: 16.666%;
   flex-shrink: 0;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -461,7 +491,7 @@ nav {
 }
 
 .nav-container {
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -782,7 +812,7 @@ main {
   grid-template-columns: 1fr;
   gap: 4rem;
   margin-top: 2rem;
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -891,7 +921,7 @@ main {
 }
 
 .work-together {
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 4rem auto 0;
   padding: 0 1rem;
   position: relative;
@@ -1008,9 +1038,22 @@ main {
 
 /* Update main container */
 .container {
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 0 auto;
-  padding: 3rem 2rem;
+  padding: 2rem 1rem;
+}
+
+/* Responsive scaling for larger screens */
+@media (min-width: 1600px) {
+  .container {
+    width: var(--container-width-wide);
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    width: var(--container-width-ultra);
+  }
 }
 
 /* Base tag style */
@@ -1130,7 +1173,7 @@ main {
 } */
 
 .project-detail {
-  max-width: 1200px;
+  width: var(--container-width);
   margin: 0 auto;
 }
 
@@ -1142,6 +1185,9 @@ main {
   margin: 2rem 0;
   border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-content {
@@ -1169,6 +1215,11 @@ main {
   border-radius: 0;
   margin-bottom: 4rem;
   padding: 1.25rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
 }
 
 .project-large:hover {
@@ -1177,16 +1228,16 @@ main {
 
 .project-large-image-container {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: 0;
-  transition: transform 0.2s ease;
-  padding-bottom: 75%; /* 4:3 aspect ratio */
+  padding-bottom: 37.5%; /* 4:3 aspect ratio for half width */
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .projects-page .project-large-image-container {
   width: 100%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .project-large-image {
@@ -1204,12 +1255,14 @@ main {
   object-fit: contain;
 }
 
-.project-large:hover .project-large-image {
-  transform: scale(1.02);
-}
+
 
 .project-large-content {
   padding: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .project-large-content h2 {
@@ -1251,10 +1304,11 @@ main {
   font-weight: 500;
   margin-top: 1rem;
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .project-large-content .see-more:hover {
+  color: var(--accent-pink);
   opacity: 1;
   text-decoration: underline;
 }
@@ -1285,7 +1339,7 @@ main {
 }
 
 .project-section h2 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
   color: var(--foreground);
 }
@@ -1300,20 +1354,101 @@ main {
 
 .project-images-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
   margin-top: 1.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-image-item {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.project-image-item:hover {
+  transform: scale(1.02);
 }
 
 .project-detail-image {
   width: 100%;
   height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-detail-image.small {
+  width: 50%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+/* Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.image-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--background);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.image-modal-close:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .project-images-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 }
 
 .image-caption {
@@ -1412,13 +1547,15 @@ main {
 }
 
 .books-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
+  align-items: flex-start;
 }
 
 .book-card {
+  flex: 0 0 200px;
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s ease;
@@ -1464,9 +1601,9 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-  max-width: 800px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 2rem 0;
 }
 
 /* Projects Grid (for small projects) */
@@ -1737,6 +1874,20 @@ main {
     width: 100%;
     min-width: 100%;
   }
+
+  .project-large {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-large-image-container {
+    width: 100%;
+    padding-bottom: 75%; /* Back to full width on mobile */
+  }
+
+  .projects-page .project-large-image-container {
+    width: 100%; /* full width on mobile */
+  }
 }
 
 /* project-small styles */
@@ -1788,16 +1939,17 @@ main {
 }
 
 .projects-page .project-large {
-  width: 600px;  /* fixed width instead of max-width */
+  width: 100%;  /* use full width for two-column layout */
   margin: 0 auto;
 }
 
 .projects-page .project-large-image-container {
-  width: 100%;  /* take full width of parent */
-  margin: 0 auto;
+  width: 50%;  /* half width for left column */
+  margin: 0;
 }
 
 .projects-page .project-large-image {
   object-fit: contain;
 }
+
 

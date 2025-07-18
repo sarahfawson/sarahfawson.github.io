@@ -6,16 +6,25 @@ import { useState } from 'react';
 
 export default function CJRPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const changeSlide = (direction: number) => {
     const newSlide = currentSlide + direction;
-    if (newSlide >= 0 && newSlide < 4) {
+    if (newSlide >= 0 && newSlide < 6) {
       setCurrentSlide(newSlide);
     }
   };
 
   const goToSlide = (slideIndex: number) => {
     setCurrentSlide(slideIndex);
+  };
+
+  const openImageModal = (imageSrc: string) => {
+    setSelectedImage(imageSrc);
+  };
+
+  const closeImageModal = () => {
+    setSelectedImage(null);
   };
   return (
     <main className="container">
@@ -26,33 +35,159 @@ export default function CJRPage() {
           <h1>The Legislative Roots of Mass Incarceration</h1>
           <p className="project-subtitle">I analyzed the United States' criminal legal system, policing, disenfranchisement, and more while building my thesis at MICA.</p>
         </div>
-        {/* <div className="project-image-container">
-          <Image
-            src="/images/portfolio/thedatasays-personal/thumbnails-04.png"
-            alt="CJR Visual Analyses"
-            fill
-            className="project-image"
-            priority
-          />
-        </div> */}
+        
+        <div className="project-images-grid">
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg"
+              alt="CJR Visual Analysis page 1"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg"
+              alt="CJR Visual Analysis 2"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg"
+              alt="CJR Visual Analysis 3"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg"
+              alt="CJR Visual Analysis 4"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg"
+              alt="CJR Visual Analysis 5"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg"
+              alt="CJR Visual Analysis 6"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg"
+              alt="CJR Visual Analysis 7"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg"
+              alt="CJR Visual Analysis 8"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg"
+              alt="CJR Visual Analysis 9"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg")}>
+            <Image
+              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg"
+              alt="CJR Visual Analysis 10"
+              width={100}
+              height={150}
+              className="project-detail-image"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Image Modal */}
+        {selectedImage && (
+          <div className="image-modal-overlay" onClick={closeImageModal}>
+            <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="image-modal-close" onClick={closeImageModal}>
+                ×
+              </button>
+              <Image
+                src={selectedImage}
+                alt="Expanded view"
+                width={800}
+                height={600}
+                className="image-modal-image"
+                priority
+              />
+            </div>
+          </div>
+        )}
 
 
         <div className="project-content">
           <section className="project-section">
-            {/* <h2>Overview</h2> */}
-            {/* <p>
-              A comprehensive analysis of the United States criminal justice system, including data on policing practices, 
-              incarceration rates, and the impact of disenfranchisement on communities.
-            </p> */}
-            <hr className="section-divider" />
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/data-tells-us.png"
-              alt="What the data tells us about the criminal justice system"
-              width={80}
-              height={80}
-              className="project-detail-image"
-            />
-                <h4>There are too many forms of discrimination of former prisoners that are still currently legal, like:</h4>
+            <h2>Overview</h2>
+            <p>
+            This project aims to shine a bright light on the perpetual marginalization of the dispossessed at the hands of our own government. Our country’s history of racialized legislation and culture has led to a system of mass incarceration today, the likes of which no country has ever seen before. What is different now, from previous periods of racial control like slavery and the Jim Crow era? We have data, and we’re seeing the injustices live streamed.
+            </p>
+            <p>
+            Although we celebrate colorblindness in America, our laws and leadership have enabled systemic racism and control that is exerted disproportionately on People of Color. Let us better understand our history so we can demand the change needed.
+            </p>
+            <p>
+            I have summarized the process of creating this as my thesis for the Maryland Institute College of Art (MICA) Information & Data Visualization Master’s program, completed in December 2020.
+            </p>
+
+        <hr className="section-divider" />
+            <h3>We have a mass incarceration problem because of our legislation and our history, not because of our crime.</h3>
+            <div className="two-column-layout highlighted">
+              <div className="column-left">
+                <h4>The data shows the scale of the mass incarceration problem</h4>
+                <p>The data tells us about how pervasive mass incarceration is in the United States. For example:</p>
+                <ul>
+                  <li>The U.S. puts people behind bars at a higher rate than any country around the world at 698 per 100,000 people</li>
+                  <li>Black men are incarcerated at a disproportionate rate - 33% of Black men are incarcerated in their lifetime</li>
+                  <li>After someone leaves prison, they are legally disenfranchised in many ways. 5.2Million people are currently impacted by voter disenfranchisement due to a felony charge.</li>
+                  <li>These problems often lead to recidivism and generational poverty</li>
+                </ul>
+              </div>
+              <div className="column-right">
+                <h4>Discrimination is still legal in the United States</h4>
+                <p>There are too many forms of discrimination of former prisoners that are still currently legal. To name a few:</p>
                 <ul>
                   <li>Voting</li>
                   <li>Serving on a jury</li>
@@ -63,12 +198,14 @@ export default function CJRPage() {
                   <li>Traveling abroad</li>
                   <li>Renting/buying housing</li>
                 </ul>
-            </section>
-            <section className="project-section">
-            <hr className="section-divider" />
+              </div>
+            </div>
+        </section>
 
+        <hr className="section-divider" />
+            
+        {/* <section className="project-section">
             <h2>Approach</h2>
-
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/approach.png"
               alt="approach and process to this work"
@@ -77,26 +214,33 @@ export default function CJRPage() {
               className="project-detail-image small"
             />
 
-          <hr className="section-divider" />
-          <h2>Data Sources</h2>
+          <hr className="section-divider" /> */}
 
-            <p>
-            I used a combination of data from the U.S. Census Bureau, the Bureau of Justice Statistics, and the U.S. Department of Justice to create the visualizations for this project.
-            A few of my many inspiration sources for this project are shown. This research was heavily influenced by Michelle Alexander's groundbreaking work "The New Jim Crow," 
-              which analyzes how mass incarceration functions as a new form of racial control in the United States.
-            </p>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/sources.png"
-              alt="Research sources and methodology"
-              width={150}
-              height={150}
-              className="project-detail-image small"
-            />
+        <section className="project-section">
+          <h2>Data Sources, Context, and Inspiration</h2>
+          <div className="two-column-layout">
+            <div className="column-left">
+              <p>
+              I used a combination of data from the U.S. Census Bureau, the Bureau of Justice Statistics, and the U.S. Department of Justice to create the visualizations for this project.
+              A few of my many inspiration sources for this project are shown. This research was heavily influenced by Michelle Alexander's groundbreaking work "The New Jim Crow," 
+                which analyzes how mass incarceration functions as a new form of racial control in the United States.
+              </p>
+            </div>
+            <div className="column-right">
+              <Image
+                src="/images/portfolio/thedatasays-personal/thesis/sources.png"
+                alt="Research sources and methodology"
+                width={300}
+                height={300}
+                className="project-detail-image small"
+              />
+            </div>
+          </div>
           <hr className="section-divider" />
 
             <div className="carousel-container">
             <h2>It took several attempts to find the right layout for the shape of data I had.</h2>
-              <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 25}%)` }}>
+              <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 16.666}%)` }}>
                 <div className="carousel-slide">
                   <Image
                     src="/images/portfolio/thedatasays-personal/thesis/stickies.png"
@@ -108,7 +252,7 @@ export default function CJRPage() {
                 </div>
                 <div className="carousel-slide">
                   <Image
-                    src="/images/portfolio/thedatasays-personal/thesis/sketches.png"
+                    src="/images/portfolio/thedatasays-personal/thesis/version-of-layout-00-sketches.png"
                     alt="Sketches"
                     width={400}
                     height={300}
@@ -142,6 +286,15 @@ export default function CJRPage() {
                     className="carousel-image"
                   />
                 </div>
+                <div className="carousel-slide">
+                  <Image
+                    src="/images/portfolio/thedatasays-personal/thesis/version-of-layout-04.png"
+                    alt="Layout version 4"
+                    width={400}
+                    height={300}
+                    className="carousel-image"
+                  />
+                </div>
               </div>
               <button className="carousel-btn prev" onClick={() => changeSlide(-1)}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -158,6 +311,8 @@ export default function CJRPage() {
                 <span className={`dot ${currentSlide === 1 ? 'active' : ''}`} onClick={() => goToSlide(1)}></span>
                 <span className={`dot ${currentSlide === 2 ? 'active' : ''}`} onClick={() => goToSlide(2)}></span>
                 <span className={`dot ${currentSlide === 3 ? 'active' : ''}`} onClick={() => goToSlide(3)}></span>
+                <span className={`dot ${currentSlide === 4 ? 'active' : ''}`} onClick={() => goToSlide(4)}></span>
+                <span className={`dot ${currentSlide === 5 ? 'active' : ''}`} onClick={() => goToSlide(5)}></span>
               </div>
             </div>
             {/* <Image
@@ -167,36 +322,16 @@ export default function CJRPage() {
               height={80}
               className="project-detail-image"
             /> */}
-          </section>
-          <hr className="section-divider" />
-          <section className="final-visual-narrative-section">
-
-            <h2>Final Visual Narrative</h2>
-            <div className="project-images-grid">            
-                <div className="project-image-item">
-                <iframe
-                  src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history.pdf"
-                  width="100%"
-                  height="600"
-                  className="project-pdf-embed"
-                  title="Mass Incarceration History"
-                />
-
-              </div>
-            </div>
-
-          </section>
+        </section>
+        
+        <hr className="section-divider" />
+        
+        <section className="project-section">
           <p>
-                This project was presented at the <a href="https://youtu.be/paECLTlgz9I?si=Q-YnbCEz-Nz2fY3x" target="_blank" rel="noopener noreferrer">Data Visualization Society's 2021 Outlier conference</a>
-            </p>
-
-        {/* <section className="notes-section">
-            <div className="tag-container">
-                <span className="tag">Data Visualization</span>
-                <span className="tag">Criminal Justice</span>
-                <span className="tag">Research</span>
-            </div>
-          </section> */}
+            I spoke about the process of creating this thesis – including all the ups and downs, the research, analysis, and design – in the 2021 Outlier Data Visualization Conference, available to view <a href="https://youtu.be/paECLTlgz9I?si=Q-YnbCEz-Nz2fY3x" target="_blank" rel="noopener noreferrer">here</a>.
+          </p>
+        </section>
+          
         </div>
       </div>
     </main>
