@@ -1,22 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Face circle -->
-  <circle cx="100" cy="100" r="90" fill="#FFD700" stroke="#000000" stroke-width="4"/>
-  
-  <!-- Eyes - now ovals -->
-  <ellipse cx="70" cy="80" rx="12" ry="18" fill="#000000"/>
-  <ellipse cx="130" cy="80" rx="12" ry="18" fill="#000000"/>
-  
-  <!-- Smile with end caps -->
-  <path 
-    d="M 60 120 Q 100 180 140 120" 
-    stroke="#000000" 
-    stroke-width="8" 
-    stroke-linecap="round" 
-    fill="none"
-  />
-  <!-- Left end cap -->
-  <line x1="60" y1="120" x2="55" y2="118" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
-  <!-- Right end cap -->
-  <line x1="140" y1="120" x2="145" y2="118" stroke="#000000" stroke-width="8" stroke-linecap="round"/>
+<svg width="1004" height="1004" viewBox="0 0 1004 1004" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="502" cy="502" r="502" fill="#FFB838"/>
+<path d="M235.283 357.802C230.692 293.067 263.791 253.44 307.935 251.281C352.079 249.123 390.552 285.25 395.143 349.986C399.735 414.721 378.274 468.431 323.527 471.107C264.401 473.998 239.875 422.537 235.283 357.802Z" fill="#FFE9C1"/>
+<path d="M364.935 380.305C366.082 417.418 344.685 439.133 317.461 439.133C290.238 439.133 267.498 417.418 266.351 380.305C265.204 343.192 277.943 318 311.705 318C348.168 318 363.788 343.192 364.935 380.305Z" fill="#12231E"/>
+<path d="M765.346 360.987C772.153 296.386 740.424 255.994 696.372 252.794C652.32 249.594 612.625 284.799 605.818 349.399C599.011 414 618.623 468.195 673.256 472.163C732.259 476.449 758.538 425.588 765.346 360.987Z" fill="#FFE9C1"/>
+<path d="M634.832 380.305C633.685 417.418 655.083 439.133 682.306 439.133C709.529 439.133 732.269 417.418 733.416 380.305C734.563 343.192 721.824 318 688.063 318C651.6 318 635.979 343.192 634.832 380.305Z" fill="#12231E"/>
+<path d="M216 633C291.833 779.683 562.5 930.209 787 633" stroke="#12231E" stroke-width="45" stroke-linecap="round"/>
+<path d="M236 583C230.167 604.167 208.7 645.8 169.5 643" stroke="#12231E" stroke-width="40" stroke-linecap="round"/>
+<path d="M769 573C774.833 594.167 796.3 635.8 835.5 633" stroke="#12231E" stroke-width="40" stroke-linecap="round"/>
 </svg>
