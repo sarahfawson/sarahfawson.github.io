@@ -19,10 +19,10 @@ export default function DashboardsPage() {
             <h2>Info coming soon</h2>
             <p>Stay tuned for more details on this project.</p>
             
-            {/* <div className="project-image-container">
+            <div className="project-image-container">
               <Image
-                src="/images/portfolio/professional/deloitte/Deloitte_CovidPatientJourneyMap_2022.jpg"
-                alt="covid-19 patient journey map"
+                src="/images/portfolio/thedatasays-personal/dash-general-light.png"
+                alt="dashboard in light mode"
                 width={800}
                 height={600}
                 className="project-image"
@@ -33,7 +33,7 @@ export default function DashboardsPage() {
                   objectFit: 'contain'
                 }}
               />
-            </div> */}
+            </div>
           </section>
 
           <hr className="section-divider" />
