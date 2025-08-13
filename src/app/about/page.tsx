@@ -29,7 +29,7 @@ export default function About() {
 
   const fastFacts = [
     "Based in Denver, CO",
-    "Currently at The New York Times",
+    "Senior Product Designer at The New York Times",
     "Graduated from MICA and OU",
     "Sewing and scrapbooking enthusiast",
     "Amateur oil painter"
@@ -40,11 +40,11 @@ export default function About() {
       <div className="about-grid">
         <div className="about-content">
           <h3 className="about-intro">
-            Thanks for stopping by.
+            Hey, I'm Sarah!
           </h3>
           <div className="about-text">
             <p>
-              I'm all about turning complex information into seemless experiences - to me, the magic I get to wield as a designer lives at the intersection of clarity, delight, and impact.
+              I'm a designer who focuses on making sense of complex workflows - whether they're human or data. I enjoy what I do, and I love to work closely with others to build things together.
             </p>
             {/* <div className="skills-section">
               <div className="skills-list">
@@ -95,32 +95,32 @@ export default function About() {
   <section className="services-section">
         <div className="services-row">
           <Image
-            src="/images/about/services/services-01.jpg"
-            alt="Service 1"
+            src="/images/about/services/services-01.png"
+            alt="service design"
             width={200}
             height={200}
             className="service-image"
           />
           <Image
-            src="/images/about/services/services-02.jpg"
-            alt="Service 2"
+            src="/images/about/services/services-02.png"
+            alt="ui and ux design"
             width={200}
             height={200}
             className="service-image"
           />
           <Image
-            src="/images/about/services/services-03.jpg"
-            alt="Service 3"
+            src="/images/about/services/services-03.png"
+            alt="infographic design"
             width={200}
             height={200}
             className="service-image"
           />
           <Image
-            src="/images/about/services/services-04.jpg"
-            alt="Service 4"
+            src="/images/about/services/services-04.png"
+            alt="prototyping"
             width={200}
             height={200}
-            className="service-image"
+            className="service-image-"
           />
         </div>
       </section>

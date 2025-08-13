@@ -16,19 +16,27 @@ export const largeProjects: Project[] = [
     tags: ["Data Visualization"]
   },
   {
+    title: "Content Planning Prototypes",
+    summary: "A suite of content planning tools prototyped for live testing and rapid iterations.",
+    image: "/images/portfolio/professional/nyt/calendar-design-prototype-week.png",
+    slug: "calendar-prototype",
+    tags: ["UX/UI Design", "Data Visualization", "Development"]
+  },
+  {
     title: "Workshops & Diagramming",
     summary: "Various journey maps and diagrams where I layer in how people, processes, and technology interact.",
     image: "/images/portfolio/thedatasays-personal/thumbnails-02.png",
     slug: "workflow-diagrams",
     tags: ["Journey Maps", "Data Visualization"]
   },
-  {
-    title: "Calendar Prototype",
-    summary: "A detailed calendar designed and prototyped for live testing",
+    {
+    title: "Data Dashboards",
+    summary: "Making data and insights easy to consume and understand.",
     image: "/images/portfolio/thedatasays-personal/dash-general-light.png",
-    slug: "calendar-prototype",
+    slug: "dashboards",
     tags: ["UX/UI Design", "Data Visualization"]
-  }
+  },
+
 ];
 
 export const smallProjects: Project[] = [

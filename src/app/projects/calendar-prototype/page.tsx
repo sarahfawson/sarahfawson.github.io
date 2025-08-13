@@ -10,25 +10,37 @@ export default function CalendarPrototypePage() {
       
       <div className="project-detail">
         <div className="project-header">
-          <h1>Calendar Prototype</h1>
-          <p className="project-subtitle">A detailed calendar designed and prototyped for live testing</p>
+          <h1>Content Planning Prototypes</h1>
+          <p className="project-subtitle">A planning app for newsletter and push alert content generation, scheduling, and ai-generated recommendations.</p>
         </div>
 
         <div className="project-content">
           <section className="project-section">
             <h2>Overview</h2>
             <p>
-              This project involved designing and prototyping a comprehensive calendar interface 
-              for live user testing and feedback collection.
+              This project began when I redesigned a calendar tool used for content planning, and evolved into an experiment of new generative design and development tools including Cursor, Figma Make, and Vercel. 
             </p>
             
             <div className="project-image-container">
               <Image
-                src="/images/portfolio/thedatasays-personal/dash-general-light.png"
+                src="/images/portfolio/professional/nyt/calendar-design-prototype-week.png"
                 alt="Calendar Prototype"
-                fill
-                className="project-image"
+                width={1000}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 priority
+                className="project-image"
+              />
+            </div>
+                        <div className="project-image-container">
+              <Image
+                src="/images/portfolio/professional/nyt/calendar-design-prototype-month.png"
+                alt="Calendar Prototype"
+                width={1000}
+                height={600}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority
+                className="project-image"
               />
             </div>
           </section>
@@ -56,7 +68,7 @@ export default function CalendarPrototypePage() {
           <section className="project-section">
             <h2>Testing & Iteration</h2>
             <p>
-              I gained feedback on thisprototype with extensive user testing to gather feedback and 
+              I gained feedback on this prototype with extensive user testing to gather feedback and 
               identify areas for improvement in the calendar and control center concept and different features that support it.
             </p>
           </section>
