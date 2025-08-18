@@ -48,6 +48,11 @@ export default function ProjectsPage() {
             <div className="project-large-content">
               <h3>{project.title}</h3>
               <p>{project.summary}</p>
+              {/* <div className="project-tags">
+                {project.tags.map((tag, index) => (
+                  <span key={index} className="tag">{tag}</span>
+                ))}
+              </div> */}
               <Link href={`/projects/${project.slug}`} className="portfolio-link">
                 <span className="see-more">Details →</span>
               </Link>
@@ -91,10 +96,6 @@ export default function ProjectsPage() {
                 className="project-image"
               />
             </div>
-            {/* <div className="project-content">
-              <h4>{project.title}</h4>
-              <p>{project.summary}</p>
-            </div> */}
           </div>
         ))}
       </div>

@@ -10,7 +10,7 @@ export default function CalendarPrototypePage() {
       
       <div className="project-detail">
         <div className="project-header">
-          <h1>Content Planning Prototypes</h1>
+          <h1>Content Planning Tools</h1>
           <p className="project-subtitle">A planning app for newsletter and push alert content generation, scheduling, and ai-generated recommendations.</p>
         </div>
 
@@ -48,19 +48,19 @@ export default function CalendarPrototypePage() {
           <hr className="section-divider" />
 
           <section className="project-section">
-            <h2>Design Process</h2>
+            <h2>Process: Generative Design & Prototyping </h2>
             <p>
               The calendar prototype was developed through an iterative design process, 
               focusing on user experience and interface usability.
             </p>
             
-            <h3>Key Features</h3>
+            {/* <h3>Key Design Features</h3>
             <ul>
               <li>Intuitive date selection and navigation</li>
               <li>Event management and scheduling</li>
               <li>Responsive design for multiple devices</li>
               <li>User-friendly interface elements</li>
-            </ul>
+            </ul> */}
           </section>
 
           <hr className="section-divider" />

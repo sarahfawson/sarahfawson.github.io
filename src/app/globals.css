@@ -63,28 +63,28 @@ main {
 
 /* Typography */
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   line-height: 1.1;
   margin-bottom: 2rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
 h3 {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   line-height: 1.3;
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
 h4 {
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   line-height: 1.4;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -823,7 +823,7 @@ main {
 }
 
 .dataviz-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-bottom: 0.75rem;
   color: var(--foreground);
 }
@@ -1160,7 +1160,7 @@ main {
   position: relative;
   width: 100%;
   height: 0;
-  padding-bottom: 75%; /* 4:3 aspect ratio */
+  padding-bottom: 50%;
   overflow: hidden;
 }
 
@@ -1319,7 +1319,12 @@ main {
 .project-tags {
   display: flex;
   gap: 0.5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  background: var(--accent-green-light);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease;
 }
 
 .project-tags p {
@@ -1373,11 +1378,11 @@ main {
 }
 
 .project-section {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .project-section h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
   color: var(--foreground);
 }
@@ -1573,7 +1578,7 @@ main {
 }
 
 .recommended-reads h2 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 1rem;
 }
 
