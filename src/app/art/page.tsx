@@ -6,12 +6,16 @@ const artImages = [
     alt: "Salvador Dali coffee cup"
   },
   {
+    src: "/images/portfolio/creative/2yearAnniversaryInfographic.JPG",
+    alt: "2 year anniversary infographic, sketched"
+  },
+  {
     src: "/images/portfolio/creative/3yearAnniversaryInfographic.jpg",
     alt: "3 year anniversary infographic"
   },
   {
-    src: "/images/portfolio/creative/2yearAnniversaryInfographic.JPG",
-    alt: "2 year anniversary infographic, sketched"
+    src: "/images/portfolio/creative/perfect-dots.png",
+    alt: "Perfect dots artwork"
   },
   {
     src: "/images/portfolio/creative/acrylic_youcaneven.JPG",
@@ -20,10 +24,6 @@ const artImages = [
   {
     src: "/images/portfolio/creative/coffee_douglassperspective.jpg",
     alt: "Frederick Douglass coffee cup sketching in progress"
-  },
-  {
-    src: "/images/portfolio/creative/dream_big.JPG",
-    alt: "Dream big digital artwork"
   },
   {
     src: "/images/portfolio/creative/oilpainting_iceland.jpg",
@@ -40,10 +40,6 @@ const artImages = [
   {
     src: "/images/portfolio/creative/coffeecup_popart.JPG",
     alt: "Pop art coffee cup"
-  },
-  {
-    src: "/images/portfolio/creative/perfect-dots.png",
-    alt: "Perfect dots artwork"
   }
 ];
 

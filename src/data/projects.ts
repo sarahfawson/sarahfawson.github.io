@@ -9,37 +9,44 @@ export interface Project {
 
 export const largeProjects: Project[] = [
   {
-    title: "The Legislative Roots of Mass Incarceration",
-    summary: "Visualized history of the United States' laws and rhetoric about race and criminal justice which led to the U.S. becoming the country with the highest imprisonment rates in the entire world.",
-    image: "/images/portfolio/thedatasays-personal/thumbnails-04.png",
-    slug: "cjr",
-    tags: ["Data Visualization"]
-  },
-  {
-    title: "Content Planning Prototypes",
+    title: "Content Planning Tools",
     summary: "A suite of content planning tools prototyped for live testing and rapid iterations.",
     image: "/images/portfolio/professional/nyt/calendar-design-prototype-week.png",
     slug: "calendar-prototype",
     tags: ["UX/UI Design", "Data Visualization", "Development"]
   },
   {
-    title: "Workshops & Diagramming",
-    summary: "Various journey maps and diagrams where I layer in how people, processes, and technology interact.",
+    title: "Service Design",
+    summary: "Using journey maps and diagrams to visualize in how people, processes, and technology interact.",
     image: "/images/portfolio/thedatasays-personal/thumbnails-02.png",
     slug: "workflow-diagrams",
     tags: ["Journey Maps", "Data Visualization"]
   },
     {
     title: "Data Dashboards",
-    summary: "Making data and insights easy to consume and understand.",
+    summary: "Making data and insights easy and enjoyable to find and understand.",
     image: "/images/portfolio/thedatasays-personal/dash-general-light.png",
     slug: "dashboards",
     tags: ["UX/UI Design", "Data Visualization"]
   },
+  {
+    title: "The Legislative Roots of Mass Incarceration",
+    summary: "Visualized history of the United States' laws and culture surrounding race and criminal justice.",
+    image: "/images/portfolio/thedatasays-personal/thumbnails-04.png",
+    slug: "cjr",
+    tags: ["Data Visualization"]
+  }
 
 ];
 
 export const smallProjects: Project[] = [
+  {
+    title: "What Chart Are You?",
+    summary: "A playful horoscope about what chart you are.",
+    image: "/images/portfolio/thedatasays-personal/what-chart-art-you.png",
+    slug: "what-chart-are-you",
+    tags: ["Data Visualization", "Graphic Design"]
+  },
   {
     title: "Capital Punishment Streamgraph",
     summary: "A streamgraph visualization showing the history of capital punishment in the United States.",
@@ -55,21 +62,14 @@ export const smallProjects: Project[] = [
     slug: "bitches-are-the-shit",
     tags: ["Data Visualization"]
   },
-  {
-    title: "What Chart Are You?",
-    summary: "A playful horoscope about what chart you are.",
-    image: "/images/portfolio/thedatasays-personal/what-chart-art-you.png",
-    slug: "what-chart-are-you",
-    tags: ["Data Visualization", "Graphic Design"]
-  },
-  {
-    title: "Middle School Infographic",
-    summary: "An infographic for parents to see what's upcoming in their child's schoolyear.",
-    image: "/images/portfolio/thedatasays-clients/MMMS-infographic-2022.png",
-    slug: "MMMS-infographic",
-    link: "https://www.behance.net/gallery/your-incarceration-rates-project",
-    tags: ["Data Visualization", "Graphic Design"]
-  },
+  // {
+  //   title: "Middle School Infographic",
+  //   summary: "An infographic for parents to see what's upcoming in their child's schoolyear.",
+  //   image: "/images/portfolio/thedatasays-clients/MMMS-infographic-2022.png",
+  //   slug: "MMMS-infographic",
+  //   link: "https://www.behance.net/gallery/your-incarceration-rates-project",
+  //   tags: ["Data Visualization", "Graphic Design"]
+  // },
   {
     title: "The Popular Vote",
     summary: "A candidate doesn’t need to win the popular vote to win the presidential election in the United States. 5 U.S. presidents have been elected through strategic electoral college wins even though they lost the nation’s popular vote. It’s difficult to say what the outcomes might have been in those elections had our democracy used the popular vote to declare the winner in the presidency, like in any other office. How might candidate’s strategies operate differently? How many more people would vote if they knew each vote carried the same weight?",

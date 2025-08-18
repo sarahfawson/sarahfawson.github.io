@@ -11,14 +11,32 @@ export default function DashboardsPage() {
       <div className="project-detail">
         <div className="project-header">
           <h1>Data Dashboards</h1>
-          <p className="project-subtitle">Designing data for public consumption.</p>
+          <p className="project-subtitle">Making data and insights easy and enjoyable to find and understand.</p>
         </div>
 
         <div className="project-content">
           <section className="project-section">
-            <h2>Info coming soon</h2>
-            <p>Stay tuned for more details on this project.</p>
-            
+            <div className="project-image-container">
+              <Image
+                src="/images/portfolio/professional/general/process-dataviz.png"
+                alt="processe"
+                width={500}
+                height={400}
+                className="project-image"
+                priority
+                style={{ 
+                  maxWidth: '75%', 
+                  height: 'auto',
+                  objectFit: 'contain'
+                }}
+              />
+            </div>
+          </section>
+        </div>
+
+        <div className="project-content">
+          <section className="project-section">
+            <h2>Prior Examples</h2>            
             <div className="project-image-container">
               <Image
                 src="/images/portfolio/thedatasays-personal/dash-general-light.png"
@@ -37,6 +55,13 @@ export default function DashboardsPage() {
           </section>
 
           <hr className="section-divider" />
+                  
+        <div className="project-content">
+          <section className="project-section">
+            <h2>Operational Health</h2>
+            <p>This information about recent work is available upon request.</p>
+          </section>
+        </div>
 
           {/* <section className="project-section">
             
