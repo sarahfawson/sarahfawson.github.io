@@ -11,7 +11,7 @@ export const largeProjects: Project[] = [
   {
     title: "Content Planning Tools",
     summary: "A suite of content planning tools prototyped for live testing and rapid iterations.",
-    image: "/images/portfolio/professional/nyt/calendar-design-prototype-week.png",
+    image: "/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png",
     slug: "calendar-prototype",
     tags: ["UX/UI Design", "Data Visualization", "Development"]
   },
@@ -78,6 +78,13 @@ export const smallProjects: Project[] = [
     tags: ["Data Visualization"]
   },
   {
+    title: "Program Planning Gantt",
+    summary: "Government program planning Gantt, part of a design project at Deloitte aimed at improving supply chain operations with better tooling. 2019-2020.",
+    image: "/images/portfolio/professional/deloitte/apollo-gantt.png",
+    slug: "gantt-chart",
+    tags: ["UX/UI Design"]
+  },
+  {
     title: "Racial Wealth Gaps",
     summary: "We know that the roots of legalized discrimination run deep in America, and we have data to prove many of its consequences. Let’s look at household wealth, for example. In the Fed’s 2019 survey on household wealth (so, pre-pandemic), the organization found these drastic disparities in the median wealth owned by different races. Even young families or households have enormous differences in wealth, particularly between White and Black households, with a median White household owning $25,400 and a median Black family owning only $600. As households get older, across all race and ethnicity groups the wealth rises, but we see even larger disparities between races, again most notably between Black and White households.",
     image: "/images/portfolio/thedatasays-personal/racialWealthGap-01.png",
@@ -113,14 +120,14 @@ export const smallProjects: Project[] = [
     tags: ["Graphic Design"]
   },
   {
-    title: "Wrongful Death Sentences",
+    title: "Wrongful Death Sentences (2021)",
     summary: "A visual analysis of tragic cases of wrongful death sentences in the United States, 2021.",
     image: "/images/portfolio/thedatasays-personal/wrongful-death-sentence-dark.png",
     slug: "wrongful-death-sentence",
     tags: ["Data Visualization"]
   },
   {
-    title: "Wrongful Death Sentences",
+    title: "Wrongful Death Sentences (2022)",
     summary: "A visual analysis of tragic cases of wrongful death sentences in the United States, 2022.",
     image: "/images/portfolio/thedatasays-personal/wrongful-death-sentence-light.png",
     slug: "wrongful-death-sentence",

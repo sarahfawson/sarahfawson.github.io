@@ -32,7 +32,7 @@ export default function CalendarPrototypePage() {
                 className="project-image"
               />
             </div>
-                        <div className="project-image-container">
+              <div className="project-image-container">
               <Image
                 src="/images/portfolio/professional/nyt/calendar-design-prototype-month.png"
                 alt="Calendar Prototype"
@@ -48,29 +48,19 @@ export default function CalendarPrototypePage() {
           <hr className="section-divider" />
 
           <section className="project-section">
-            <h2>Process: Generative Design & Prototyping </h2>
+            <h2>Generative Design & Prototyping </h2>
             <p>
-              The calendar prototype was developed through an iterative design process, 
-              focusing on user experience and interface usability.
+              I gained feedback on this prototype with user testing and design demos to gather feedback, test concepts, and solicit new ideas.
+              </p>
+              <p>
+              More information to come soon!
             </p>
-            
-            {/* <h3>Key Design Features</h3>
+            {/* <h3>Feedback Themes</h3>
             <ul>
-              <li>Intuitive date selection and navigation</li>
+              <li>Users are excited about the concepts, particularly the way this could be customized to their permission level and needs</li>
               <li>Event management and scheduling</li>
-              <li>Responsive design for multiple devices</li>
               <li>User-friendly interface elements</li>
             </ul> */}
-          </section>
-
-          <hr className="section-divider" />
-
-          <section className="project-section">
-            <h2>Testing & Iteration</h2>
-            <p>
-              I gained feedback on this prototype with extensive user testing to gather feedback and 
-              identify areas for improvement in the calendar and control center concept and different features that support it.
-            </p>
           </section>
 
 

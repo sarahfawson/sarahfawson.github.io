@@ -87,6 +87,7 @@ h4 {
   font-size: 1.25rem;
   line-height: 1.4;
   margin-bottom: 1rem;
+  margin-top: 1rem;
   font-weight: 600;
 }
 
@@ -1211,7 +1212,7 @@ main {
 } */
 
 .project-detail {
-  width: var(--container-width);
+  /* width: var(--container-width); */
   margin: 0 auto;
 }
 
