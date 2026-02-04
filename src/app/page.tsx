@@ -32,10 +32,10 @@ export default function Home() {
         <div className="homepage-text">
           <h1>Hi, I'm Sarah Fawson</h1>
           <p className="about-text">
-            I'm a designer, artist, and storyteller.
+            I'm a designer, artist, and storyteller. Currently a Senior Product Designer at the New York Times, I focus on making sense of complex workflows - whether they're human or data. I enjoy what I do, and I love to work closely with others to build things together.
           </p>
           <p>
-            <a href="/projects" className="design-work-link">See my design work →</a>
+            <a href="/projects" className="design-work-link">See my work →</a>
           </p>
         </div>
       </div>

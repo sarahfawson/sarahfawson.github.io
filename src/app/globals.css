@@ -92,7 +92,7 @@ h4 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -331,7 +331,7 @@ footer {
 }
 
 .project-two-column-info p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--foreground);
   margin-bottom: 1rem;
@@ -377,7 +377,7 @@ footer {
 }
 
 .project-call-out p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--foreground);
   margin-bottom: 1rem;
@@ -542,15 +542,21 @@ nav {
   height: 4rem;
 }
 
-.nav-brand a {
-  font-size: 1.25rem;
-  font-weight: 600;
-  transition: color 0.2s ease;
+.nav-brand-link {
+  display: inline-block;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.nav-brand a:hover {
-  color: var(--accent-pink);
+.nav-brand-link:hover {
+  transform: translateY(-3px);
   text-decoration: none;
+}
+
+.nav-brand-logo {
+  display: block;
+  height: auto;
+  width: auto;
+  max-height: 32px;
 }
 
 .nav-links {
@@ -561,11 +567,13 @@ nav {
 .nav-links a {
   font-size: 1rem;
   opacity: 0.7;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, font-weight 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover {
   opacity: 1;
+  font-weight: 600;
+  color: #000;
   text-decoration: none;
 }
 
@@ -726,7 +734,7 @@ main {
 }
 
 .portfolio-content p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--foreground);
   opacity: 0.8;
@@ -883,7 +891,7 @@ main {
 }
 
 .about-text p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--foreground);
   opacity: 0.8;
@@ -1319,7 +1327,7 @@ main {
 }
 
 .project-large-content p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--foreground);
   opacity: 0.8;
@@ -1340,7 +1348,7 @@ main {
   width: 25px;
   height: 2px;
   background-color: var(--foreground);
-  opacity: 0.3;
+  opacity: 0.15;
   margin-bottom: 0.5rem;
 }
 
@@ -1416,7 +1424,7 @@ main {
 }
 
 .project-section p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--foreground);
   opacity: 0.9;
@@ -1611,7 +1619,7 @@ main {
 }
 
 .recommended-reads > p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   color: var(--foreground);
   opacity: 0.8;
   margin-bottom: 2rem;
@@ -1916,7 +1924,7 @@ main {
 }
 
 .modal-project-content p {
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--foreground);
   opacity: 0.9;

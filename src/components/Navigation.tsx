@@ -1,13 +1,13 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const navItems = [
   { name: 'Design', path: '/projects' },
   { name: 'Art', path: '/art' },
-  { name: 'About', path: '/about' },
 ];
 
 export default function Navigation() {
@@ -23,7 +23,16 @@ export default function Navigation() {
       <div className="nav-container">
         <div className="nav-content">
           <div className="nav-brand">
-            <Link href="/">Sarah Fawson</Link>
+            <Link href="/" className="nav-brand-link">
+              <Image
+                src="/images/about/sarah_fawson_colorful.png"
+                alt="Sarah Fawson"
+                width={140}
+                height={32}
+                className="nav-brand-logo"
+                priority
+              />
+            </Link>
           </div>
           
           <div className="nav-links">
