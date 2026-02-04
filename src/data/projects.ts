@@ -91,7 +91,8 @@ export const smallProjects: Project[] = [
   {
     title: 'Program Planning Gantt',
     client: 'Deloitte',
-    summary: 'Government program planning Gantt, part of a design project at Deloitte aimed at improving supply chain operations with better tooling. 2019-2020.',
+    timeframe: '2019-2020',
+    summary: 'Program planning Gantt visualization within a supply chain application for a government client at Deloitte, a project aimed at improving supply chain operations.',
     image: '/images/portfolio/professional/deloitte/apollo-gantt.png',
     slug: 'gantt-chart',
     tags: ['UX/UI Design']

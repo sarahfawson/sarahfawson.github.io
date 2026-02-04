@@ -4,18 +4,18 @@ export default function Home() {
   return (
     <main className="container homepage-content">
       <div className="homepage-heading">
+        <h1>{`Hi, I'm Sarah Fawson`}</h1>
         <Image
           src="/images/smiley.svg"
           alt="Spinning smiley face"
           width={50}
           height={50}
           priority
-          className="spinning-smiley heading-smiley"
+          className='spinning-smiley heading-smiley'
         />
-        <h1>{`Hi, I'm Sarah Fawson`}</h1>
       </div>
-      <p className="about-text">
-        I&apos;m a Senior Product Designer at the New York Times, I focus on making sense of complex workflows - whether they&apos;re human or data. I enjoy what I do, and I love to work closely with others to build things together.
+      <p className="about-text" style={{ marginTop: '1.5rem' }}>
+        {`I'm a Senior Product Designer at the New York Times, I focus on making sense of complex workflows - whether they're human or data. I enjoy what I do, and I love to work closely with others to build things together.`}
       </p>
       <p>
         <a href="/projects" className="design-work-link" data-text="See my work">See my work →</a>
