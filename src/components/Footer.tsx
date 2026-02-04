@@ -26,7 +26,7 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[var(--accent-turquoise)] border-t border-black/10 py-8 mt-auto w-full md:py-6">
-      <div className="w-[var(--container-width)] mx-auto px-4 flex flex-col items-center gap-12 md:gap-8">
+      <div className="w-full max-w-[1400px] mx-auto px-4 flex flex-col items-center gap-12 md:gap-8">
         <div className="flex justify-center flex-wrap gap-12 font-semibold md:gap-6 max-sm:gap-4">
           {socialLinks.map((item) => (
             <a
