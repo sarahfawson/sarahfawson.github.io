@@ -11,22 +11,20 @@ export default function CalendarPrototypePage() {
       <div className="project-detail">
         <div className="project-header">
           <h1>Content Planning Tools</h1>
-          <p className="project-subtitle">Tab through to explore various design projects related to content generation, scheduling, and planning with internal tools.</p>
+          <p className="project-subtitle">Explore a few designs for content generation, scheduling, and planning with internal tools.</p>
         </div>
 
         <div className="project-content">
         <section className="project-section">
             <h2>Ping Messaging Email Platform</h2>
             <p>Enterprise software project to redesign the entire email platform for the New York Times. Certain elements of the data, verbiage, and architecture have been modified for privacy and security reasons.</p>
-          </section>
-          <section className="project-section">
+        </section>
+        <section className="project-section">
             <h2>Calendar Envisioning</h2>
             <p>A planning app for newsletter and push alert content generation, scheduling, and ai-generated recommendations.</p>
-
             <p>
               This project began when I redesigned a calendar tool used for content planning, and evolved into an experiment of new generative design and development tools including Cursor, Figma Make, and Vercel. 
             </p>
-            
             <div className="project-image-container">
               <Image
                 src="/images/portfolio/professional/nyt/calendar-design-prototype-week.png"
@@ -68,7 +66,6 @@ export default function CalendarPrototypePage() {
               <li>User-friendly interface elements</li>
             </ul> */}
           </section>
-
 
         </div>
       </div>

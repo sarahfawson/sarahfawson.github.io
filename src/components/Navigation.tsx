@@ -40,6 +40,7 @@ export default function Navigation() {
               <Link
                 key={item.path}
                 href={item.path}
+                data-text={item.name}
                 className={`text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-gray-100 ${
                   pathname === item.path
                     ? 'text-gray-900 dark:text-gray-100'

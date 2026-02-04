@@ -63,14 +63,14 @@ main {
 
 /* Typography */
 h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   line-height: 1.1;
   margin-bottom: 2rem;
   font-weight: 700;
 }
 
 h2 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   line-height: 1.2;
   margin-bottom: 1.5rem;
   font-weight: 600;
@@ -105,34 +105,43 @@ p {
 
 }
 
-.homepage-columns {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  width: 100%;
-  max-width: 900px;
+.homepage-content {
+  max-width: 800px;
   margin: 0 auto;
+  padding-top: 3rem;
 }
 
-.homepage-text {
-  flex: 1;
+.homepage-heading {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 0.75rem;
 }
-@media (max-width: 900px) {
-  .homepage-columns {
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 100%;
-  }
-  .homepage-text, .circular-text-container {
-    align-items: center;
-    text-align: center;
-  }
+
+.heading-smiley {
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.design-work-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.design-work-link::after {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.design-work-link:hover {
+  font-weight: 600;
+  text-decoration: none;
 }
 
 /* Links */
@@ -240,15 +249,26 @@ footer {
 
 /* Services row styles */
 .services-row {
-  display: flex;
-  gap: 15px;
-  margin: 2rem auto;
-  padding: 0 2rem;
-  max-width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 2rem 0;
+  padding: 0;
+  width: 100%;
 }
 
 .service-image {
-  object-fit: cover;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Tablet and Mobile: 2x2 grid for services */
+@media (max-width: 1024px) {
+  .services-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }
 
 .services-section {
@@ -567,7 +587,22 @@ nav {
 .nav-links a {
   font-size: 1rem;
   opacity: 0.7;
-  transition: opacity 0.2s ease, font-weight 0.2s ease, color 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Reserve space for bold text to prevent layout shift */
+.nav-links a::after {
+  content: attr(data-text);
+  font-weight: 600;
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .nav-links a:hover {
@@ -1772,8 +1807,9 @@ main {
 
 .circular-text-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2029,6 +2065,53 @@ main {
 
 .projects-page .project-large-image {
   object-fit: contain;
+}
+
+/* Tablet adjustments (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-large {
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Mobile adjustments - enhance existing 768px breakpoint */
+@media (max-width: 768px) {
+  .project-large {
+    margin-bottom: 2rem;
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+  
+  .project-large-image-container {
+    padding-bottom: 56.25%; /* 16:9 instead of 75% (4:3) */
+  }
+  
+  .project-large-image {
+    padding-bottom: 0;
+  }
+  
+  .large-projects-grid {
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+  .project-large {
+    padding: 0;
+    margin-bottom: 1.5rem;
+    gap: 0.25rem;
+  }
+  
+  .large-projects-grid {
+    gap: 1.5rem;
+  }
+  
+  .project-large-content h3 {
+    font-size: 1.25rem;
+  }
 }
 
 

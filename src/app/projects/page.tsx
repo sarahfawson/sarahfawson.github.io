@@ -47,47 +47,14 @@ export default function ProjectsPage() {
               <h3>{project.title}</h3>
               <div className="project-meta">
                 <div className="project-meta-line" />
-                <p>{project.timeframe}</p>
                 <p style={{ fontWeight: 600 }}>{project.client}</p>
+                <p>{project.timeframe}</p>
               </div>
             </div>
           </Link>
         ))}
       </div>
 
-      <hr className="section-divider" />
-      <section className="services-section">
-        <div className="services-row">
-          <Image
-            src="/images/about/services/services-01.png"
-            alt="service design"
-            width={200}
-            height={200}
-            className="service-image"
-          />
-          <Image
-            src="/images/about/services/services-02.png"
-            alt="ui and ux design"
-            width={200}
-            height={200}
-            className="service-image"
-          />
-          <Image
-            src="/images/about/services/services-03.png"
-            alt="infographic design"
-            width={200}
-            height={200}
-            className="service-image"
-          />
-          <Image
-            src="/images/about/services/services-04.png"
-            alt="prototyping"
-            width={200}
-            height={200}
-            className="service-image"
-          />
-        </div>
-      </section>
       <hr className="section-divider" />
 
       <h2 className="section-title">More designs</h2>    
