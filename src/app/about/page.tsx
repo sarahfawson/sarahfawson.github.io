@@ -1,97 +1,42 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 
 const recommendedReads = [
   {
-    title: "Design is Storytelling",
-    author: "Ellen Lupton",
-    image: "/images/books/design-is-storytelling.jpg"
+    title: 'Design is Storytelling',
+    author: 'Ellen Lupton',
+    image: '/images/books/design-is-storytelling.jpg'
   },
   {
-    title: "Am I there yet?",
-    author: "Mari Andrew",
-    image: "/images/books/am-i-there-yet.jpg"
+    title: 'Am I there yet?',
+    author: 'Mari Andrew',
+    image: '/images/books/am-i-there-yet.jpg'
   },
   {
-    title: "Data Story",
-    author: "Nancy Duarte",
-    image: "/images/books/data-story.jpg"
+    title: 'Data Story',
+    author: 'Nancy Duarte',
+    image: '/images/books/data-story.jpg'
   },
   {
-    title: "The boy the mole the fox and the horse",
-    author: "Charlie Mackesy",
-    image: "/images/books/boy-mole-fox.jpg"
+    title: 'The boy the mole the fox and the horse',
+    author: 'Charlie Mackesy',
+    image: '/images/books/boy-mole-fox.jpg'
   }
 ];
 
 export default function About() {
-
-  const fastFacts = [
-    "Based in Denver, CO",
-    "Senior Product Designer at The New York Times",
-    "Graduated from MICA and OU",
-    "Sewing and scrapbooking enthusiast",
-    "Amateur oil painter"
-  ];
-
   return (
     <main className="container">
-      <div className="about-grid">
-        <div className="about-content">
-          <h3 className="about-intro">
-            Hey, I'm Sarah!
-          </h3>
-          <div className="about-text">
-            <p>
-              I'm a designer who focuses on making sense of complex workflows - whether they're human or data. I enjoy what I do, and I love to work closely with others to build things together.
-            </p>
-            {/* <div className="skills-section">
-              <div className="skills-list">
-                {skills.map((skill, index) => (
-                  <Chip key={index} label={skill} />
-                ))}
-              </div>
-            </div> */}
-          </div>
-          <div className="about-email-container">
-        <a href="mailto:hello@sarahfawson.com" className="about-email">
-          hello@sarahfawson.com
-        </a>
-      </div>
-        </div>
-        <div className="fast-facts-section">
-          <h4>Fast Facts</h4>
-          <ul className="fast-facts-list">
-            {fastFacts.map((fact, index) => (
-              <li key={index} className="fast-fact-item">
-                {fact}
-              </li>
-            ))}
-          </ul>
+      <div className="about-content">
+      <h1>About</h1>
+        <div className="about-text">
+          <p>
+            Hey, I'm Sarah, a Senior Product Designer at the New York Times who focuses on making sense of complex workflows - whether they're human or data. I enjoy what I do, and I love to work closely with others to build things together.
+          </p>
         </div>
       </div>
-        {/* <div className="about-image-section">
-          <div className="about-image-container">
-            <Image
-              src="/images/about/profile-photo.png"
-              alt="Sarah Fawson"
-              fill
-              className="about-image"
-              priority
-            />
-          </div>
-        </div> */}
-
-      {/* <div className="work-together">
-        <h4>Let's work together if:</h4>
-        <ul className="work-list">
-          <li>You have a story to tell but are having trouble knowing how to get from A to Z</li>
-          <li>You're looking for a thoughtful, collaborative partner (and a bit of design magic)</li>
-        </ul>
-      </div> */}
 <hr className="section-divider" />
-
   <section className="services-section">
         <div className="services-row">
           <Image
@@ -126,8 +71,8 @@ export default function About() {
       </section>
 
       <section className="recommended-reads">
-        <h2>Inspiration</h2>
-        <p>A collection of artifacts that have influenced my work in data visualization, design, history, and creativity.</p>
+        <h2>You can’t use up creativity. The more you use, the more you have.</h2>
+        {/* <p>These books have influenced my work in data visualization, design, history, and creativity.</p> */}
         
         <div className="books-grid">
           {recommendedReads.map((book, index) => (

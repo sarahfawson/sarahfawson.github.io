@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Modal from '@/components/Modal';
-import { largeProjects, smallProjects, allTags } from '@/data/projects';
+import { largeProjects, smallProjects, allTags, Project } from '@/data/projects';
 // import DataViz from '@/components/dataviz';
 
 export default function ProjectsPage() {
-  const [selectedProject, setSelectedProject] = useState<typeof smallProjects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
 
   const toggleTag = (tag: string) => {
@@ -30,34 +30,28 @@ export default function ProjectsPage() {
 
   return (
     <main className="container projects-page">
-      <h1>Design Work </h1>      
+      <h1>Design </h1>      
       <div className="large-projects-grid">
         {largeProjects.map((project) => (
-          <div key={project.slug} className="project-large">
+          <Link key={project.slug} href={`/projects/${project.slug}`} className="project-large">
             <div className="project-large-image-container">
-              <Link href={`/projects/${project.slug}`} className="portfolio-link">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="project-large-image"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-              </Link>
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="project-large-image"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             <div className="project-large-content">
               <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              {/* <div className="project-tags">
-                {project.tags.map((tag, index) => (
-                  <span key={index} className="tag">{tag}</span>
-                ))}
-              </div> */}
-              <Link href={`/projects/${project.slug}`} className="portfolio-link">
-                <span className="see-more">Details →</span>
-              </Link>
+              <div className="project-meta">
+                <div className="project-meta-line" />
+                <p>{project.timeframe}</p>
+                <p>{project.client}</p>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

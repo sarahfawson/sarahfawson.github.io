@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
@@ -10,7 +10,7 @@ export default function DataViz() {
     if (!svgRef.current) return;
 
     // Clear any existing content
-    d3.select(svgRef.current).selectAll("*").remove();
+    d3.select(svgRef.current).selectAll('*').remove();
 
     // Set up the SVG
     const width = 800;
@@ -18,10 +18,10 @@ export default function DataViz() {
     const margin = { top: 20, right: 20, bottom: 30, left: 40 };
 
     const svg = d3.select(svgRef.current)
-      .attr("width", width)
-      .attr("height", height)
-      .attr("viewBox", [0, 0, width, height])
-      .attr("style", "max-width: 100%; height: auto;");
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [0, 0, width, height])
+      .attr('style', 'max-width: 100%; height: auto;');
 
     // Create sample data
     const data = Array.from({ length: 5 }, (_, i) => ({
@@ -74,47 +74,47 @@ export default function DataViz() {
       ]);
 
     // Add the areas
-    svg.selectAll("path")
+    svg.selectAll('path')
       .data(stack(stackedData))
-      .join("path")
-      .attr("d", area)
-      .attr("fill", (d) => color(d.key))
-      .attr("opacity", 0.8)
-      .on("mouseover", function() {
+      .join('path')
+      .attr('d', area)
+      .attr('fill', (d) => color(d.key))
+      .attr('opacity', 0.8)
+      .on('mouseover', function() {
         d3.select(this)
-          .attr("opacity", 1);
+          .attr('opacity', 1);
       })
-      .on("mouseout", function() {
+      .on('mouseout', function() {
         d3.select(this)
-          .attr("opacity", 0.8);
+          .attr('opacity', 0.8);
       });
 
     // Add the x-axis
-    svg.append("g")
-      .attr("transform", `translate(0,${height - margin.bottom})`)
+    svg.append('g')
+      .attr('transform', `translate(0,${height - margin.bottom})`)
       .call(d3.axisBottom(x).ticks(5));
 
     // Add a title
-    svg.append("text")
-      .attr("x", width / 2)
-      .attr("y", margin.top)
-      .attr("text-anchor", "middle")
-      .style("font-size", "16px")
-      .text("Streamgraph Visualization");
+    svg.append('text')
+      .attr('x', width / 2)
+      .attr('y', margin.top)
+      .attr('text-anchor', 'middle')
+      .style('font-size', '16px')
+      .text('Streamgraph Visualization');
 
     // Add tooltips
-    const tooltip = d3.select("body").append("div")
-      .attr("class", "tooltip")
-      .style("opacity", 0)
-      .style("position", "absolute")
-      .style("background-color", "white")
-      .style("border", "1px solid #ddd")
-      .style("padding", "10px")
-      .style("border-radius", "4px");
+    const tooltip = d3.select('body').append('div')
+      .attr('class', 'tooltip')
+      .style('opacity', 0)
+      .style('position', 'absolute')
+      .style('background-color', 'white')
+      .style('border', '1px solid #ddd')
+      .style('padding', '10px')
+      .style('border-radius', '4px');
 
     // Add interactive elements
-    svg.selectAll("path")
-      .on("mousemove", function(this: d3.BaseType, event: MouseEvent, d: unknown) {
+    svg.selectAll('path')
+      .on('mousemove', function(this: d3.BaseType, event: MouseEvent, d: unknown) {
         const series = d as d3.Series<{ [key: string]: number }, string>;
         const [pointerX] = d3.pointer(event);
         const date = x.invert(pointerX);
@@ -122,16 +122,16 @@ export default function DataViz() {
         
         tooltip.transition()
           .duration(200)
-          .style("opacity", .9);
+          .style('opacity', .9);
         
         tooltip.html(`${series.key}<br/>Value: ${value?.value.toFixed(1)}`)
-          .style("left", (event.pageX + 10) + "px")
-          .style("top", (event.pageY - 28) + "px");
+          .style('left', (event.pageX + 10) + 'px')
+          .style('top', (event.pageY - 28) + 'px');
       })
-      .on("mouseout", () => {
+      .on('mouseout', () => {
         tooltip.transition()
           .duration(500)
-          .style("opacity", 0);
+          .style('opacity', 0);
       });
 
   }, []);

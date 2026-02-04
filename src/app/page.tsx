@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -35,7 +35,7 @@ export default function Home() {
             I'm a designer, artist, and storyteller.
           </p>
           <p>
-            <a href="/about" className="about-link">Say Hello →</a>
+            <a href="/projects" className="design-work-link">See my design work →</a>
           </p>
         </div>
       </div>
