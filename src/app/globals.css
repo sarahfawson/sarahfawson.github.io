@@ -288,6 +288,40 @@ footer {
   margin: 3rem 0;
 }
 
+/* Three column grid layout */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.three-column-item {
+  padding: 1rem;
+}
+
+.three-column-item h4 {
+  margin-top: 0;
+}
+
+.column-number {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  color: var(--accent-turquoise);
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .three-column-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 .two-column-layout {
   display: flex;
   gap: 2rem;
@@ -392,6 +426,50 @@ footer {
   margin: 2rem 0;
   border-radius: 8px;
   border-left: 4px solid var(--accent-pink);
+}
+
+/* Call-out with image side by side */
+.call-out-with-image {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 2rem 0;
+}
+
+.call-out-with-image .call-out {
+  flex: 1;
+  min-width: 0;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-pink);
+  margin: 0;
+}
+
+.call-out-with-image .call-out-image {
+  flex: none;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.call-out-with-image .call-out-image img {
+  width: 100px !important;
+  height: auto !important;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .call-out-with-image {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .call-out-with-image .call-out,
+  .call-out-with-image .call-out-image {
+    flex: none;
+    width: 100%;
+  }
 }
 
 .project-call-out h3 {
@@ -1445,12 +1523,24 @@ main {
 }
 
 /* Project Detail Page Enhancements */
+.project-section .project-subtitle,
 .project-subtitle {
   font-size: 1.25rem;
   color: var(--foreground);
   opacity: 0.8;
   margin-top: 0.5rem;
   margin-bottom: 2rem;
+}
+
+.project-year {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  background: var(--accent-turquoise);
+  color: var(--foreground);
+  margin-bottom: 1rem;
 }
 
 .project-section {

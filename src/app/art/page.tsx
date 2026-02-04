@@ -23,6 +23,11 @@ const recommendedReads = [
   }
 ];
 
+const quotes = [
+  "You can't use up creativity. The more you use, the more you have.",
+  "Creativity is a wild mind and a disciplined eye."
+];
+
 const artImages = [
   {
     src: '/images/portfolio/creative/coffee_dali.jpg',
@@ -84,8 +89,7 @@ export default function ArtPage() {
       </div>
 
       <section className="recommended-reads">
-        <h2>You can't use up creativity. The more you use, the more you have.</h2>
-        
+        <h2>{quotes[Math.floor(Math.random() * quotes.length)]}</h2>
         <div className="books-grid">
           {recommendedReads.map((book, index) => (
             <div 
