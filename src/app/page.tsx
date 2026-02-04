@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <main className="container homepage-content">
-      <h1 className="homepage-heading">
+      <div className="homepage-heading">
         <Image
           src="/images/smiley.svg"
           alt="Spinning smiley face"
@@ -12,8 +12,8 @@ export default function Home() {
           priority
           className="spinning-smiley heading-smiley"
         />
-        Hi, I&apos;m Sarah Fawson
-      </h1>
+        <h1>Hi, I&apos;m Sarah Fawson</h1>
+      </div>
       <p className="about-text">
         I&apos;m a Senior Product Designer at the New York Times, I focus on making sense of complex workflows - whether they&apos;re human or data. I enjoy what I do, and I love to work closely with others to build things together.
       </p>

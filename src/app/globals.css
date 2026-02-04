@@ -105,16 +105,20 @@ p {
 
 }
 
-.homepage-content {
+main.homepage-content {
   max-width: 800px;
   margin: 0 auto;
-  padding-top: 3rem;
+  padding-top: 5rem;
 }
 
 .homepage-heading {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+.homepage-heading h1 {
+  margin: 0;
 }
 
 .heading-smiley {
@@ -1123,6 +1127,7 @@ main {
   width: var(--container-width);
   margin: 0 auto;
   padding: 2rem 1rem;
+  overflow-x: hidden;
 }
 
 /* Responsive scaling for larger screens */
@@ -1255,7 +1260,7 @@ main {
 } */
 
 .project-detail {
-  /* width: var(--container-width); */
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -2095,6 +2100,30 @@ main {
     gap: 2rem;
     padding: 1rem 0;
   }
+  
+  /* More designs section mobile */
+  .section-title {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .project-image-container {
+    padding-bottom: 75%;
+  }
+  
+  .tag-container {
+    gap: 0.375rem;
+  }
+  
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
 }
 
 /* Small mobile adjustments */
@@ -2110,6 +2139,17 @@ main {
   }
   
   .project-large-content h3 {
+    font-size: 1.25rem;
+  }
+  
+  /* More designs section small mobile */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .section-title {
+    margin-top: 1.5rem;
     font-size: 1.25rem;
   }
 }
