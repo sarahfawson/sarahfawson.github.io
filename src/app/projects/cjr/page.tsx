@@ -33,6 +33,7 @@ export default function CJRPage() {
       <div className="project-detail">
         <div className="project-header">
           <h1>The Legislative Roots of Mass Incarceration</h1>
+          <p className="project-year">2020</p>
           <p className="project-subtitle">I analyzed the United States' criminal legal system, policing, disenfranchisement, and more while building my thesis at MICA.</p>
         </div>
         
@@ -158,12 +159,12 @@ export default function CJRPage() {
           </div>
         )}
 
-
         <div className="project-content">
           <section className="project-section">
-            <h2>Overview</h2>
+            {/* <h2>Overview</h2> */}
+            <p className="project-subtitle">Our lives begin to end the day we become silent about things that matter.</p>
             <p>
-            This project aims to shine a bright light on the perpetual marginalization of the dispossessed at the hands of our own government. Our country’s history of racialized legislation and culture has led to a system of mass incarceration today, the likes of which no country has ever seen before. What is different now, from previous periods of racial control like slavery and the Jim Crow era? We have data, and we’re seeing the injustices live streamed.
+            This work aims to shine a bright light on the perpetual marginalization of the dispossessed at the hands of our own government. Our country’s history of racialized legislation and culture has led to a system of mass incarceration today, the likes of which no country has ever seen before. What is different now, from previous periods of racial control like slavery and the Jim Crow era? We have data, and we’re seeing the injustices live streamed.
             </p>
             <p>
             Although we celebrate colorblindness in America, our laws and leadership have enabled systemic racism and control that is exerted disproportionately on People of Color. Let us better understand our history so we can demand the change needed.
@@ -175,7 +176,7 @@ export default function CJRPage() {
         <hr className="section-divider" />
             <h3>We have a mass incarceration problem because of our legislation and our history, not because of our crime.</h3>
             <div className="two-column-layout highlighted">
-              <div className="column-left">
+              <div className="column-left" style={{ padding: '1.5rem' }}>
                 <h4>The data shows the scale of the mass incarceration problem</h4>
                 <p>The data tells us about how pervasive mass incarceration is in the United States. For example:</p>
                 <ul>
@@ -185,7 +186,7 @@ export default function CJRPage() {
                   <li>These problems often lead to recidivism and generational poverty</li>
                 </ul>
               </div>
-              <div className="column-right">
+              <div className="column-right" style={{ padding: '1.5rem' }}>
                 <h4>Discrimination is still legal in the United States</h4>
                 <p>There are too many forms of discrimination of former prisoners that are still currently legal. To name a few:</p>
                 <ul>
@@ -217,7 +218,7 @@ export default function CJRPage() {
           <hr className="section-divider" /> */}
 
         <section className="project-section">
-          <h2>Data Sources, Context, and Inspiration</h2>
+          <h3>There is no shortage of data, in its many forms.</h3>
           <div className="two-column-layout">
             <div className="column-left">
               <p>
@@ -230,16 +231,17 @@ export default function CJRPage() {
               <Image
                 src="/images/portfolio/thedatasays-personal/thesis/sources.png"
                 alt="Research sources and methodology"
-                width={300}
-                height={300}
-                className="project-detail-image small"
+                width={800}
+                height={800}
+                className="project-detail-image"
+                style={{ width: '100%', height: 'auto', maxWidth: '100%', boxShadow: 'none' }}
               />
             </div>
           </div>
           <hr className="section-divider" />
 
             <div className="carousel-container">
-            <h2>It took several attempts to find the right layout for the shape of data I had.</h2>
+            <h3>Finding the right layout for the shape of this data was crucial.</h3>
               <div className="carousel-track" style={{ transform: `translateX(-${currentSlide * 16.666}%)` }}>
                 <div className="carousel-slide">
                   <Image

@@ -11,6 +11,7 @@ export default function DashboardsPage() {
       <div className="project-detail">
         <div className="project-header">
           <h1>Data Dashboards</h1>
+          <p className="project-year">2019-2022</p>
           <p className="project-subtitle">Making data and insights easy and enjoyable to find and understand.</p>
         </div>
 
