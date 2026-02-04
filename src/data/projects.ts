@@ -10,12 +10,13 @@ export interface Project {
 }
 
 export const largeProjects: Project[] = [
+
   {
     title: 'Content Planning Tools',
     client: 'NYT',
     timeframe: '2025-2026',
     image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
-    slug: 'calendar-prototype',
+    slug: 'content-planning',
     tags: ['UX/UI Design', 'Data Visualization', 'Prototypes']
   },
   {
@@ -26,13 +27,13 @@ export const largeProjects: Project[] = [
     slug: 'workflow-diagrams',
     tags: ['Service Design', 'Data Visualization']
   },
-    {
-    title: 'Insights',
-    client: 'Freelance',
-    timeframe: '2023',
-    image: '/images/portfolio/thedatasays-personal/dash-general-light.png',
-    slug: 'dashboards',
-    tags: ['UX/UI Design', 'Data Visualization']
+  {
+    title: 'Design Leadership',
+    client: 'NYT',
+    timeframe: '2025-2026',
+    image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
+    slug: 'design-leadership',
+    tags: ['Design Leadership', 'Workshops']
   },
   {
     title: 'The Legislative Roots of Mass Incarceration',
@@ -41,6 +42,14 @@ export const largeProjects: Project[] = [
     image: '/images/portfolio/thedatasays-personal/thumbnails-04.png',
     slug: 'cjr',
     tags: ['Data Visualization']
+  },
+  {
+    title: 'Data & Insights',
+    client: 'Freelance',
+    timeframe: '2023',
+    image: '/images/portfolio/thedatasays-personal/dash-general-light.png',
+    slug: 'dashboards',
+    tags: ['UX/UI Design', 'Data Visualization']
   }
 
 ];
