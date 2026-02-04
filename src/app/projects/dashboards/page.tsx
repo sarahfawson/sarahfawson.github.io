@@ -6,9 +6,9 @@ import Link from 'next/link';
 export default function DashboardsPage() {
   return (
     <main className="container">
-      <Link href="/projects" className="back-link">← Back to Projects</Link>
-      
       <div className="project-detail">
+        <Link href="/projects" className="nav-link mb-8 text-[var(--accent-turquoise-dark)]" data-text="← Back to Projects">← Back to Projects</Link>
+        
         <div className="project-header">
           <h1>Data Dashboards</h1>
           <p className="project-year">2019-2022</p>

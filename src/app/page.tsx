@@ -18,7 +18,7 @@ export default function Home() {
 {'I\'m a Senior Product Designer at the New York Times, I focus on making sense of complex workflows - whether they\'re human or data. I enjoy what I do, and I love to work closely with others to build things together.'}
       </p>
       <p>
-        <a href="/projects" className="design-work-link" data-text="See my work">See my work →</a>
+        <a href="/projects" className="nav-link" data-text="See my work">See my work →</a>
       </p>
       <div className="services-row">
         <Image

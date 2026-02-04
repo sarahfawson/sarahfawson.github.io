@@ -54,7 +54,6 @@ main {
   padding-top: 4rem; /* Space for fixed navigation */
 }
 
-/* Basic reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -97,6 +96,10 @@ p {
   margin-bottom: 1rem;
 }
 
+section {
+  padding: 3rem 0;
+}
+
 main.homepage-content {
   max-width: 800px;
   margin: 0 auto;
@@ -118,15 +121,20 @@ main.homepage-content {
   flex-shrink: 0;
 }
 
-.design-work-link {
+.nav-link {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   position: relative;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  transition: font-weight 0.2s ease;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: var(--accent-turquoise-dark);
 }
 
-.design-work-link::after {
+.nav-link::after {
   content: attr(data-text);
   font-weight: 600;
   height: 0;
@@ -135,7 +143,7 @@ main.homepage-content {
   pointer-events: none;
 }
 
-.design-work-link:hover {
+.nav-link:hover {
   font-weight: 600;
   text-decoration: none;
 }
@@ -536,7 +544,7 @@ nav {
 }
 
 .nav-links a {
-  font-size: 1rem;
+  font-size: 0.8rem;
   opacity: 0.7;
   transition: opacity 0.2s ease, color 0.2s ease;
   position: relative;
@@ -544,6 +552,8 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 /* Reserve space for bold text to prevent layout shift */
@@ -559,7 +569,7 @@ nav {
 .nav-links a:hover {
   opacity: 1;
   font-weight: 600;
-  color: #000;
+  color: #ff7eb6;
   text-decoration: none;
 }
 
@@ -703,7 +713,6 @@ main {
   border-radius: 4px;
 }
 
-/* Update main container */
 .container {
   width: var(--container-width);
   margin: 0 auto;
@@ -789,18 +798,15 @@ main {
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 0;
-  padding-bottom: 50%;
   overflow: hidden;
 }
 
 .project-image {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: contain; /* Changed from contain to cover */
+  height: auto;
+  object-fit: contain;
+  border: none;
+  outline: none;
 }
 
 .project-content {
@@ -828,24 +834,14 @@ main {
 }
 
 /* Project Detail Page */
-.back-link {
-  display: inline-block;
-  margin-bottom: 2rem;
-  color: var(--accent-turquoise-dark);
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-
-/* .back-link:hover {
-  opacity: 0.8;
-} */
-
 .project-detail {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .project-header {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   margin-bottom: 2rem;
 }
 
@@ -931,8 +927,6 @@ main {
 .projects-page .project-large-image {
   object-fit: contain;
 }
-
-
 
 .project-large-content {
   padding: 0;
@@ -1254,9 +1248,23 @@ main {
 /* Art Grid */
 .art-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
   margin-top: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 600px) {
+  .art-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .art-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 .art-item {
@@ -1272,12 +1280,19 @@ main {
 }
 
 .art-image {
+  display: block;
   width: 100%;
   height: auto;
-  object-fit: cover;
 }
 
-/* Spinning Smiley */
+.art-quote {
+  margin: 4rem 0;
+  text-align: center;
+  align-items: start;
+  font-size: 1.25rem;
+  color: var(--foreground);
+}
+
 .spinning-smiley {
   animation: spin 4s linear infinite;
 }
@@ -1507,9 +1522,6 @@ main {
     gap: 1rem;
   }
   
-  .project-image-container {
-    padding-bottom: 75%;
-  }
   
   .tag-container {
     gap: 0.375rem;
@@ -1537,7 +1549,6 @@ main {
     font-size: 1.25rem;
   }
   
-  /* More designs section small mobile */
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1548,5 +1559,3 @@ main {
     font-size: 1.25rem;
   }
 }
-
-

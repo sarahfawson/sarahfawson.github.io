@@ -6,9 +6,9 @@ import Link from 'next/link';
 export default function WorkflowDiagramsPage() {
   return (
     <main className="container">
-      <Link href="/projects" className="back-link">← Back to Projects</Link>
-      
       <div className="project-detail">
+        <Link href="/projects" className="nav-link mb-8 text-[var(--accent-turquoise-dark)]" data-text="← Back to Projects">← Back to Projects</Link>
+        
         <div className="project-header">
           <h1>Service Design</h1>
           <p className="project-subtitle">View a selection of service design maps and diagrams where I layer in how people, processes, and technology interact.</p>

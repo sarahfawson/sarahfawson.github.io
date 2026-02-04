@@ -79,17 +79,24 @@ export default function ArtPage() {
             <Image
               src={image.src}
               alt={image.alt}
-              width={400}
-              height={400}
+              width={350}
+              height={350}
               className="art-image"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
             />
           </div>
         ))}
       </div>
 
-      <section className="recommended-reads">
+      <section className="art-quote">
         <h2>{quotes[Math.floor(Math.random() * quotes.length)]}</h2>
+        <svg width="75%" height="30" viewBox="0 0 1200 30" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', margin: '1.5rem auto 0' }}>
+          <path d="M0 15 Q30 0, 60 15 T120 15 T180 15 T240 15 T300 15 T360 15 T420 15 T480 15 T540 15 T600 15 T660 15 T720 15 T780 15 T840 15 T900 15 T960 15 T1020 15 T1080 15 T1140 15 T1200 15" stroke="#bcde85" strokeWidth="3" fill="none"/>
+        </svg>
+      </section>
+
+      <section className="recommended-reads">
+        <h2>Recommended Reads</h2>
         <div className="books-grid">
           {recommendedReads.map((book, index) => (
             <div 

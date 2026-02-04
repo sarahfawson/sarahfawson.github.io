@@ -27,14 +27,14 @@ export const largeProjects: Project[] = [
     slug: 'workflow-diagrams',
     tags: ['Service Design', 'Data Visualization']
   },
-  {
-    title: 'Design Leadership',
-    client: 'NYT',
-    timeframe: '2025-2026',
-    image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
-    slug: 'design-leadership',
-    tags: ['Design Leadership', 'Workshops']
-  },
+  // {
+  //   title: 'Design Leadership',
+  //   client: 'NYT',
+  //   timeframe: '2025-2026',
+  //   image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
+  //   slug: 'design-leadership',
+  //   tags: ['Design Leadership', 'Workshops']
+  // },
   {
     title: 'The Legislative Roots of Mass Incarceration',
     client: 'Masters Thesis',
@@ -55,13 +55,14 @@ export const largeProjects: Project[] = [
 ];
 
 export const smallProjects: Project[] = [
+
   {
-    title: 'What Chart Are You?',
+    title: 'Wrongful Death Sentences (2021)',
     client: 'Personal',
-    summary: 'A playful horoscope about what chart you are.',
-    image: '/images/portfolio/thedatasays-personal/what-chart-art-you.png',
-    slug: 'what-chart-are-you',
-    tags: ['Data Visualization', 'Graphic Design']
+    summary: 'A visual analysis of tragic cases of wrongful death sentences in the United States, 2021.',
+    image: '/images/portfolio/thedatasays-personal/wrongful-death-sentence-dark.png',
+    slug: 'wrongful-death-sentence',
+    tags: ['Data Visualization']
   },
   {
     title: 'Capital Punishment Streamgraph',
@@ -73,12 +74,12 @@ export const smallProjects: Project[] = [
     tags: ['Data Visualization']
   },
   {
-    title: 'Bitches Are The Shit',
+    title: 'What Chart Are You?',
     client: 'Personal',
-    summary: 'A visualization of award-winning female music artists.',
-    image: '/images/portfolio/thedatasays-personal/bitches-are-the-shit.jpg',
-    slug: 'bitches-are-the-shit',
-    tags: ['Data Visualization']
+    summary: 'A playful horoscope about what chart you are.',
+    image: '/images/portfolio/thedatasays-personal/what-chart-art-you.png',
+    slug: 'what-chart-are-you',
+    tags: ['Data Visualization', 'Graphic Design']
   },
   // {
   //   title: "Middle School Infographic",
@@ -98,20 +99,27 @@ export const smallProjects: Project[] = [
     tags: ['Data Visualization']
   },
   {
-    title: 'Program Planning Gantt',
-    client: 'Deloitte',
-    timeframe: '2019-2020',
-    summary: 'Program planning Gantt visualization within a supply chain application for a government client at Deloitte, a project aimed at improving supply chain operations.',
-    image: '/images/portfolio/professional/deloitte/apollo-gantt.png',
-    slug: 'gantt-chart',
-    tags: ['UX/UI Design']
+    title: 'Beerconomics Infographic',
+    client: 'Personal',
+    summary: 'The economics of beer, summarized visually.',
+    image: '/images/portfolio/thedatasays-personal/beer-infographic.jpg',
+    slug: 'beer-infographic',
+    tags: ['Data Visualization']
   },
   {
-    title: 'Racial Wealth Gaps',
+    title: 'COVID-19 Patient Journey',
+    client: 'Deloitte',
+    summary: 'In a former role working with a State Government during the Covid-19 pandemic, I synthesized user research into a comprehensive map that intersects human experiences, physical processes, and data collection moments. All sensitive or identifiable information about the client, data, and subjects have been changed.',
+    image: '/images/portfolio/thedatasays-personal/thumbnails-02.png',
+    slug: 'covid-19-patient-journey',
+    tags: ['Data Visualization', 'Service Design']
+  },
+  {
+    title: 'Bitches Are The Shit',
     client: 'Personal',
-    summary: 'We know that the roots of legalized discrimination run deep in America, and we have data to prove many of its consequences. Let’s look at household wealth, for example. In the Fed’s 2019 survey on household wealth (so, pre-pandemic), the organization found these drastic disparities in the median wealth owned by different races. Even young families or households have enormous differences in wealth, particularly between White and Black households, with a median White household owning $25,400 and a median Black family owning only $600. As households get older, across all race and ethnicity groups the wealth rises, but we see even larger disparities between races, again most notably between Black and White households.',
-    image: '/images/portfolio/thedatasays-personal/racialWealthGap-01.png',
-    slug: 'racial-wealth-gap',
+    summary: 'A visualization of award-winning female music artists.',
+    image: '/images/portfolio/thedatasays-personal/bitches-are-the-shit.jpg',
+    slug: 'bitches-are-the-shit',
     tags: ['Data Visualization']
   },
   {
@@ -123,35 +131,11 @@ export const smallProjects: Project[] = [
     tags: ['Data Visualization']
   },
   {
-    title: 'Beerconomics Infographic',
+    title: 'Racial Wealth Gaps',
     client: 'Personal',
-    summary: 'The economics of beer, summarized visually.',
-    image: '/images/portfolio/thedatasays-personal/beer-infographic.jpg',
-    slug: 'beer-infographic',
-    tags: ['Data Visualization']
-  },
-  {
-    title: 'Breaking News Illustration',
-    client: 'Data for Democracy',
-    summary: 'A digital illustration of reading breaking news and seeing data to make sense of it on ipad.',
-    image: '/images/portfolio/thedatasays-clients/political/DFD-interpreting-polls-2.png',
-    slug: 'breaking-news-illustration',
-    tags: ['Graphic Design']
-  },
-  {
-    title: "Covid'19 Voting Impact",
-    client: 'Personal',
-    summary: 'A visual analysis of the impact of Covid19 on voting in the United States.',
-    image: '/images/portfolio/thedatasays-personal/COVID19-VotingImpact.jpg',
-    slug: 'covid19-voting-impact',
-    tags: ['Graphic Design']
-  },
-  {
-    title: 'Wrongful Death Sentences (2021)',
-    client: 'Personal',
-    summary: 'A visual analysis of tragic cases of wrongful death sentences in the United States, 2021.',
-    image: '/images/portfolio/thedatasays-personal/wrongful-death-sentence-dark.png',
-    slug: 'wrongful-death-sentence',
+    summary: 'We know that the roots of legalized discrimination run deep in America, and we have data to prove many of its consequences. Let’s look at household wealth, for example. In the Fed’s 2019 survey on household wealth (so, pre-pandemic), the organization found these drastic disparities in the median wealth owned by different races. Even young families or households have enormous differences in wealth, particularly between White and Black households, with a median White household owning $25,400 and a median Black family owning only $600. As households get older, across all race and ethnicity groups the wealth rises, but we see even larger disparities between races, again most notably between Black and White households.',
+    image: '/images/portfolio/thedatasays-personal/racialWealthGap-01.png',
+    slug: 'racial-wealth-gap',
     tags: ['Data Visualization']
   },
   {
@@ -163,13 +147,31 @@ export const smallProjects: Project[] = [
     tags: ['Data Visualization']
   },
   {
-    title: 'COVID-19 Patient Journey',
+    title: 'Program Planning Gantt',
     client: 'Deloitte',
-    summary: 'In a former role working with a State Government during the Covid-19 pandemic, I synthesized user research into a comprehensive map that intersects human experiences, physical processes, and data collection moments. All sensitive or identifiable information about the client, data, and subjects have been changed.',
-    image: '/images/portfolio/professional/deloitte/Deloitte_CovidPatientJourneyMap_2022.jpg',
-    slug: 'covid-19-patient-journey',
-    tags: ['Data Visualization', 'Service Design']
-  }
+    timeframe: '2019-2020',
+    summary: 'Program planning Gantt visualization within a supply chain application for a government client at Deloitte, a project aimed at improving supply chain operations.',
+    image: '/images/portfolio/professional/deloitte/apollo-gantt.png',
+    slug: 'gantt-chart',
+    tags: ['UX/UI Design']
+  },
+  {
+    title: 'Breaking News Illustration',
+    client: 'Data for Democracy',
+    summary: 'A digital illustration of reading breaking news and seeing data to make sense of it on ipad.',
+    image: '/images/portfolio/thedatasays-clients/political/DFD-interpreting-polls-2.png',
+    slug: 'breaking-news-illustration',
+    tags: ['Graphic Design']
+  },
+
+  {
+    title: "Covid'19 Voting Impact",
+    client: 'Personal',
+    summary: 'A visual analysis of the impact of Covid19 on voting in the United States.',
+    image: '/images/portfolio/thedatasays-personal/COVID19-VotingImpact.jpg',
+    slug: 'covid19-voting-impact',
+    tags: ['Graphic Design']
+  },
   // {
   //   title: "Democratic Polls Sketch",
   //   client: 'Personal',
