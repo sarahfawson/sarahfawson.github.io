@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ export default function WorkflowDiagramsPage() {
       <div className="project-detail">
         <div className="project-header">
           <h1>Service Design</h1>
-          <p className="project-subtitle">View a selection of journey maps and diagrams where I layer in how people, processes, and technology interact.</p>
+          <p className="project-subtitle">View a selection of service design maps and diagrams where I layer in how people, processes, and technology interact.</p>
         </div>
         <div className="project-content">
           <section className="project-section">

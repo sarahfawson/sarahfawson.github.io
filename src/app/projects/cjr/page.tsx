@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -37,7 +37,7 @@ export default function CJRPage() {
         </div>
         
         <div className="project-images-grid">
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg"
               alt="CJR Visual Analysis page 1"
@@ -47,7 +47,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg"
               alt="CJR Visual Analysis 2"
@@ -57,7 +57,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg"
               alt="CJR Visual Analysis 3"
@@ -67,7 +67,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg"
               alt="CJR Visual Analysis 4"
@@ -77,7 +77,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg"
               alt="CJR Visual Analysis 5"
@@ -87,7 +87,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg"
               alt="CJR Visual Analysis 6"
@@ -97,7 +97,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg"
               alt="CJR Visual Analysis 7"
@@ -107,7 +107,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg"
               alt="CJR Visual Analysis 8"
@@ -117,7 +117,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg"
               alt="CJR Visual Analysis 9"
@@ -127,7 +127,7 @@ export default function CJRPage() {
               priority
             />
           </div>
-          <div className="project-image-item" onClick={() => openImageModal("/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg")}>
+          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg')}>
             <Image
               src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg"
               alt="CJR Visual Analysis 10"
