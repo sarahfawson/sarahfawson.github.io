@@ -93,7 +93,7 @@ export default function ContentPlanningPage() {
                 />
               </li>
               <li>
-                <strong>IA and Navigation:</strong> Before designing any features in high-fidelity, myself and my design colleague involved in envisioning tested and validated various Information Architecture concepts through sketches, wireframes, and an A/B test workshop to organically understand which concept was most intuitive to our users.
+                <strong>IA and Navigation:</strong> Before designing any specific features, we tested and validated various Information Architecture concepts through sketches, wireframes, and an A/B test workshop to organically understand which concept was most intuitive to our users.
                 {/* Visual placeholder: IA sketches, wireframes */}
               </li>
               <li>
@@ -130,67 +130,9 @@ export default function ContentPlanningPage() {
 
         <section className="project-section">
             <h2>Calendar Envisioning</h2>
-            <p>A planning app for newsletter and push alert content generation, scheduling, and recommendations.</p>
-            
+            <p>A platform for newsletter and push alert content planning, scheduling, and recommendations.</p>
+          
 
-            {/* PROTOTYPING WITH GENERATIVE TOOLS
-            <div className="case-study-section">
-              <h3>Generative Design Experiment</h3>
-              <p>Since you mentioned Cursor, Figma Make, and Vercel - 
-                 this could be a unique angle for your case study.</p>
-              <h4>Process</h4>
-              <p>How did you use these tools differently than traditional design workflows?</p>
-              <h4>What Worked</h4>
-              <ul>
-                <li>Speed of iteration</li>
-                <li>Ability to test real interactions</li>
-              </ul>
-              <h4>Challenges</h4>
-              <ul>
-                <li>Limitations you encountered</li>
-                <li>When you needed to step back to traditional tools</li>
-              </ul>
-            </div>
-            */}
-
-            {/* KEY FEATURES
-            <div className="case-study-section">
-              <h3>Key Features</h3>
-              <div className="feature">
-                <h4>Feature 1: [Name]</h4>
-                <p>Description and rationale.</p>
-              </div>
-              <div className="feature">
-                <h4>Feature 2: [Name]</h4>
-                <p>Description and rationale.</p>
-              </div>
-            </div>
-            */}
-
-            {/* USER TESTING & FEEDBACK
-            <div className="case-study-section">
-              <h3>Testing & Feedback</h3>
-              <p>How did you validate the designs?</p>
-              <h4>Methods</h4>
-              <ul>
-                <li>User testing sessions</li>
-                <li>Design demos</li>
-                <li>Stakeholder reviews</li>
-              </ul>
-              <h4>Key Themes</h4>
-              <ul>
-                <li>Theme 1</li>
-                <li>Theme 2</li>
-              </ul>
-            </div>
-            */}
-
-            {/* NEXT STEPS / FUTURE VISION
-            <div className="case-study-section">
-              <h3>What's Next</h3>
-              <p>Where is this project heading? What would you explore with more time?</p>
-            </div>
-            */}
             <div className="project-image-container">
               <Image
                 src="/images/portfolio/professional/nyt/lofi-mock-calendar.png"
@@ -231,16 +173,6 @@ export default function ContentPlanningPage() {
               />
             </div>
           </section>
-
-          {/* <section className="project-section">
-            <h4>Generative Design & Prototyping </h4>
-            <p>
-              User testing and design demos to gather feedback, test concepts, and solicit new ideas.
-              </p>
-              <p>
-              Stay tuned for more information to come.
-            </p>
-          </section> */}
 
         </div>
       </div>
