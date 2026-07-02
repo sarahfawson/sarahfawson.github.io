@@ -35,14 +35,14 @@ export default function Footer() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!text-[#4a8e8b] text-base p-2 transition-all duration-200 hover:font-bold hover:no-underline md:text-sm max-sm:text-xs max-sm:p-1"
+                className="!text-[var(--color-alabster)] text-base p-2 transition-all duration-200 hover:font-bold hover:no-underline md:text-sm max-sm:text-xs max-sm:p-1"
               >
                 {item.name}
               </a>
             ))}
           </div>
-          <div className="text-center text-base !text-[#4a8e8b] font-medium md:text-xs">
-            <p className="m-0">© {new Date().getFullYear()} Sarah Fawson. All rights reserved.</p>
+          <div className="text-center text-base font-medium md:text-xs">
+            <p className="m-0 !text-[var(--color-alabster)]">© {new Date().getFullYear()} Sarah Fawson. All rights reserved.</p>
           </div>
         </div>
       </div>

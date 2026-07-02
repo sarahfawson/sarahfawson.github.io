@@ -12,7 +12,7 @@ export interface Project {
 export const largeProjects: Project[] = [
 
   {
-    title: 'Content Planning Tools',
+    title: 'Publishing & Planning tools',
     client: 'NYT',
     timeframe: '2025-2026',
     image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
@@ -37,7 +37,7 @@ export const largeProjects: Project[] = [
   // },
   {
     title: 'The Legislative Roots of Mass Incarceration',
-    client: 'Masters Thesis',
+    client: 'Thesis',
     timeframe: '2020',
     image: '/images/portfolio/thedatasays-personal/thumbnails-04.png',
     slug: 'cjr',

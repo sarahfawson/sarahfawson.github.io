@@ -2,19 +2,44 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function ContentPlanningPage() {
+  const [activeTab, setActiveTab] = useState<'messaging' | 'publishing'>('messaging');
+
   return (
     <main className="container">
       <div className="project-detail">
         <Link href="/projects" className="nav-link mb-8 text-[var(--accent-turquoise-dark)]" data-text="← Back to Projects">← Back to Projects</Link>
         
         <div className="project-header">
-          <h1>Content Planning Tools</h1>
+          <h1>Publishing & Planning tools</h1>
           {/* <p className="project-subtitle">Explore a few designs for content generation, scheduling, and planning with internal tools.</p> */}
         </div>
 
+        {/* Tab Navigation */}
+        <div className="tab-navigation">
+          <button 
+            className={`tab-button ${activeTab === 'messaging' ? 'active' : ''}`}
+            onClick={() => setActiveTab('messaging')}
+          >
+            Messaging Planning Tools
+          </button>
+          <button 
+            className={`tab-button ${activeTab === 'publishing' ? 'active' : ''}`}
+            onClick={() => setActiveTab('publishing')}
+          >
+            Publishing Tools
+          </button>
+        </div>
+
         <div className="project-content">
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            TAB 1: MESSAGING PLANNING TOOLS
+        ═══════════════════════════════════════════════════════════════════ */}
+        {activeTab === 'messaging' && (
+          <>
         
         {/* ═══════════════════════════════════════════════════════════════════
             PROJECT 1: EMAIL PLATFORM
@@ -23,7 +48,7 @@ export default function ContentPlanningPage() {
         <section className="project-section">
           <h2>Unifying the NYT Messaging Ecosystem</h2>
             <p className="project-year">2025</p>
-            <p style={{ color: 'gray' }}> Some elements of the design examples shown have been modified in this case study for privacy.</p>
+            {/* <p style={{ color: 'gray' }}> Some elements of the design examples shown have been modified in this case study for privacy.</p> */}
                         
             <p>Redesigning the New York Times email ecosystem meant combining two team's workflows into one platform, and replacing a fragmented, legacy tech stack with a unified experience on top of shared infrastructure. We needed to bridge the gap between editorial's desire for speed and marketing's need for observability into the performance of their objectives. We built a smart, scalable foundation for the entire NYT messaging pipeline.</p>
             <p>Our legacy systems were previously siloed and unscalable. Editorial and Marketing operated in different worlds, using jargon-y, non-functioning controls that made it impossible to see a global view of our messaging operations and performance.</p>
@@ -146,7 +171,7 @@ export default function ContentPlanningPage() {
               />
             </div>
             <p>
-              This project began when I redesigned a calendar tool used for content planning, and evolved into an experiment of new generative design and development tools including Cursor, Figma Make, and V0. 
+              Explorations for a calendar and planning redesign, which evolved into an experiment of new generative design and development tools including Cursor, Figma Make, and V0. 
             </p>
             <div className="project-image-container">
               <Image
@@ -173,6 +198,18 @@ export default function ContentPlanningPage() {
               />
             </div>
           </section>
+          </>
+        )}
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            TAB 2: PUBLISHING TOOLS
+        ═══════════════════════════════════════════════════════════════════ */}
+        {activeTab === 'publishing' && (
+          <section className="project-section">
+            <h2>Publishing Tools</h2>
+            <p>Content coming soon.</p>
+          </section>
+        )}
 
         </div>
       </div>

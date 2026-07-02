@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --color-alabster: #FCFCF9;
+  --background: var(--color-alabster);
   --foreground: #1e1e1e;
   --font-heading: var(--font-work-sans), sans-serif;
   --font-body: var(--font-plus-jakarta), sans-serif;
@@ -11,9 +12,10 @@
   --accent-purple: #a7a5ff;
   --accent-lilac: #abc3ff;
   --accent-red: #c34725;
-  --accent-pink: #ff7eb6;
+  --accent-pink: #FF86BA;
   --accent-turquoise: #94DCD8;
   --accent-turquoise-dark: #4a8e8b;
+  --accent-turquoise-2: #74AECF;
   --line-primary: rgb(217, 217, 217);
 
   /* Better responsive design system */
@@ -116,10 +118,12 @@ main.homepage-content {
   margin: 0;
 }
 
+/* Smiley temporarily hidden
 .heading-smiley {
   display: inline-block;
   flex-shrink: 0;
 }
+*/
 
 .nav-link {
   display: inline-flex;
@@ -160,11 +164,15 @@ a:hover {
 
 /* footer styles */
 footer {
-  background: var(--accent-turquoise);
+  background: var(--accent-turquoise-2);
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: 2rem 0;
   margin-top: auto;
   width: 100%;
+}
+
+footer a {
+  color: var(--color-alabster);
 }
 
 .footer-content {
@@ -175,7 +183,7 @@ footer {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  color: var(--background);
+  color: var(--color-alabster);
 }
 
 .social-links {
@@ -188,7 +196,7 @@ footer {
 }
 
 .social-links a {
-  color: var(--accent-turquoise-dark); 
+  color: var(--color-alabster); 
   transition: color 0.2s ease;
   font-size: 1rem;
   padding: 0.5rem;
@@ -206,7 +214,7 @@ footer {
 .copyright {
   text-align: center;
   font-size: 1rem;
-  color: var(--accent-turquoise-dark);
+  color: var(--color-alabster);
   font-weight: 500;
   padding: 0 1rem;
 }
@@ -265,6 +273,14 @@ footer {
   width: 100% !important;
   height: auto !important;
   object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+/* Grow the skill boxes on hover — desktop / fine-pointer devices only */
+@media (hover: hover) and (pointer: fine) {
+  .service-image:hover {
+    transform: scale(1.08);
+  }
 }
 
 /* Tablet and Mobile: 2x2 grid for services */
@@ -535,7 +551,7 @@ nav {
   display: block;
   height: auto;
   width: auto;
-  max-height: 32px;
+  max-height: 28px;
 }
 
 .nav-links {
@@ -845,6 +861,10 @@ main {
   margin-bottom: 2rem;
 }
 
+.project-header h1 {
+  margin-bottom: 0;
+}
+
 .project-image-container {
   margin: 2rem 0;
   border-radius: 8px;
@@ -870,6 +890,37 @@ main {
 
 .button:hover {
   background-color: var(--accent-color-dark);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--line-primary);
+}
+
+.tab-button {
+  padding: 1rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  opacity: 0.8;
+}
+
+.tab-button.active {
+  opacity: 1;
+  border-bottom-color: var(--accent-turquoise-dark);
+  color: var(--accent-turquoise-dark);
 }
 
 /* Large Project Cards */
@@ -1293,18 +1344,64 @@ main {
   color: var(--foreground);
 }
 
-.spinning-smiley {
-  animation: spin 4s linear infinite;
+/* Smiley temporarily hidden
+.bouncing-smiley {
+  --travel: min(48vw, 400px);
+  --bounce: 58px;
+  transform-origin: center bottom;
+  animation: basketball-bounce 3.4s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  will-change: transform;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
+  Bouncing basketball: a parabolic arc that travels right across the body
+  container and returns to the start. The horizontal path follows a sine curve
+  (Xfactor = sin(pi * t)) so it eases at the turnaround, while the vertical
+  bounce uses ease-out going up / ease-in coming down for a gravity feel, with
+  squash-and-stretch on each ground contact.
+@keyframes basketball-bounce {
+  0% {
+    transform: translate(0, 0) scale(1.12, 0.85);
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.35, 1);
   }
-  to {
-    transform: rotate(360deg);
+  12.5% {
+    transform: translate(calc(var(--travel) * 0.383), calc(var(--bounce) * -1)) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.85, 0.35);
+  }
+  25% {
+    transform: translate(calc(var(--travel) * 0.707), 0) scale(1.12, 0.85);
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.35, 1);
+  }
+  37.5% {
+    transform: translate(calc(var(--travel) * 0.924), calc(var(--bounce) * -1)) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.85, 0.35);
+  }
+  50% {
+    transform: translate(var(--travel), 0) scale(1.12, 0.85);
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.35, 1);
+  }
+  62.5% {
+    transform: translate(calc(var(--travel) * 0.924), calc(var(--bounce) * -1)) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.85, 0.35);
+  }
+  75% {
+    transform: translate(calc(var(--travel) * 0.707), 0) scale(1.12, 0.85);
+    animation-timing-function: cubic-bezier(0.2, 0.6, 0.35, 1);
+  }
+  87.5% {
+    transform: translate(calc(var(--travel) * 0.383), calc(var(--bounce) * -1)) scale(0.96, 1.05);
+    animation-timing-function: cubic-bezier(0.6, 0, 0.85, 0.35);
+  }
+  100% {
+    transform: translate(0, 0) scale(1.12, 0.85);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .bouncing-smiley {
+    animation: none;
+  }
+}
+*/
 
 /* Modal styles */
 .modal-overlay {

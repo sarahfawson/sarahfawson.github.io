@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const navItems = [
   { name: 'Design', path: '/projects' },
-  { name: 'Art', path: '/art' },
+  // { name: 'Art', path: '/art' },
 ];
 
 export default function Navigation() {

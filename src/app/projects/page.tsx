@@ -30,7 +30,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="container projects-page">
-      <h1>Design </h1>      
+      {/* <h1>Design </h1>       */}
       <div className="large-projects-grid">
         {largeProjects.map((project) => (
           <Link key={project.slug} href={`/projects/${project.slug}`} className="project-large">
