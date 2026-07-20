@@ -23,10 +23,10 @@ const recommendedReads = [
   }
 ];
 
-const quotes = [
-  "You can't use up creativity. The more you use, the more you have.",
-  'Creativity is a wild mind and a disciplined eye.'
-];
+// const quotes = [
+//   "You can't use up creativity. The more you use, the more you have.",
+//   'Creativity is a wild mind and a disciplined eye.'
+// ];
 
 const artImages = [
   {
