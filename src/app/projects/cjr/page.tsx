@@ -2,11 +2,25 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+const dataStoryImages = [
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg',
+  '/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg',
+];
 
 export default function CJRPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
 
   const changeSlide = (direction: number) => {
     const newSlide = currentSlide + direction;
@@ -19,13 +33,48 @@ export default function CJRPage() {
     setCurrentSlide(slideIndex);
   };
 
-  const openImageModal = (imageSrc: string) => {
+  // Autoplay the layout carousel, advancing every 2s and looping back to the start.
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((slide) => (slide + 1) % 6);
+    }, 2000);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
+  const openImageModal = (imageSrc: string, index: number) => {
     setSelectedImage(imageSrc);
+    setSelectedImageIndex(index);
   };
 
-  const closeImageModal = () => {
+  const closeImageModal = useCallback(() => {
     setSelectedImage(null);
-  };
+  }, []);
+
+  const navigateModal = useCallback((direction: number) => {
+    const newIndex = selectedImageIndex + direction;
+    if (newIndex >= 0 && newIndex < dataStoryImages.length) {
+      setSelectedImageIndex(newIndex);
+      setSelectedImage(dataStoryImages[newIndex]);
+    }
+  }, [selectedImageIndex]);
+
+  // Keyboard navigation for modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedImage) return;
+      
+      if (e.key === 'ArrowLeft' && selectedImageIndex > 0) {
+        navigateModal(-1);
+      } else if (e.key === 'ArrowRight' && selectedImageIndex < dataStoryImages.length - 1) {
+        navigateModal(1);
+      } else if (e.key === 'Escape') {
+        closeImageModal();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage, selectedImageIndex, navigateModal, closeImageModal]);
   return (
     <main className="container">
       <div className="project-detail">
@@ -34,172 +83,118 @@ export default function CJRPage() {
         <div className="project-header">
           <h1>The Legislative Roots of Mass Incarceration</h1>
           <p className="project-year">2020</p>
-          <p className="project-subtitle">I analyzed the United States' criminal legal system, policing, disenfranchisement, and more while building my thesis at MICA.</p>
+          <p className="project-subtitle">I analyzed the United States' criminal legal system, policing, and felony disenfranchisement while building my thesis at MICA.</p>
         </div>
-        
-        <div className="project-images-grid">
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history1.jpg"
-              alt="CJR Visual Analysis page 1"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
+        <section className="project-section">
+          <h2>Data Story</h2>
+          
+          <div className="project-images-grid">
+            {dataStoryImages.map((src, index) => (
+              <div key={src} className="project-image-item" onClick={() => openImageModal(src, index)}>
+                <Image
+                  src={src}
+                  alt={`CJR Visual Analysis ${index + 1}`}
+                  width={100}
+                  height={150}
+                  className="project-detail-image"
+                  priority={index < 4}
+                />
+              </div>
+            ))}
           </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history2.jpg"
-              alt="CJR Visual Analysis 2"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history3.jpg"
-              alt="CJR Visual Analysis 3"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history4.jpg"
-              alt="CJR Visual Analysis 4"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history5.jpg"
-              alt="CJR Visual Analysis 5"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history6.jpg"
-              alt="CJR Visual Analysis 6"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history7.jpg"
-              alt="CJR Visual Analysis 7"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history8.jpg"
-              alt="CJR Visual Analysis 8"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history9.jpg"
-              alt="CJR Visual Analysis 9"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-          <div className="project-image-item" onClick={() => openImageModal('/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg')}>
-            <Image
-              src="/images/portfolio/thedatasays-personal/thesis/mass-incarceration-history10.jpg"
-              alt="CJR Visual Analysis 10"
-              width={100}
-              height={150}
-              className="project-detail-image"
-              priority
-            />
-          </div>
-        </div>
 
-        {/* Image Modal */}
-        {selectedImage && (
-          <div className="image-modal-overlay" onClick={closeImageModal}>
-            <div className="image-modal-content" onClick={(e) => e.stopPropagation()}>
+          {/* Image Modal */}
+          {selectedImage && (
+            <div className="image-modal-overlay" onClick={closeImageModal}>
+              {/* Close button - top right of overlay */}
               <button className="image-modal-close" onClick={closeImageModal}>
-                ×
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
               </button>
-              <Image
-                src={selectedImage}
-                alt="Expanded view"
-                width={800}
-                height={600}
-                className="image-modal-image"
-                priority
-              />
+
+              <div className="image-modal-wrapper" onClick={(e) => e.stopPropagation()}>
+                {/* Left Arrow */}
+                <button 
+                  className={`image-modal-nav image-modal-prev ${selectedImageIndex === 0 ? 'disabled' : ''}`}
+                  onClick={() => navigateModal(-1)}
+                  disabled={selectedImageIndex === 0}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                  </svg>
+                </button>
+
+                <div className="image-modal-content">
+                  <Image
+                    src={selectedImage}
+                    alt="Expanded view"
+                    width={800}
+                    height={600}
+                    className="image-modal-image"
+                    priority
+                  />
+                  
+                  {/* Image counter */}
+                  <div className="image-modal-counter">
+                    {selectedImageIndex + 1} / {dataStoryImages.length}
+                  </div>
+                </div>
+
+                {/* Right Arrow */}
+                <button 
+                  className={`image-modal-nav image-modal-next ${selectedImageIndex === dataStoryImages.length - 1 ? 'disabled' : ''}`}
+                  onClick={() => navigateModal(1)}
+                  disabled={selectedImageIndex === dataStoryImages.length - 1}
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </section>
 
         <div className="project-content">
           <section className="project-section">
             {/* <h2>Overview</h2> */}
-            <p className="project-subtitle">Our lives begin to end the day we become silent about things that matter.</p>
+            <p className="project-subtitle">"Our lives begin to end the day we become silent about things that matter."</p>
             <p>
             This work aims to shine a bright light on the perpetual marginalization of the dispossessed at the hands of our own government. Our country’s history of racialized legislation and culture has led to a system of mass incarceration today, the likes of which no country has ever seen before. What is different now, from previous periods of racial control like slavery and the Jim Crow era? We have data, and we’re seeing the injustices live streamed.
             </p>
             <p>
             Although we celebrate colorblindness in America, our laws and leadership have enabled systemic racism and control that is exerted disproportionately on People of Color. Let us better understand our history so we can demand the change needed.
             </p>
-            <p>
-            I have summarized the process of creating this as my thesis for the Maryland Institute College of Art (MICA) Information & Data Visualization Master’s program, completed in December 2020.
-            </p>
+
 
         <hr className="section-divider" />
+            <h2>Background</h2>
             <h3>We have a mass incarceration problem because of our legislation and our history, not because of our crime.</h3>
-            <div className="two-column-layout highlighted">
-              <div className="column-left" style={{ padding: '1.5rem' }}>
-                <h4>The data shows the scale of the mass incarceration problem</h4>
-                <p>The data tells us about how pervasive mass incarceration is in the United States. For example:</p>
-                <ul>
-                  <li>The U.S. puts people behind bars at a higher rate than any country around the world at 698 per 100,000 people</li>
-                  <li>Black men are incarcerated at a disproportionate rate - 33% of Black men are incarcerated in their lifetime</li>
-                  <li>After someone leaves prison, they are legally disenfranchised in many ways. 5.2Million people are currently impacted by voter disenfranchisement due to a felony charge.</li>
-                  <li>These problems often lead to recidivism and generational poverty</li>
-                </ul>
-              </div>
-              <div className="column-right" style={{ padding: '1.5rem' }}>
-                <h4>Discrimination is still legal in the United States</h4>
-                <p>There are too many forms of discrimination of former prisoners that are still currently legal. To name a few:</p>
-                <ul>
-                  <li>Voting</li>
-                  <li>Serving on a jury</li>
-                  <li>Getting a job</li>
-                  <li>Opening a bank account</li>
-                  <li>Starting a business</li>
-                  <li>Getting a student loan</li>
-                  <li>Traveling abroad</li>
-                  <li>Renting/buying housing</li>
-                </ul>
-              </div>
+            <div style={{ marginTop: '2rem' }}>
+              <h4>The data shows the scale of the mass incarceration problem</h4>
+              <p>The data tells us about how pervasive mass incarceration is in the United States. For example:</p>
+              <ul>
+                <li>The U.S. puts people behind bars at a higher rate than any country around the world at 698 per 100,000 people</li>
+                <li>Black men are incarcerated at a disproportionate rate - 33% of Black men are incarcerated in their lifetime</li>
+                <li>After someone leaves prison, they are legally disenfranchised in many ways. 5.2Million people are currently impacted by voter disenfranchisement due to a felony charge.</li>
+                <li>These problems often lead to recidivism and generational poverty</li>
+              </ul>
+            </div>
+            <div style={{ marginTop: '2rem' }}>
+              <h4>Discrimination is still legal in the United States</h4>
+              <p>There are too many forms of discrimination of former prisoners that are still currently legal. To name a few:</p>
+              <ul>
+                <li>Voting</li>
+                <li>Serving on a jury</li>
+                <li>Getting a job</li>
+                <li>Opening a bank account</li>
+                <li>Starting a business</li>
+                <li>Getting a student loan</li>
+                <li>Traveling abroad</li>
+                <li>Renting/buying housing</li>
+              </ul>
             </div>
         </section>
 
@@ -325,15 +320,16 @@ export default function CJRPage() {
               className="project-detail-image"
             /> */}
         </section>
-        
         <hr className="section-divider" />
-        
+
         <section className="project-section">
           <p>
-            I spoke about the process of creating this thesis – including all the ups and downs, the research, analysis, and design – in the 2021 Outlier Data Visualization Conference, available to view <a href="https://youtu.be/paECLTlgz9I?si=Q-YnbCEz-Nz2fY3x" target="_blank" rel="noopener noreferrer">here</a>.
+            I spoke about the process of creating this thesis – including all the ups and downs, the research, analysis, and design – at the 2021 Outlier Data Visualization Conference, available to view <a href="https://youtu.be/paECLTlgz9I?si=Q-YnbCEz-Nz2fY3x" target="_blank" rel="noopener noreferrer">here</a>.
           </p>
         </section>
-          
+
+
+       
         </div>
       </div>
     </main>

@@ -204,3 +204,8 @@ export const allTags = Array.from(new Set([
   ...largeProjects.flatMap(project => project.tags),
   ...smallProjects.flatMap(project => project.tags)
 ]));
+
+// Get unique tags from small projects only (for the "More designs" filter)
+export const smallProjectTags = Array.from(new Set(
+  smallProjects.flatMap(project => project.tags)
+));

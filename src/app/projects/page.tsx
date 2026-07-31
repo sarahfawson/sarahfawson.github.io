@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Modal from '@/components/Modal';
-import { largeProjects, smallProjects, allTags, Project } from '@/data/projects';
+import { largeProjects, smallProjects, smallProjectTags, Project } from '@/data/projects';
 // import DataViz from '@/components/dataviz';
 
 export default function ProjectsPage() {
@@ -65,7 +65,7 @@ export default function ProjectsPage() {
         >
           All
         </button>
-        {allTags.map((tag) => (
+        {smallProjectTags.map((tag) => (
           <button
             key={tag}
             className={`tag tag-interactive ${selectedTags.includes(tag) ? 'active' : ''}`}
