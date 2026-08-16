@@ -1,7 +1,7 @@
 export interface Project {
   title: string;
   client: string;
-  timeframe?: string; // Used for large projects (e.g., "2025-2026")
+  timeframe?: string; // Used for large projects (e.g., '2025-2026')
   summary?: string;   // Used for small projects (description text)
   image: string;
   slug: string;
@@ -12,17 +12,25 @@ export interface Project {
 export const largeProjects: Project[] = [
 
   {
-    title: 'Publishing & Planning tools',
-    client: 'NYT',
+    title: 'Publishing tools',
+    client: 'The New York Times',
     timeframe: '2025-2026',
     image: '/images/portfolio/professional/nyt/calendar-design-prototype-week-bg.png',
     slug: 'content-planning',
     tags: ['UX/UI Design', 'Data Visualization', 'Prototypes']
   },
+    {
+    title: 'The Legislative Roots of Mass Incarceration',
+    client: 'Masters Thesis',
+    timeframe: '2020',
+    image: '/images/portfolio/thedatasays-personal/thumbnails-04.png',
+    slug: 'cjr',
+    tags: ['Data Visualization']
+  },
   {
     title: 'Service Design',
-    client: 'NYT, Deloitte',
-    timeframe: '2025-2026',
+    client: 'The New York Times, Deloitte',
+    timeframe: '2023-2026',
     image: '/images/portfolio/thedatasays-personal/thumbnails-02.png',
     slug: 'workflow-diagrams',
     tags: ['Service Design', 'Data Visualization']
@@ -36,17 +44,9 @@ export const largeProjects: Project[] = [
   //   tags: ['Design Leadership', 'Workshops']
   // },
   {
-    title: 'The Legislative Roots of Mass Incarceration',
-    client: 'Thesis',
-    timeframe: '2020',
-    image: '/images/portfolio/thedatasays-personal/thumbnails-04.png',
-    slug: 'cjr',
-    tags: ['Data Visualization']
-  },
-  {
-    title: 'Data & Insights',
-    client: 'Freelance',
-    timeframe: '2023',
+    title: 'Data Dashboards',
+    client: 'Freelance, Deloitte',
+    timeframe: '2020-2023',
     image: '/images/portfolio/thedatasays-personal/dash-general-light.png',
     slug: 'dashboards',
     tags: ['UX/UI Design', 'Data Visualization']
@@ -81,15 +81,6 @@ export const smallProjects: Project[] = [
     slug: 'what-chart-are-you',
     tags: ['Data Visualization', 'Graphic Design']
   },
-  // {
-  //   title: "Middle School Infographic",
-  //   client: 'Denver Public Schools',
-  //   summary: "An infographic for parents to see what's upcoming in their child's schoolyear.",
-  //   image: "/images/portfolio/thedatasays-clients/MMMS-infographic-2022.png",
-  //   slug: "MMMS-infographic",
-  //   link: "https://www.behance.net/gallery/your-incarceration-rates-project",
-  //   tags: ["Data Visualization", "Graphic Design"]
-  // },
   {
     title: 'The Popular Vote',
     client: 'Personal',
@@ -147,6 +138,110 @@ export const smallProjects: Project[] = [
     tags: ['Data Visualization']
   },
   {
+    title: 'Incarceration Likelihood',
+    client: 'Personal',
+    summary: 'Likelihood of incarceration for black vs white men in the United States, showing disproportionate precentage of black individuals as compared to the population.',
+    image: '/images/portfolio/thedatasays-personal/incarceration-likelihood-illustration.JPG',
+    slug: 'incarceration-likelihood',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Innocent Years Spent on Death Row',
+    client: 'Personal',
+    summary: 'How many years have innocent people spent on death row before their exoneration? (2019)',
+    image: '/images/portfolio/thedatasays-personal/exonerations-innocentyears-2019.JPG',
+    slug: 'innocent-years-2019',
+    tags: ['Data Visualization']
+  },
+  {
+    title: 'Solitary Confinement',
+    client: 'Personal',
+    summary: 'Racial breakdown of people in solitary confinement, showing disproportionate precentage of black individuals as compared to the population.',
+    image: '/images/portfolio/thedatasays-personal/solitary-confinement-byrace-2019.JPG',
+    slug: 'solitary-configment-race-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Senator Representation by Race',
+    client: 'Personal',
+    summary: 'Representation of the US population in the senate by race.',
+    image: '/images/portfolio/thedatasays-personal/senators-race-2019.JPG',
+    slug: 'senators-race-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Pandemic Unemployment Pays More than Minimum Wage',
+    client: 'Personal',
+    summary: '2020.',
+    image: '/images/portfolio/thedatasays-personal/pandemic-unemployment-hexmap.JPG',
+    slug: 'pandemic-unemployment-hexmap',
+    tags: ['Data Visualization']
+  },
+  {
+    title: 'Pandemic Voting Impact',
+    client: 'Personal',
+    summary: 'A visual analysis of the impact of the Covid-19 pandemic on voting in the United States.',
+    image: '/images/portfolio/thedatasays-personal/COVID19-VotingImpact-tall.jpg',
+    slug: 'covid19-voting-impact',
+    tags: ['Data Visualization', 'Graphic Design']
+  },
+  {
+    title: 'Regional Delegates',
+    client: 'Personal',
+    summary: 'Regional delegates earned by 2020 presidential hopefuls.',
+    image: '/images/portfolio/thedatasays-personal/regional-delegates-2019.PNG',
+    slug: 'regional-delegates-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Primaries Delegate Race',
+    client: 'Personal',
+    summary: 'Who is winning in the democratic delegate race?',
+    image: '/images/portfolio/thedatasays-personal/delegates-bump-chart-2019.JPG',
+    slug: 'delegates-bump-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Primaries Delegates',
+    client: 'Personal',
+    summary: 'Traction for delegates by Democratic Presidential hopefuls',
+    image: '/images/portfolio/thedatasays-personal/delegates-face-count-2019.JPG',
+    slug: 'delegates-count-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Campaign Tracker',
+    client: 'Personal',
+    summary: 'Campaign durations and polling for 2020 presidential hopefuls.',
+    image: '/images/portfolio/thedatasays-personal/campaing-tracker-2019.JPG',
+    slug: 'campaign-tracker-2019',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Do I Look Presidential Yet?',
+    client: 'Personal',
+    summary: 'Analysis of colors worn to debates.',
+    image: '/images/portfolio/thedatasays-personal/candidate-debate-suitcolors-2019.JPG',
+    slug: 'presidential-suits',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Voter Turnout',
+    client: 'Personal',
+    summary: 'Voter turnout in the United States Presidential Elections, 1972-2016 elctions (2019).',
+    image: '/images/portfolio/thedatasays-personal/voter-turnout-2019.JPG',
+    slug: 'voter-turnout',
+    tags: ['Data Visualization', 'Sketch']
+  },
+  {
+    title: 'Adult Loneliness',
+    client: 'Personal',
+    summary: 'Adult Loneliness graphic',
+    image: '/images/portfolio/thedatasays-personal/loneliness-graphic.JPG',
+    slug: 'adult-loneliness',
+    tags: ['Data Visualization', 'Graphic Design']
+  },
+   {
     title: 'Program Planning Gantt',
     client: 'Deloitte',
     timeframe: '2019-2020',
@@ -163,30 +258,53 @@ export const smallProjects: Project[] = [
     slug: 'breaking-news-illustration',
     tags: ['Graphic Design']
   },
-
   {
-    title: "Covid'19 Voting Impact",
+    title: 'New Years Eve',
     client: 'Personal',
-    summary: 'A visual analysis of the impact of Covid19 on voting in the United States.',
-    image: '/images/portfolio/thedatasays-personal/COVID19-VotingImpact.jpg',
-    slug: 'covid19-voting-impact',
-    tags: ['Graphic Design']
+    summary: 'How many people are home before midnight? Disco Ball visualization.',
+    image: '/images/portfolio/thedatasays-personal/nye-disco.JPG',
+    slug: 'disco',
+    tags: ['Data Visualization', 'Sketch']
   },
+  {
+    title: 'Holiday Spending',
+    client: 'Personal',
+    summary: 'Retail holiday spending continues to increase each year in the United States, based on data from the National Retail Federation.',
+    image: '/images/portfolio/thedatasays-personal/holiday-spending-2019.JPG',
+    slug: 'holiday-spending',
+    tags: ['Data Visualization', 'Sketch']
+  }
   // {
-  //   title: "Democratic Polls Sketch",
-  //   client: 'Personal',
-  //   summary: "A sketched visualization of democratic polling data for the 2020 presidential election.",
-  //   image: "/images/portfolio/thedatasays-personal/demPollsSketched1.jpg",
-  //   slug: "democratic-polls-sketch",
-  //   tags: ["Data Visualization", "Sketch"]
+  //   title: 'Middle School Infographic',
+  //   client: 'Denver Public Schools',
+  //   summary: 'An infographic for parents to see what's upcoming in their child's schoolyear.',
+  //   image: '/images/portfolio/thedatasays-clients/MMMS-infographic-2022.png',
+  //   slug: 'MMMS-infographic',
+  //   tags: ['Data Visualization', 'Graphic Design']
   // },
   // {
-  //   title: "Disenfranchisement Poster",
+  //   title: 'Democratic Polls Sketch',
   //   client: 'Personal',
-  //   summary: "A poster highlighting huge issues related to disenfranchisement of people who have served time for a felony.",
-  //   image: "/images/portfolio/thedatasays-personal/disenfranchisement-poster.jpg",
-  //   slug: "disenfranchisement-poster",
-  //   tags: ["Data Visualization", "Graphic Design"]
+  //   summary: 'A sketched visualization of democratic polling data for the 2020 presidential election.',
+  //   image: '/images/portfolio/thedatasays-personal/demPollsSketched-2019.jpg',
+  //   slug: 'democratic-polls-sketch',
+  //   tags: ['Data Visualization', 'Sketch']
+  // },
+  // {
+  //   title: 'Disenfranchisement Poster',
+  //   client: 'Personal',
+  //   summary: 'A poster highlighting huge issues related to disenfranchisement of people who have served time for a felony.',
+  //   image: '/images/portfolio/thedatasays-personal/disenfranchisement-poster.jpg',
+  //   slug: 'disenfranchisement-poster',
+  //   tags: ['Data Visualization', 'Graphic Design']
+  // },
+  // {
+  //   title: 'Utah Backpacking Poster',
+  //   client: 'Personal',
+  //   summary: 'Guide to packing and preparing for a Backpacking trip.',
+  //   image: '/images/portfolio/thedatasays-personal/backpacking-guide.pdf',
+  //   slug: 'slug',
+  //   tags: ['Data Visualization', 'Graphic Design']
   // }
 ];
 
@@ -205,7 +323,7 @@ export const allTags = Array.from(new Set([
   ...smallProjects.flatMap(project => project.tags)
 ]));
 
-// Get unique tags from small projects only (for the "More designs" filter)
+// Get unique tags from small projects only (for the 'More designs' filter)
 export const smallProjectTags = Array.from(new Set(
   smallProjects.flatMap(project => project.tags)
 ));

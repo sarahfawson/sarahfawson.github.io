@@ -10,7 +10,7 @@ export default function DashboardsPage() {
         <Link href="/projects" className="nav-link mb-8 text-[var(--accent-turquoise-dark)]" data-text="← Back to Projects">← Back to Projects</Link> 
         <div className="project-header">
           <h1>Data Dashboards</h1>
-          <p className="project-year">2019-2022</p>
+          <p className="project-year">2020-2023</p>
           <p className="project-subtitle">Making data and insights easy to discover and understand.</p>
         </div>
 
